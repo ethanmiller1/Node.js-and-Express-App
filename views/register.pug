@@ -1,0 +1,41 @@
+extends partials/header
+
+block content
+  .form-signin-wrapper
+    form.form-signin.form-wrapper.needs-validation(novalidate='', method='POST', action='/users/register')
+      .text-center.box1
+        img.mb-4(src='/images/bibleAcademy Logo Only.svg', alt='', width='72', height='72')
+        h1.h3.mb-3.font-weight-normal Create your bibleAcademy Account
+      .form-label-group   
+        input#firstName.form-control(name='firstname' type='text', placeholder='First name', required='', autofocus='')
+        label.cursor-text(for='firstName') First name
+        .invalid-feedback
+          | Valid first name is required.
+      .form-label-group
+        input#lastName.form-control(name='lastname' type='text', placeholder='Last name', required='', autofocus='')
+        label.cursor-text(for='lastName') Last name
+        .invalid-feedback
+          | Valid last name is required.
+      .form-label-group.box1 
+        input#inputEmail.form-control(name='email' type='email', placeholder='Email address', required='', autofocus='')
+        label.cursor-text(for='inputEmail') Email address
+        .invalid-feedback
+          | Valid email is required.
+      .input-group.box1
+        .input-group-prepend
+          span.input-group-text @
+        .form-label-group
+          input#username.form-control(name='username' type='text', placeholder='Username', required='', autofocus='')
+          label.cursor-text(for='username') Username
+          .invalid-feedback
+            | Please choose a username.
+      .form-label-group
+        input#inputPassword.form-control(name='password' type='password', placeholder='Password', required='')
+        label.cursor-text(for='inputPassword') Password
+      .form-label-group
+        input#inputPasswordConfirm.form-control(name='password2' type='password', data-match='#inputPassword', data-match-error="Whoops, these don't match", placeholder='Confirm password', required='')
+        label.cursor-text(for='inputPasswordConfirm') Confirm password
+        .help-block.with-errors
+      a.register.box2(href='/users/login') Sign in instead
+      button.btn.btn-lg.btn-primary.btn-block.login-btn.box3(type='submit') Sign up
+    p.mt-5.mb-3.text-muted.text-center Copyright © 2018

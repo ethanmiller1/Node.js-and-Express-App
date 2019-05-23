@@ -1,0 +1,71 @@
+extends partials/header
+
+block content
+  script(src='/components/jquery/dist/jquery.js')
+  script.
+    $(function() {
+    $('.dates #usr1').datepicker({
+    'format': 'm\/d\/yyyy',
+    'altFormat': 'mm/dd/yyyy',
+    'autoclose': true
+    });
+    });
+  .container    
+    br
+    h1 #{title}
+    br
+    form.form-wrapper(method='POST', action='/articles/edit/'+article._id)
+      #form-group
+        label Title:
+        input.form-control.article-title.box2(name='title', type='text', value=article.title)
+        br
+      #form-group
+        label Author:
+        input.form-control.article-title.box2(name='author', type='text', value=article.author)
+        br
+      #form-group.box1
+        .meta-header
+          select#dynamic-resizing(name='doctrine' value=article.doctrine)
+            option Soteriology
+            option Trinity
+            option Miracles
+            option Soul-winning
+          select#select-width(style='display:none')
+            option#option-width
+          input(name='scripture', placeholder="Add scripture..." value=article.scripture type='text')
+        textarea.form-control(name='editor1')= article.editor1
+        br
+      #form-group
+        label Series:
+        select.form-control.box2(name='series', type='text' value=article.series)
+          option Evangalism Techniques
+          option How To Be Saved
+          option Nature of God
+          option Faith Healing
+      #form-group
+        label Abstract:
+        textarea.form-control.box2(name='abstract', type='text' value=article.abstract)
+      //
+        #form-group
+          - const date = article.date.getFullYear() + "-" + (article.date.getMonth()+1) + "-" + article.date.getDate()
+          input.form-control.article-title.box2(name='date', type='date', value=date)
+          .form-group
+            #datetimepicker1.input-group.date
+              input.form-control(type='text')
+              span.input-group-addon
+                span.glyphicon.glyphicon-calendar
+      #datetimepicker1.input-group.dates
+        - const shortDate = (article.date.getMonth()+1) + "/" + article.date.getDate() + "/" + article.date.getFullYear()
+        input#usr1.form-control(name='date', type='text', placeholder='MM/DD/YYY' value=shortDate)
+        span.input-group-addon
+          span.glyphicon.glyphicon-calendar
+        script(type='text/javascript').
+          $(function () {
+          $('#datetimepicker1').datetimepicker();
+          });
+      
+      input.btn.btn-primary.login-btn.box3(type='submit',value='Submit')
+  script(src='https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js')
+  script.
+    CKEDITOR.replace( 'editor1' );
+  include partials/footer

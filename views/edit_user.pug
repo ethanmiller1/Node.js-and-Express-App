@@ -1,0 +1,67 @@
+extends partials/header
+
+block content
+  .container    
+    br
+    h1 #{title}
+    br
+  form.settings-wrapper(method='POST', action='/users/edit/'+user._id)
+    a.settings-wrapper.box1(style='cursor: default;')
+      .box1_2
+        label Name
+      .box2_3
+        input#firstName.settings-item(name='firstname' type='text', placeholder='First name', value=user.firstname)
+        input#lastName.settings-item(name='lastname' type='text', placeholder='Last name', value=user.lastname)
+        span(onclick='window.location.href = \'javascript:document.getElementById("firstName").focus()\';' style='cursor: pointer;') Edit
+        
+    a.settings-wrapper.box1(href="javascript:document.getElementById('username').focus()")
+      .box1_2
+        label Username
+      .box2_3
+        input#username.settings-item(name='username' type='text', placeholder='Username', value=user.username)
+        span Edit
+    a.settings-wrapper.box1(href="javascript:document.getElementById('inputEmail').focus()")
+      .box1_2
+        label Email
+      .box2_3
+        input#inputEmail.settings-item(name='email' type='email', placeholder='Email address', value=user.email)
+        span Edit
+    a.settings-wrapper.box1(href="javascript:document.getElementById('church').focus()")
+      .box1_2
+        label Church
+      .box2_3
+        input#church.settings-item(name='church' type='text', placeholder='e.g. Northlake Baptist Church', value=user.church)
+        span Edit
+    a.settings-wrapper.box1(href="javascript:document.getElementById('role').focus()")
+      .box1_2
+        label Role
+      .box2_3
+        input#role.settings-item(name='role' type='text', placeholder='e.g. Member', value=user.role)
+        span Edit
+    a.settings-wrapper.box1(href="javascript:document.getElementById('churchcity').focus()")
+      .box1_2
+        label Church City
+      .box2_3
+        input#churchcity.settings-item(name='churchcity' type='text', placeholder='e.g. Garland, TX', value=user.churchcity)
+        span Edit
+    a.settings-wrapper.box1(href="javascript:document.getElementById('new-password').focus()")
+      .box1_2
+        label Password
+      .box2_3
+        input#password.settings-item(name='password' type='password', value=user.password)
+        span Edit
+    .settings-wrapper.box1.hidden#reset-password(style='background: #F5F6F7')
+      .box1_2
+        label Reset Password
+      .box2_3
+        .form-group
+          label(for='password') New Password
+          input.form-control#new-password(type='password', name='password', value='', placeholder='New password')
+        .form-group
+          label(for='confirm') Confirm Password
+          input.form-control(type='password', name='confirm', value='', placeholder='Confirm password')
+        .form-group
+          button.btn.btn-primary(type='submit') Update Password
+    br
+    input.btn.btn-primary.login-btn.box3.mt-4(type='submit',value='Save')
+  include partials/footer

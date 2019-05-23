@@ -1,0 +1,22 @@
+extends partials/header
+
+block content
+  .resource-wrapper
+    - const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    - const publishedDate = monthNames[article.publisheddate.getMonth()] + " " + article.publisheddate.getDate() + ", " + article.publisheddate.getFullYear();
+    - const date = monthNames[article.date.getMonth()] + " " + article.date.getDate() + ", " + article.date.getFullYear();
+    if date ==publishedDate
+      time.published-date= date
+    else
+      time.published-date= date + "   |   " + publishedDate
+    h1.resource-title= article.title
+    .resource-authors
+      span Article by #{publisher}
+      .author-role Northlake Baptist Church Member, Garland, TX
+    .resource-body
+      p!= article.editor1
+      if user
+        if user.id ==article.publisher
+          a.btn.btn-light(href='/articles/edit/'+article._id) Edit
+          a.btn.btn-danger.delete-article(href="#",data-id=article._id) Delete
+  include partials/footer

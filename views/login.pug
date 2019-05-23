@@ -1,0 +1,21 @@
+extends partials/header
+
+block content
+  .form-signin-wrapper  
+    form.form-signin.form-wrapper(novalidate='', method='POST', action='/users/login')
+      .text-center.box1
+        img.mb-4(src='/images/bibleAcademy Logo Only.svg', alt='', width='72', height='72')
+        h1.h3.mb-3.font-weight-normal Log In
+      .form-label-group.box1
+        input#inputEmail.form-control(name='username' type='text', placeholder='Username', required='', autofocus='')
+        label.cursor-text(for='inputEmail') Username
+      .form-label-group.box1
+        input#inputPassword.form-control(name='password' type='password', placeholder='Password', required='')
+        label.cursor-text(for='inputPassword') Password
+      .checkbox.box1
+        label.input-checkbox
+          input(type='checkbox', value='remember-me')
+          |  Remember me
+      a.register.box2(href='/users/register') Create account
+      button.btn.btn-lg.btn-primary.btn-block.login-btn.box3(type='submit') Sign in
+    p.mt-5.mb-3.text-muted.text-center Copyright © 2018

@@ -1,0 +1,100 @@
+doctype html
+html
+  head
+    link(rel='shortcut icon', href='/images/favicon2.ico')
+    title Bible Academy
+    link(rel='stylesheet' href='/components/bootstrap/dist/css/bootstrap.css')
+    //- link(rel='stylesheet', href='/css/bootstrap-datepicker.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/bootstrap-datepicker.css')
+    link(rel='stylesheet' href='/css/style.css')
+  body
+    .nav-placeholder
+    nav.navbar.navbar-expand-md.navbar-dark.main-nav
+      button#guideButton
+      a.logo(href='/')
+        img(src='/images/bibleAcademy Logo.svg', alt='', width='154', height='24.2')
+      .nav-items
+        a.-item(href='/articles') Articles
+        a.-item(href='/messages') Sermons
+        a.-item(href='/topics') Topics
+        a.-item(href='/books/all') Books
+        a.-item(href='/podcasts') Podcasts
+        button.-btn(data-ix='ix-features-nav') Features
+        a.-item(href='/about-us') About
+        a.-item(data-segment-header-donate='', href='/donate') Donate
+        .search-bar#search-bar
+          input#input-bar.input-bar(name='search', placeholder='Search Bible Academy...')
+          button.search-button.no-focus(data-toggle='tooltip', data-placement='bottom', title='')
+        button.toggle-nav-method.no-focus(data-toggle='tooltip', data-placement='bottom', title='Search')
+      //- button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+        ul.nav.navbar-nav.navbar-right
+          if user
+            ul.navbar-nav.mr-auto
+              a.nav-link#add-article(href='/articles/add', data-toggle='tooltip', data-placement='bottom', title='Add Article', data-delay='{"show":"500", "hide":"200"}')
+              a.nav-link#add-media-resource(href='/messages/add', data-toggle='tooltip', data-placement='bottom', title='Add Media Resource', data-delay='{"show":"500", "hide":"200"}')
+              a.nav-link#add-book(href='/articles/add', data-toggle='tooltip', data-placement='bottom', title='Add ebook', data-delay='{"show":"500", "hide":"9000"}')
+              li.nav-item.dropdown
+                button#avatar-btn(data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  img.img-shadow(alt='', height='40', width='40', src='/images/avatar-male.png')
+                .dropdown-menu.dropdown-menu-right.user-dropdown(aria-labelledby='dropdown01')
+                  .user-header
+                    a.user-profile(href='/profile/:id')
+                      img.img-dropdown(alt='', height='40', width='40', src='/images/avatar-male.png')
+                      .channel-container
+                        .user-name(ellipsis-truncate='', title='Ethan Miller') #{user.firstname} #{user.lastname}
+                        .email(ellipsis-truncate='', title='ethan.romans5.8@gmail.com') #{user.email}
+                  a.dropdown-item#user-profile(href='/users/edit/'+user._id) My Profile
+                  a.dropdown-item#switch-user(href='#') Switch User
+                  a.dropdown-item#logout(href='/users/logout') Logout
+          else
+            a.nav-link(href='/users/login') SIGN IN
+    
+    .sidebar(style='width: 256px;')
+      .sidebar__item.sidebar__item--open#course-btn Course
+      .sidebar__container.course-menu
+        .course-menu__header
+          .course-menu__breadcrumbs
+            a.breadcrumbs__link(href='#') Trinity
+            a.breadcrumbs__link(href='#') Refuting Modalism
+          .course-menu__title Welcome to jQuery
+        .course-menu__subway-tracks
+          .course-menu__subway-track.course-menu--selected
+            .course-menu__media-icon
+              img(src='/images/course-menu__video-completed.svg', alt='', width='23', height='22')
+              .course-menu__bottom-track(style='background: rgb(24, 101, 242); left: 10px;')
+            .course-menu__track-title Trinity 101
+          .course-menu__subway-track
+            .course-menu__media-icon
+              .course-menu__top-track(style='background: rgb(102, 175, 233); left: 10px;')
+              img(src='/images/course-menu__video.svg', alt='', width='23', height='22')
+              .course-menu__bottom-track(style='background: rgb(102, 175, 233); left: 10px;')
+            .course-menu__track-title Trinity Or Oneness Debate
+          .course-menu__subway-track
+            .course-menu__media-icon
+              .course-menu__top-track(style='background: rgb(24, 101, 242); left: 10px;')
+              img(src='/images/course-menu__article-completed.svg', alt='', width='23', height='22')
+              .course-menu__bottom-track(style='background: rgb(24, 101, 242); left: 10px;')
+            .course-menu__track-title What Is the Doctrine of the Trinity?
+          .course-menu__subway-track
+            .course-menu__media-icon
+              .course-menu__top-track(style='background: rgb(102, 175, 233); left: 10px;')
+              img(src='/images/course-menu__video.svg', alt='', width='23', height='22')
+              .course-menu__bottom-track(style='background: rgb(102, 175, 233); left: 10px;')
+            .course-menu__track-title Trinity Spectrum
+          .course-menu__subway-track
+            .course-menu__media-icon
+              .course-menu__top-track(style='background: rgb(186, 190, 194); left: 10px;')
+              img(src='/images/course-menu__challange.svg', alt='', width='23', height='22')
+            .course-menu__track-title Challenge: Verses That Teach The Trinity
+      .sidebar__item.series-menu Series
+      .sidebar__item.playlists-menu Playlists
+      .sidebar__item.subscriptions-menu Subscriptions
+    != messages('message', locals)
+    if errors
+      each error, i in errors
+        div(class="alert alert-danger") #{error.msg}
+    block content

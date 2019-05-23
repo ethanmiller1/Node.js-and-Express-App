@@ -1,0 +1,51 @@
+extends partials/header
+
+block content
+  .container    
+    br
+    h1 #{title}
+    br
+    form(method='POST', action='/messages/add')
+      #form-group
+        label Video Link:
+        input.form-control.article-title(name='videolink', type='text', placeholder='https://www.youtube.com/watch?v=R0ZxB8_VsrY')
+        br
+      #form-group
+        label Audio Link:
+        input.form-control.article-title(name='audiolink', type='text', placeholder='http://www.faithfulwordbaptist.org/052718a.mp3')
+        br
+      #form-group
+        label Title:
+        input.form-control.article-title(name='title', type='text', placeholder='Trinity 101')
+        br
+      #form-group
+        label Author:
+        input.form-control.article-title(name='author', type='text', placeholder='Steven L. Anderson')
+        br
+      #form-group
+        .meta-header
+          label Abstract:
+          br
+          select#dynamic-resizing(name='doctrine')
+            option Soteriology
+            option Trinity
+            option Miracles
+            option Soul-winning
+          select#select-width(style='display:none')
+            option#option-width
+          input(name='scripture', placeholder="Add scripture..." type='text')
+          textarea.form-control(name='abstract', type='text')
+          br
+      #form-group
+        label Series:
+        select.form-control(name='series', type='text')
+          option Evangalism Techniques
+          option How To Be Saved
+          option Nature of God
+          option Faith Healing
+        br
+      #form-group
+        
+      br
+      input.btn.btn-primary(type='submit',value='Submit')
+  include partials/footer
