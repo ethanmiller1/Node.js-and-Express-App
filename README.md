@@ -1,4 +1,4 @@
-# Bible Academy
+# Node.js & Express App
 
 **Version 1.0.0**
 
@@ -176,7 +176,7 @@ To remove a service, use `.\nssm remove ngrok`.
 Set http request and port in the `ngrok.yml` file in `%USERPROFILE%\.ngrok2\ngrok.yml`.
 
 ``` yml
-authtoken: 7QNo2QqDfDuTtc1WGsHux_2sem5cmG67V52tcf9Gbmr
+authtoken: <YOUR_AUTH_TOKEN>
 tunnels:
     default:
         proto: http
@@ -188,8 +188,6 @@ Check status of ngrok at [localhost:4040/status](http://localhost:4040/status).
 ### MongoDB
 
 Download and install [MongoDB](https://www.mongodb.com/download-center/community "MongoDB Download Center") from MSI file
-
-https://nssm.cc/release/nssm-2.24.zip
 
 #### Start MongoDB as a service.
 1. Navigate to `..\mongoDB\bin` in cmd as administrator.
@@ -209,3 +207,9 @@ https://nssm.cc/release/nssm-2.24.zip
 ## License & copyright
 
 © 2019 Ethan Miller
+
+<!-- 
+    [x]TODO: Remove unneeded files from repository.
+    TODO: Fade sidebar__item out on guideButton click.
+    TODO: Fix hidden media-container on generic hashchange event @ main.js > hashApp > this.$hashContent.hide();.
+-->

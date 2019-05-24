@@ -1,5 +1,8 @@
 node_modules
 
+# Individual files
+style-orig.css
+
 # Logs
 logs
 *.log
