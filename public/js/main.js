@@ -279,7 +279,6 @@ $(document).ready(courseMenu.init());
 var hashApp = {
   init: function() {
     this.cacheDom();
-    this.resetHash();
     this.bindEvents();
   },
   cacheDom: function() {
@@ -289,9 +288,6 @@ var hashApp = {
   },
   bindEvents: function() {
     this.$win.on('hashchange', this.showPage.bind(this));
-  },
-  resetHash: function() {
-    location.hash = "#full-video";
   },
   showPage: function() {
     this.$hashContent.hide();
