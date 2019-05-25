@@ -5,6 +5,7 @@ block content
     - const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     - const publishedDate = monthNames[article.publisheddate.getMonth()] + " " + article.publisheddate.getDate() + ", " + article.publisheddate.getFullYear();
     - const date = monthNames[article.date.getMonth()] + " " + article.date.getDate() + ", " + article.date.getFullYear();
+    //- Only display one date if they are the same.
     if date ==publishedDate
       time.published-date= date
     else

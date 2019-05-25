@@ -207,12 +207,3 @@ Download and install [MongoDB](https://www.mongodb.com/download-center/community
 ## License & copyright
 
 © 2019 Ethan Miller
-
-<!-- 
-    [x]TODO: Remove unneeded files from repository.
-    [x]TODO: Remove #full-video from URL unless media-menu__link is clicked.
-    TODO: Style Articles page.
-    TODO: Create a view for homepage.
-    TODO: Fade sidebar__item out on guideButton click.
-    TODO: Fix hidden media-container on generic hashchange event @ main.js > hashApp > this.$hashContent.hide();.
--->

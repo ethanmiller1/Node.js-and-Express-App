@@ -26,6 +26,7 @@
     5.7 Edit User
     5.8 Sermon
     5.9 Modals
+    5.10 Articles
 
 */
 
@@ -2624,4 +2625,141 @@ content: "";
     padding-bottom: calc(24px + 54px);
     width: 50%;
   }
+}
+
+/****** 5.10 Articles ******/                                                      /****** 5.10 Articles ******/
+
+.articles-top {
+  padding-top: 30px;
+}
+
+body .grid-container {
+    max-width: 1388px;
+    padding-left: 66px;
+    padding-right: 66px;
+}
+
+.article-header {
+    padding-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0;
+}
+
+.article-header__title {
+    box-sizing: border-box;
+    padding-bottom: 0;
+    float: none;
+    font-size: 45px;
+    line-height: 55px;
+    font-weight: 700;
+    margin-bottom: .2em;
+    display: inline-block;
+}
+
+.resource-list-item__inner {
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.resource-list-item__inner {
+  transition-property: none;
+  transition-duration: 0s;
+  /* transition-timing-function: ease-in-out; */
+  border: 1px solid transparent;
+  border-bottom-color: #dcdcdc;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #3a3c3f;
+}
+
+.resource-list-item:last-child .resource-list-item__inner {
+  border-bottom-color: transparent
+}
+
+.resource-list-item:hover .resource-list-item__inner {
+  margin-top: -1px;
+  padding-top: 11px;
+  border-bottom-color: #dcdcdc
+}
+
+.resource-list-item {
+  padding: 0 15px 0 15px;
+  width: 317px;
+  height: 70px;
+}
+
+.resource-list-item:first-child {
+  box-sizing: border-box;
+  padding-bottom: 0;
+  display: block;
+  padding-left: 15px;
+  padding-right: 15px;
+  float: left;
+  box-sizing: border-box;
+}
+
+.resource-list-item__inner:hover {
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  padding-left: 9px;
+  padding-right: 9px;
+  margin: 0 -9px;
+  transition-property: all 0s;
+}
+
+.resource-list-item__title {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #333;
+  text-decoration: none;
+  margin-bottom: .2em;
+  margin-bottom: 0;
+  line-height: 146.55172%;
+  font: 700 15px Balto Web,Helvetica,Arial,sans-serif;
+}
+
+.resource-list-item__title {
+  font-size: 15px;
+  line-height: 146.55172%;
+}
+
+.resource-list-item__data {
+  box-sizing: border-box;
+  display: inline-block;
+  margin-top: 6px;
+  margin-right: 6px;
+  padding: 0 8px 2px 0;
+  max-width: calc(55% - 8px);
+  line-height: 14px;
+  font-size: 13px;
+  border-right: 1px solid #e1e1e1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.resource-list-item__data:last-child {
+  margin-right: 0;
+  padding-right: 0;
+  max-width: 44%;
+  border-right: 0
+}
+
+.resource-list-item__author-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+  margin-right: 10px;
+  margin-top: 12px;
+  transform: translate(0);
+}
+
+.card-list-view {
+  display: table;   /* Allow the centering to work */
+	/* margin: 0 auto; */
 }
