@@ -283,25 +283,38 @@ var hashApp = {
   },
   cacheDom: function() {
     this.$hashContent = $('.media-container');
-    this.$btn = $('.media-menu__link');
+    this.$vbtn = $('.media-menu__link[href="#full-video"]');
+    this.$abtn = $('.media-menu__link[href="#full-audio"]');
     this.$win = $(window);
   },
   bindEvents: function() {
     this.$win.on('hashchange', this.showPage.bind(this));
   },
   showPage: function() {
-    this.$hashContent.hide();
+    // Only hide the $hashContent if its sibling is taking its place. (Don't hide on generic #)
+    if (location.hash === this.$vbtn.attr('href') || location.hash === this.$abtn.attr('href')) {
+      this.$hashContent.hide();
+    }
+    // Select the HTML element whose id is identical with the hash. $(#full-video).
+    // TODO: Move browser to the top of the page.
     $(location.hash).show();
+    // Change the button colors.
     this.changeBtn();
   },
   changeBtn: function() {
-    this.$btn.each(function () {
-      if ($(this).attr("href") === location.hash) {
-        $(this).addClass("media-menu__link--selected");
-      } else {
-        $(this).removeClass("media-menu__link--selected");
-      }
-    })
+    // If the href attribute of $vbtn is identical to the URL hash (#full-video === #full-video), apply the following code.
+    if (location.hash === this.$vbtn.attr('href')) {
+      // Set the video button colors to show it's selected.
+      this.$vbtn.addClass('media-menu__link--selected');
+      // Set the audio button colors to show it isn't selected.
+      this.$abtn.removeClass('media-menu__link--selected');
+    // If the href attribute of $abtn is identical to the URL hash (#full-audio === #full-audio), apply the following code.
+    } else if (location.hash === this.$abtn.attr('href')) {
+      // Set the audio button colors to show it's selected.
+      this.$abtn.addClass('media-menu__link--selected');
+      // Set the video button colors to show it isn't selected.
+      this.$vbtn.removeClass('media-menu__link--selected');
+    }
   }
 };
 
