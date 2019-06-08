@@ -1,0 +1,17 @@
+REMAINING TASKS:
+
+TODO: (B) Style Articles page.
+TODO: (B) Create a view for homepage.
+TODO: (A) Get .container to adjust with open/closed sidebar.
+TODO: (C) Fade sidebar__item out on guideButton click.
+TODO: (B) Make a diagram (data design) of the website.
+TODO: (A) Fix unresponsive Audio hash button. (Occurs when playback doesn't start automatically.)
+TODO: (B) Add name of mongo database to readme.
+TODO: (C) Format localhost:3000 as clickable URL in app.js.
+
+
+FINISHED TASKS:
+
+DONE: Remove unneeded files from repository.
+DONE: Remove #full-video from URL unless media-menu__link is clicked.
+DONE: Fix hidden media-container on generic hashchange event @ main.js > hashApp > this.$hashContent.hide();.
