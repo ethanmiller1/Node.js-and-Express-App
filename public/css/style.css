@@ -2761,5 +2761,6 @@ body .grid-container {
 
 .card-list-view {
   display: table;   /* Allow the centering to work */
-	/* margin: 0 auto; */
+  /* margin: 0 auto; */
+  margin-left: 50px;
 }

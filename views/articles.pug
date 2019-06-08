@@ -1,7 +1,7 @@
 extends partials/header
 
 block content
-  .container
+  .page-wrapper
     br
     .highlighted-section.articles-top
       .grid-container
@@ -10,9 +10,12 @@ block content
     .card-list-view
       ul.list-group
         each article, i in articles
+          //- TODO: Add column for user rating, author church, notebook (topic), and reading time (user reading speed / word count).
           li.resource-list-item
             a.resource-list-item__inner(href='/articles/'+article._id)
               //- TODO: Replace avatar-male.png with user.image (Use article.author as foreign key to access user table.)
+              //- https://www.jstor.org/action/doBasicSearch?Query=what+is+this&acc=off&wc=on&fc=off&group=none
+              //- https://study.com/academy/subj/math.html -- maybe use an API to generate mages
               .resource-list-item__author-image
                 img(alt='', height='30', width='30', src='/images/avatar-male.png')
               h2.resource-list-item__title= article.title
