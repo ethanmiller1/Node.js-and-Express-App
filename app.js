@@ -1,8 +1,6 @@
 // Ethan Miller
-// Traversy Media
 // 11/6/2018
 // BibleAcademy Website
-// Start server with nodemon to restart on file save, or node [entry point] to handle reloads manually
 
 const express = require('express');
 const path = require('path');
@@ -12,9 +10,9 @@ const expressValidator = require('express-validator');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
-const config = require('./config/database');
+const config = require('./config/keys');
 
-mongoose.connect(config.database);
+mongoose.connect(config.mongoURI);
 let db = mongoose.connection;
 
 // Check connection

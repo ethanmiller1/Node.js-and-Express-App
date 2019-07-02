@@ -4,12 +4,16 @@
 
 A functional MVC web app.
 
+## Azure Board
+
+To view a history of project tasks and upcoming features to be added, view the [Azure Board](https://dev.azure.com/ethanromans58/Bible%20Academy) for this project.
+
 ## Get started with Node.js App locally
 
 Ensure you have [Node.js](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com/download-center/community "MongoDB Download Center") installed, then:
 
 ``` bash
-npm install --save express pug mongoose body-parser express-messages express-session connect-flash express-validator passport passport-local bcryptjs
+npm install
 node app.js
 ```
 
@@ -195,6 +199,61 @@ Download and install [MongoDB](https://www.mongodb.com/download-center/community
 3. `net start MongoDB`
 
 (Only do this if you don't want to manually start and stop MongoDB all the time.)
+
+#### Activate the Mongo Shell
+
+``` bash
+A:\xampp\mongoDB\bin && .\mongo
+cls
+```
+
+| Command | Use |
+|-|-|
+| show dbs | Show MongoDB Databases |
+| use bibleAcademy | Pick A Databases |
+| show collections | Show all collections (or tables) within the selected database |
+| db.createCollection('articles'); | Create a collection called "articles" |
+| db.articles.insert({title:"Article One",author:"Ethan Miller",body:"This is article one."}); | Insert a document to a collection (add a row to a table) |
+| db.articles.find(); | Show all documents in the 'articles' collection |
+| db.articles.find().pretty(); | Show all documents in the 'articles' collection as a formatted JSON |
+
+#### OR Connect to MongoDB Atlas
+
+1. Visit the [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) page and click "Start Free."
+1. Add a cluster named "BibleAcademy"
+1. Under "Security" choose "Database Access" to create your first database user. (Click "Add New User.)
+1. In the "Network Access" tab, choose "Add an IP Address." Select "Allow Access from anywhere."
+
+(You can also add the current address of your development machine and once you deploy you want to add your server IP address.)
+
+5. In the "Clusters" tab, Choose "Connect" to to your cluster, and select "Connect Your Application" to get a connection string.
+1. Copy the string to clipboard or view the Full Driver Example.
+
+``` js
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://melchizedek:<password>@bibleacademy-lbizz.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+```
+
+7. Create a [`keys.js`](https://github.com/king-melchizedek/Node.js-and-Express-App/tree/master/config/keys.js) file, a [`keys_prod.js`](https://github.com/king-melchizedek/Node.js-and-Express-App/tree/master/config/keys_prod.js) file, and a `keys_dev.js` file in the config folder.
+
+The keys_dev.js file should contain the following code:
+
+``` js
+module.exports = {
+  mongoURI: 'mongodb+srv://melchizedek:kingofsalem@bibleacademy-lbizz.mongodb.net/test?retryWrites=true&w=majority', // YOUR_OWN_MONGO_URI
+  secretOrKey: 'SECRET' // YOUR_OWN_SECRET
+};
+```
+
+8. Replace references to [`config/database`](https://github.com/king-melchizedek/Node.js-and-Express-App/blob/master/config/database.js) with [`config/keys.js`](https://github.com/king-melchizedek/Node.js-and-Express-App/tree/master/config/keys.js) in [`app.js`](https://github.com/king-melchizedek/Node.js-and-Express-App/blob/master/app.js).
+
+(Note that config.database will be config.mongoURI.)
 
 ## Contributors
 

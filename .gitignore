@@ -1,5 +1,7 @@
 node_modules
 /bibleAcademy.code-workspace
+/config/keys_dev.js
+/config/database.js
 
 # Individual files
 style-orig.css
