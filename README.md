@@ -64,7 +64,6 @@ npm install --save express
 npm install --save pug
 npm install --save mongoose
 npm install --save body-parser
-npm install bootstrap
 npm install jquery
 npm install --save express-messages express-session connect-flash express-validator
 npm install --save passport passport-local bcryptjs
@@ -231,7 +230,7 @@ cls
 
 ``` js
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://melchizedek:<password>@bibleacademy-lbizz.mongodb.net/test?retryWrites=true&w=majority";
+const uri = "mongodb+srv://melchizedek:kingofsalem@bibleacademy-lbizz.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
@@ -254,6 +253,10 @@ module.exports = {
 8. Replace references to [`config/database`](https://github.com/king-melchizedek/Node.js-and-Express-App/blob/master/config/database.js) with [`config/keys.js`](https://github.com/king-melchizedek/Node.js-and-Express-App/tree/master/config/keys.js) in [`app.js`](https://github.com/king-melchizedek/Node.js-and-Express-App/blob/master/app.js).
 
 (Note that config.database will be config.mongoURI.)
+
+##### Deploy to AWS
+
+
 
 ## Contributors
 
