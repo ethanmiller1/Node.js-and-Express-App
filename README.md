@@ -64,7 +64,6 @@ npm install --save express
 npm install --save pug
 npm install --save mongoose
 npm install --save body-parser
-npm install jquery
 npm install --save express-messages express-session connect-flash express-validator
 npm install --save passport passport-local bcryptjs
 npm install pm2 -g
