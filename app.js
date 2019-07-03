@@ -122,7 +122,7 @@ let server = http.createServer(app);
 
 // Listen on provided port, on all network interfaces.
 server.listen(port, () => {
-  console.log(`Server started on port ${port}...`);
+  console.log('Server started on ' + '\x1b[36m' + `http://localhost:${port}` + '\x1b[0m');
 });
 server.on('error', onError);
 server.on('listening', onListening);
