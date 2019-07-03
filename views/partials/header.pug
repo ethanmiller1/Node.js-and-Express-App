@@ -53,7 +53,7 @@ html
           else
             a.nav-link(href='/users/login') SIGN IN
     
-    .sidebar(style='width: 256px;')
+    .sidebar
       .sidebar__item.sidebar__item--open#course-btn Course
       .sidebar__container.course-menu
         .course-menu__header
@@ -93,8 +93,9 @@ html
       .sidebar__item.series-menu Series
       .sidebar__item.playlists-menu Playlists
       .sidebar__item.subscriptions-menu Subscriptions
-    != messages('message', locals)
-    if errors
-      each error, i in errors
-        div(class="alert alert-danger") #{error.msg}
-    block content
+    .page-wrapper
+      != messages('message', locals)
+      if errors
+        each error, i in errors
+          div(class="alert alert-danger") #{error.msg}
+      block content

@@ -1,224 +1,223 @@
 extends partials/header
 
 block content
-  .page-wrapper
-    .video-backdrop
-      #full-video.media-container.responsive
-        .size-limit
-          .aspect-ratio
-            iframe.player(frameborder='0', allowfullscreen='', width='800', height='480', src='https://www.youtube-nocookie.com/embed/R0ZxB8_VsrY/?controls=1&enablejsapi=1&modestbranding=1&showinfo=0&origin=https%3A%2F%2Fwww.khanacademy.org&iv_load_policy=3&html5=1&autoplay=1&fs=1&rel=0&hl=en&cc_lang_pref=en&cc_load_policy=1&start=0')
-    .audio-backdrop
-      #full-audio.media-container(style='display:none;')
-        .audio-player__title Stand on Your Head for Joy
-        audio#audio-element.processed(src='https://api.spreaker.com/listen/episode/13169500/http', type='audio/mpeg', preload='auto', style='width: 100%')
-        .audio-player__controls
-          .audio-player__playpause-button
-            button(type='button', aria-controls='mep_0', title='Play/Pause', aria-label='Play/Pause' data-toggle='tooltip', data-placement='bottom' data-delay='{"show":"500", "hide":"200"}')
-          .audio-player__elapsed 00:00
-          .audio-player__time-rail
-            .audio-player__time-total#audio-player__time-total
-              input.audio-player__slider#audio-player__range(type='range', min='1', max='3600', value='0')
-              span.audio-player__time-loaded#audio-player__time-loaded
-              .audio-player__time-current
-              span.audio-player__time-float
-                span.audio-player__time-float-content 47:12
-                span.audio-player__time-float-arrow
-            span.mejs-time-total(style='display:none;')
-          .audio-player__remaining -15:01
-          .audio-player__playback-speed#audio-player__playback-speed
-            button.no-focus(type='button' title='Playback Speed (+)/(-)' data-toggle='tooltip', data-placement='top' data-delay='{"show":"500", "hide":"200"}')
-                  .speed-menu#speed-menu(style='display:none')
-                    option(value='0.25') 0.25
-                    option(value='0.5') 0.5
-                    option(value='0.75') 0.75
-                    option.speed-menu--active(value='1') 1
-                    option(value='1.25') 1.25
-                    option(value='1.5') 1.5
-                    option(value='2') 2
-                    option(value='3') 3
-          .audio-player__mute-button
-            button.no-focus(type='button', aria-controls='mep_0', title='Mute Toggle', aria-label='Mute Toggle' data-toggle='tooltip', data-placement='bottom' data-delay='{"show":"500", "hide":"200"}')
-          .audio-player__volume-slider
-            .audio-player__volume-bar
-              input.audio-player__slider#audio-player__volume-range.no-focus(type='range', min='1', max='100', value='67')
-              .audio-player__volume-current
-            .audio-player__volume-bar(style='display:none;')
-            .audio-player__volume-current(style='width: 74px;display:none;')
-            .audio-player__volume-handle(style='left:68px;display:none;')
-          .audio-player__loud-button
-            button.no-focus(type='button' title='Volume Max' data-toggle='tooltip', data-placement='bottom' data-delay='{"show":"500", "hide":"200"}')
-    .media-menu-backdrop
-      ul.media-menu
-        li.media-menu__item.full-video
-          a.media-menu__link.media-menu__link--selected(href='#full-video') Video
-        li.media-menu__item.full-audio
-          a.media-menu__link(href='#full-audio') Audio
-        li.media-menu__item.media-menu__download#media-menu__download
-          .media-menu__link.media-menu__download Download
-          ul.media-menu__sub
-            li.media-menu__sub-item
-              a.media-menu__link(href='https://api.spreaker.com/download/episode/13169500.mp3') Audio (MP3)
-            li.media-menu__sub-item
-            li.media-menu__sub-item
-    .resource-header
-      time.resource-header__date(datetime='2017-10-29') October 29, 2017
-      .resource-header__meta
-        ul
-          li#authors Resource by 
-            .resource-header__author#modal(href='#author-modal', title='Author Modal' data-toggle='tooltip', data-placement='bottom' data-delay='{"show":"700", "hide":"200"}')
-              span Steven Anderson
-              svg(width='20px', height='20px', viewBox='0 0 20 20', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
-                title Modal
-                path(d='M6,6 L3,6 L3,7 L6,7 L6,13 L7,13 L7,7 L13,7 L13,6 L7,6 L7,4 L6,4 L6,6 Z M14,13 L14,6 L13,6 L13,13 L6,13 L6,14 L13,14 L13,16 L14,16 L14,14 L17,14 L17,13 L14,13 Z M3,16 L14,16 L14,17 L3,17 L3,16 Z M3,7 L4,7 L4,16 L3,16 L3,7 Z M6,3 L16,3 L16,4 L6,4 L6,3 Z M16,3 L17,3 L17,13 L16,13 L16,3 Z', fill='#aaa')
-          li Topics: 
-            a(href='/topics/the-bible') The Bible
-            | , 
-            a(href='/topics/the-gospel') The Gospel
-      .resource-header__title Trinity 101
-      h2.resource-header__subtitle The Reformation’s Rediscovery of God’s Favor in His Word
-      hr
-    .resource-info
-      .resource-info__tablist(role='tablist')
-        button#tabbedpanel-tab-0.active-tab.no-focus(role='tab')
-          span About
-        button#tabbedpanel-tab-1.inactive-tab.no-focus(role='tab') Transcript
-        button#tabbedpanel-tab-2.inactive-tab.no-focus(role='tab') Scripture
-        button#tabbedpanel-tab-3.inactive-tab.no-focus(role='tab') Timeline
-        button#tabbedpanel-tab-4.inactive-tab.no-focus(role='tab') Notes
-        button#tabbedpanel-tab-5.inactive-tab.no-focus(role='tab') Doctrine
-      .separator
-      .resource-info__tab-content(role='tabpanel')
-        h3.resource-info__event Sunday Morning Service  |  Faithful Word Baptist Church  |  Tempe, Arizona
-        .resource-info__description
-          span
-            strong Programming
-            |  is the process of creating a set of instructions that tell a computer how to perform a task. Programming can be done using a variety of computer "languages," such as SQL, Java, Python, and C++.
-          span Created by Pamela Fox.
-    .sharing-footer
-      .separator
-      .sharing-footer__utility-bar
-        .sharing-footer__button
-          svg(width='20', height='20px', viewBox='0 0 20 20', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', xmlns:sketch='http://www.bohemiancoding.com/sketch/ns')
-            title Share
-            path(d='M11,8 L16,8 L17,8 L17,19 L4,19 L4,8 L10,8 L10,4.11899989 L7.254,6.86099989 L6.5,6.10499989 L10.492,2.11999989 L10.869,2.49599989 L14.486,6.10499989 L13.732,6.86099989 L11,4.13299989 L11,8 Z M10,9 L5,9 L5,18 L16,18 L16,9 L11,9 L11,15.0029999 L10,15.0029999 L10,9 Z', sketch:type='MSShapeGroup', fill='#333333')
-          .sharing-footer__metrics 2.3K
-        ul.sharing-footer__options
-          li.sharing-footer__option.twitter-badge
-          li.sharing-footer__option.facebook-badge
-          li.sharing-footer__option.email-badge
+  .video-backdrop
+    #full-video.media-container.responsive
+      .size-limit
+        .aspect-ratio
+          iframe.player(frameborder='0', allowfullscreen='', width='800', height='480', src='https://www.youtube-nocookie.com/embed/R0ZxB8_VsrY/?controls=1&enablejsapi=1&modestbranding=1&showinfo=0&origin=https%3A%2F%2Fwww.khanacademy.org&iv_load_policy=3&html5=1&autoplay=1&fs=1&rel=0&hl=en&cc_lang_pref=en&cc_load_policy=1&start=0')
+  .audio-backdrop
+    #full-audio.media-container(style='display:none;')
+      .audio-player__title Stand on Your Head for Joy
+      audio#audio-element.processed(src='https://api.spreaker.com/listen/episode/13169500/http', type='audio/mpeg', preload='auto', style='width: 100%')
+      .audio-player__controls
+        .audio-player__playpause-button
+          button(type='button', aria-controls='mep_0', title='Play/Pause', aria-label='Play/Pause' data-toggle='tooltip', data-placement='bottom' data-delay='{"show":"500", "hide":"200"}')
+        .audio-player__elapsed 00:00
+        .audio-player__time-rail
+          .audio-player__time-total#audio-player__time-total
+            input.audio-player__slider#audio-player__range(type='range', min='1', max='3600', value='0')
+            span.audio-player__time-loaded#audio-player__time-loaded
+            .audio-player__time-current
+            span.audio-player__time-float
+              span.audio-player__time-float-content 47:12
+              span.audio-player__time-float-arrow
+          span.mejs-time-total(style='display:none;')
+        .audio-player__remaining -15:01
+        .audio-player__playback-speed#audio-player__playback-speed
+          button.no-focus(type='button' title='Playback Speed (+)/(-)' data-toggle='tooltip', data-placement='top' data-delay='{"show":"500", "hide":"200"}')
+                .speed-menu#speed-menu(style='display:none')
+                  option(value='0.25') 0.25
+                  option(value='0.5') 0.5
+                  option(value='0.75') 0.75
+                  option.speed-menu--active(value='1') 1
+                  option(value='1.25') 1.25
+                  option(value='1.5') 1.5
+                  option(value='2') 2
+                  option(value='3') 3
+        .audio-player__mute-button
+          button.no-focus(type='button', aria-controls='mep_0', title='Mute Toggle', aria-label='Mute Toggle' data-toggle='tooltip', data-placement='bottom' data-delay='{"show":"500", "hide":"200"}')
+        .audio-player__volume-slider
+          .audio-player__volume-bar
+            input.audio-player__slider#audio-player__volume-range.no-focus(type='range', min='1', max='100', value='67')
+            .audio-player__volume-current
+          .audio-player__volume-bar(style='display:none;')
+          .audio-player__volume-current(style='width: 74px;display:none;')
+          .audio-player__volume-handle(style='left:68px;display:none;')
+        .audio-player__loud-button
+          button.no-focus(type='button' title='Volume Max' data-toggle='tooltip', data-placement='bottom' data-delay='{"show":"500", "hide":"200"}')
+  .media-menu-backdrop
+    ul.media-menu
+      li.media-menu__item.full-video
+        a.media-menu__link.media-menu__link--selected(href='#full-video') Video
+      li.media-menu__item.full-audio
+        a.media-menu__link(href='#full-audio') Audio
+      li.media-menu__item.media-menu__download#media-menu__download
+        .media-menu__link.media-menu__download Download
+        ul.media-menu__sub
+          li.media-menu__sub-item
+            a.media-menu__link(href='https://api.spreaker.com/download/episode/13169500.mp3') Audio (MP3)
+          li.media-menu__sub-item
+          li.media-menu__sub-item
+  .resource-header
+    time.resource-header__date(datetime='2017-10-29') October 29, 2017
+    .resource-header__meta
+      ul
+        li#authors Resource by 
+          .resource-header__author#modal(href='#author-modal', title='Author Modal' data-toggle='tooltip', data-placement='bottom' data-delay='{"show":"700", "hide":"200"}')
+            span Steven Anderson
+            svg(width='20px', height='20px', viewBox='0 0 20 20', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+              title Modal
+              path(d='M6,6 L3,6 L3,7 L6,7 L6,13 L7,13 L7,7 L13,7 L13,6 L7,6 L7,4 L6,4 L6,6 Z M14,13 L14,6 L13,6 L13,13 L6,13 L6,14 L13,14 L13,16 L14,16 L14,14 L17,14 L17,13 L14,13 Z M3,16 L14,16 L14,17 L3,17 L3,16 Z M3,7 L4,7 L4,16 L3,16 L3,7 Z M6,3 L16,3 L16,4 L6,4 L6,3 Z M16,3 L17,3 L17,13 L16,13 L16,3 Z', fill='#aaa')
+        li Topics: 
+          a(href='/topics/the-bible') The Bible
+          | , 
+          a(href='/topics/the-gospel') The Gospel
+    .resource-header__title Trinity 101
+    h2.resource-header__subtitle The Reformation’s Rediscovery of God’s Favor in His Word
+    hr
+  .resource-info
+    .resource-info__tablist(role='tablist')
+      button#tabbedpanel-tab-0.active-tab.no-focus(role='tab')
+        span About
+      button#tabbedpanel-tab-1.inactive-tab.no-focus(role='tab') Transcript
+      button#tabbedpanel-tab-2.inactive-tab.no-focus(role='tab') Scripture
+      button#tabbedpanel-tab-3.inactive-tab.no-focus(role='tab') Timeline
+      button#tabbedpanel-tab-4.inactive-tab.no-focus(role='tab') Notes
+      button#tabbedpanel-tab-5.inactive-tab.no-focus(role='tab') Doctrine
+    .separator
+    .resource-info__tab-content(role='tabpanel')
+      h3.resource-info__event Sunday Morning Service  |  Faithful Word Baptist Church  |  Tempe, Arizona
+      .resource-info__description
+        span
+          strong Programming
+          |  is the process of creating a set of instructions that tell a computer how to perform a task. Programming can be done using a variety of computer "languages," such as SQL, Java, Python, and C++.
+        span Created by Pamela Fox.
+  .sharing-footer
+    .separator
+    .sharing-footer__utility-bar
+      .sharing-footer__button
+        svg(width='20', height='20px', viewBox='0 0 20 20', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', xmlns:sketch='http://www.bohemiancoding.com/sketch/ns')
+          title Share
+          path(d='M11,8 L16,8 L17,8 L17,19 L4,19 L4,8 L10,8 L10,4.11899989 L7.254,6.86099989 L6.5,6.10499989 L10.492,2.11999989 L10.869,2.49599989 L14.486,6.10499989 L13.732,6.86099989 L11,4.13299989 L11,8 Z M10,9 L5,9 L5,18 L16,18 L16,9 L11,9 L11,15.0029999 L10,15.0029999 L10,9 Z', sketch:type='MSShapeGroup', fill='#333333')
+        .sharing-footer__metrics 2.3K
+      ul.sharing-footer__options
+        li.sharing-footer__option.twitter-badge
+        li.sharing-footer__option.facebook-badge
+        li.sharing-footer__option.email-badge
 
-    // mobile tutorial nav
-    //.mobileTutorialNav
-      .mobileTutorialNavContents
-        div(role='navigation')
-          .row(role='tablist')
-            .navHeaderWithinMobilePage
-              .navHeaderBreadcrumbs
-                div(role='navigation')
-              | Welcome to jQuery
-            div
-              .containerSubwayTracks(role='presentation')
-                .itemWithinMobilePage(role='presentation', data-tutorial-nav-selected='true')
-                  a#jquery-meet-the-inventor-Video-tab.linkWithinMobilePage(role='tab', aria-controls='v/jquery-meet-the-inventor-panel', aria-selected='true', href='/computing/computer-programming/html-js-jquery/jquery-intro/v/jquery-meet-the-inventor')
-                    div
-                      .container
-                        div
-                          span.tracksContainer(aria-label='Video', style='display: block; width: 23px; height: 22px; font-size: 22px;')
-                            svg(role='img', aria-hidden='true', focusable='false', width='1em', height='1em', viewBox='0 0 24 24')
-                              path(fill='#1865F2', d='M10.5547002,7.16963112 L16.5547002,11.1696311 C17.1484333,11.5654532 17.1484333,12.4379097 16.5547002,12.8337317 L10.5547002,16.8337317 C9.89014547,17.2767682 9,16.8003768 9,16.0016814 L9,8.00168142 C9,7.20298603 9.89014547,6.72659464 10.5547002,7.16963112 Z M16.4981533,0.871528211 C15.6684019,0.687418359 14.7661643,0.855198393 14.0355525,1.4085662 C13.8367454,1.55914334 13.6342979,1.7900273 13.4282098,2.10121808 C12.9617493,2.03451353 12.4849052,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 C17.5228475,22 22,17.5228475 22,12 C22,10.5791698 21.7036806,9.22754872 21.169469,8.00356407 L22.5927591,6.35639239 C23.4908797,8.03860341 24,9.95984599 24,12 C24,18.627417 18.627417,24 12,24 C5.372583,24 0,18.627417 0,12 C0,5.372583 5.372583,0 12,0 C13.5906458,0 15.1090071,0.309486342 16.4981533,0.871528211 Z')
-                            svg.overlay(role='img', aria-hidden='true', focusable='false', width='1em', height='1em', viewBox='0 0 24 24')
-                              path(fill='#30bf3c', d='M22.2474786,0.341509094 C22.6111606,-0.0741275376 23.2429232,-0.116245046 23.6585599,0.247437007 C24.0741965,0.61111906 24.116314,1.24288168 23.752632,1.65851831 L18.8637433,7.24581965 C18.4464894,7.72268121 17.6965804,7.69619558 17.3140083,7.1910854 L15.202897,4.40378406 C14.8694438,3.96352568 14.9560265,3.33630856 15.3962849,3.0028554 C15.8365433,2.66940224 16.4637604,2.75598497 16.7972136,3.19624335 L18.1670569,5.00484816 L22.2474786,0.341509094 Z')
-                          span(aria-label='completed')
-                        .track(style='background: rgb(24, 101, 242); left: 10px;')
-                    .infoWithinMobile
-                      .titleSubwayTracks(title='From the inventor: Welcome!', style='color: rgb(13, 146, 63);') From the inventor: Welcome!
-              .containerSubwayTracks(role='presentation')
-                .item_3iz8ff-o_O-itemWithinMobilePage_py3uvl(role='presentation', data-tutorial-nav-selected='false')
-                  a#what-is-jquery-Video-tab.linkWithinMobilePage(role='tab', aria-controls='v/what-is-jquery-panel', aria-selected='false', href='/computing/computer-programming/html-js-jquery/jquery-intro/v/what-is-jquery')
-                    div
-                      .container
-                        .topTrack(style='background: rgb(102, 175, 233); left: 10px;')
-                        div
-                          span.tracksContainer(aria-label='Video', style='display: block; width: 23px; height: 22px; font-size: 22px;')
-                            svg(role='img', aria-hidden='true', focusable='false', width='1em', height='1em', viewBox='0 0 24 24')
-                              path(fill='#66afe9', d='M12,24 C5.372583,24 0,18.627417 0,12 C0,5.372583 5.372583,0 12,0 C18.627417,0 24,5.372583 24,12 C24,18.627417 18.627417,24 12,24 Z M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M10.5547002,7.16963112 L16.5547002,11.1696311 C17.1484333,11.5654532 17.1484333,12.4379097 16.5547002,12.8337317 L10.5547002,16.8337317 C9.89014547,17.2767682 9,16.8003768 9,16.0016814 L9,8.00168142 C9,7.20298603 9.89014547,6.72659464 10.5547002,7.16963112 Z')
-                          span(aria-label='started')
-                        .track(style='background: rgb(102, 175, 233); left: 10px;')
-                    .infoWithinMobile
-                      .titleSubwayTracks(title='What is jQuery?') What is jQuery?
-              .containerSubwayTracks(role='presentation')
-                .item_3iz8ff-o_O-itemWithinMobilePage_py3uvl(role='presentation', data-tutorial-nav-selected='false')
-                  a#are-you-ready-to-learn-jquery-Article-tab.linkWithinMobilePage(role='tab', aria-controls='a/are-you-ready-to-learn-jquery-panel', aria-selected='false', href='/computing/computer-programming/html-js-jquery/jquery-intro/a/are-you-ready-to-learn-jquery')
-                    div
-                      .container
-                        .topTrack(style='background: rgb(24, 101, 242); left: 10px;')
-                        div
-                          span.tracksContainer(aria-label='Article', style='display: block; width: 23px; height: 22px; font-size: 22px;')
-                            svg(role='img', aria-hidden='true', focusable='false', width='1em', height='1em', viewBox='0 0 24 24')
-                              path(fill='#1865F2', d='M7,7.00247329 C7,6.44882258 7.45097518,6 7.99077797,6 L13,6 L13,10 L17,10 L17,17.0029699 C17,17.5536144 16.5443356,18 16.0046024,18 L7.99539757,18 C7.44565467,18 7,17.544239 7,16.9975267 L7,7.00247329 Z M14,6 L17,9 L14,9 L14,6 Z M9,13.5 C9,13.7680664 9.21983051,14 9.49100518,14 L14.5089948,14 C14.7721195,14 15,13.7761424 15,13.5 C15,13.2319336 14.7801695,13 14.5089948,13 L9.49100518,13 C9.22788048,13 9,13.2238576 9,13.5 Z M9,15.5 C9,15.7680664 9.21983051,16 9.49100518,16 L14.5089948,16 C14.7721195,16 15,15.7761424 15,15.5 C15,15.2319336 14.7801695,15 14.5089948,15 L9.49100518,15 C9.22788048,15 9,15.2238576 9,15.5 Z M16.4981533,0.871528211 C15.6684019,0.687418359 14.7661643,0.855198393 14.0355525,1.4085662 C13.8367454,1.55914334 13.6342979,1.7900273 13.4282098,2.10121808 C12.9617493,2.03451353 12.4849052,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 C17.5228475,22 22,17.5228475 22,12 C22,10.5791698 21.7036806,9.22754872 21.169469,8.00356407 L22.5927591,6.35639239 C23.4908797,8.03860341 24,9.95984599 24,12 C24,18.627417 18.627417,24 12,24 C5.372583,24 0,18.627417 0,12 C0,5.372583 5.372583,0 12,0 C13.5906458,0 15.1090071,0.309486342 16.4981533,0.871528211 Z')
-                            svg.overlay(role='img', aria-hidden='true', focusable='false', width='1em', height='1em', viewBox='0 0 24 24')
-                              path(fill='#30bf3c', d='M22.2474786,0.341509094 C22.6111606,-0.0741275376 23.2429232,-0.116245046 23.6585599,0.247437007 C24.0741965,0.61111906 24.116314,1.24288168 23.752632,1.65851831 L18.8637433,7.24581965 C18.4464894,7.72268121 17.6965804,7.69619558 17.3140083,7.1910854 L15.202897,4.40378406 C14.8694438,3.96352568 14.9560265,3.33630856 15.3962849,3.0028554 C15.8365433,2.66940224 16.4637604,2.75598497 16.7972136,3.19624335 L18.1670569,5.00484816 L22.2474786,0.341509094 Z')
-                          span(aria-label='completed')
-                        .track(style='background: rgb(24, 101, 242); left: 10px;')
-                    .infoWithinMobile
-                      .titleSubwayTracks(title='Get ready to learn jQuery') Get ready to learn jQuery
-              .containerSubwayTracks(role='presentation')
-                .item_3iz8ff-o_O-itemWithinMobilePage_py3uvl(role='presentation', data-tutorial-nav-selected='false')
-                  a#getting-started-with-jquery-Scratchpad-tab.linkWithinMobilePage(role='tab', aria-controls='p/getting-started-with-jquery-panel', aria-selected='false', href='/computing/computer-programming/html-js-jquery/jquery-intro/p/getting-started-with-jquery')
-                    div
-                      .container
-                        .topTrack(style='background: rgb(102, 175, 233); left: 10px;')
-                        div
-                          span.tracksContainer(aria-label='Talk-through', style='display: block; width: 23px; height: 22px; font-size: 22px;')
-                            svg(role='img', aria-hidden='true', focusable='false', width='1em', height='1em', viewBox='0 0 24 24')
-                              path(fill='#66afe9', d='M10.555 7.17l6 4a1 1 0 0 1 0 1.664l-6 4A1 1 0 0 1 9 16.002v-8a1 1 0 0 1 1.555-.832z\
-                              M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0 2C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12z')
-                          span(aria-label='started')
-                        .track(style='background: rgb(102, 175, 233); left: 10px;')
-                    .infoWithinMobile
-                      .titleSubwayTracks(title='Getting started with jQuery') Getting started with jQuery
-              .containerSubwayTracks(role='presentation')
-                .item_3iz8ff-o_O-itemWithinMobilePage_py3uvl(role='presentation', data-tutorial-nav-selected='false')
-                  a#challenge-your-first-jquery-Scratchpad-tab.linkWithinMobilePage(role='tab', aria-controls='p/challenge-your-first-jquery-panel', aria-selected='false', href='/computing/computer-programming/html-js-jquery/jquery-intro/p/challenge-your-first-jquery')
-                    div
-                      .container
-                        .topTrack(style='background: rgb(186, 190, 194); left: 10px;')
-                        div
-                          span.tracksContainer(aria-label='Challenge', style='display: block; width: 23px; height: 22px; font-size: 22px;')
-                            svg(role='img', aria-hidden='true', focusable='false', width='1em', height='1em', viewBox='0 0 24 24')
-                              path(fill='#BABEC2', d='M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0 2C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12z\
-                              M8.748 17.434a.5.5 0 0 1-.744-.496l.47-3.757-2.328-2.327a.5.5 0 0 1 .283-.849l3.258-.465 1.879-3.288a.5.5 0 0 1 .868 0l1.879 3.288 3.258.465a.5.5 0 0 1 .283.849l-2.328 2.327.47 3.757a.5.5 0 0 1-.744.496L12 15.576l-3.252 1.858z\
-                              M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0 2C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12z')
-                          span
-                    .infoWithinMobile
-                      .titleSubwayTracks(title='Challenge: Your first jQuery') Challenge: Your first jQuery
-            .upNextItem
-              a.link_1uvuyao-o_O-link_1sk734n(href='/computing/computer-programming/html-js-jquery/jquery-dom-access/p/finding-elements-with-jquery')
-                .upNext
-                  .upNextTitle Next tutorial
-                  .singleLineTitle(style='color: rgb(13, 146, 63);') DOM access with jQuery
+  // mobile tutorial nav
+  //.mobileTutorialNav
+    .mobileTutorialNavContents
+      div(role='navigation')
+        .row(role='tablist')
+          .navHeaderWithinMobilePage
+            .navHeaderBreadcrumbs
+              div(role='navigation')
+            | Welcome to jQuery
+          div
+            .containerSubwayTracks(role='presentation')
+              .itemWithinMobilePage(role='presentation', data-tutorial-nav-selected='true')
+                a#jquery-meet-the-inventor-Video-tab.linkWithinMobilePage(role='tab', aria-controls='v/jquery-meet-the-inventor-panel', aria-selected='true', href='/computing/computer-programming/html-js-jquery/jquery-intro/v/jquery-meet-the-inventor')
+                  div
+                    .container
+                      div
+                        span.tracksContainer(aria-label='Video', style='display: block; width: 23px; height: 22px; font-size: 22px;')
+                          svg(role='img', aria-hidden='true', focusable='false', width='1em', height='1em', viewBox='0 0 24 24')
+                            path(fill='#1865F2', d='M10.5547002,7.16963112 L16.5547002,11.1696311 C17.1484333,11.5654532 17.1484333,12.4379097 16.5547002,12.8337317 L10.5547002,16.8337317 C9.89014547,17.2767682 9,16.8003768 9,16.0016814 L9,8.00168142 C9,7.20298603 9.89014547,6.72659464 10.5547002,7.16963112 Z M16.4981533,0.871528211 C15.6684019,0.687418359 14.7661643,0.855198393 14.0355525,1.4085662 C13.8367454,1.55914334 13.6342979,1.7900273 13.4282098,2.10121808 C12.9617493,2.03451353 12.4849052,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 C17.5228475,22 22,17.5228475 22,12 C22,10.5791698 21.7036806,9.22754872 21.169469,8.00356407 L22.5927591,6.35639239 C23.4908797,8.03860341 24,9.95984599 24,12 C24,18.627417 18.627417,24 12,24 C5.372583,24 0,18.627417 0,12 C0,5.372583 5.372583,0 12,0 C13.5906458,0 15.1090071,0.309486342 16.4981533,0.871528211 Z')
+                          svg.overlay(role='img', aria-hidden='true', focusable='false', width='1em', height='1em', viewBox='0 0 24 24')
+                            path(fill='#30bf3c', d='M22.2474786,0.341509094 C22.6111606,-0.0741275376 23.2429232,-0.116245046 23.6585599,0.247437007 C24.0741965,0.61111906 24.116314,1.24288168 23.752632,1.65851831 L18.8637433,7.24581965 C18.4464894,7.72268121 17.6965804,7.69619558 17.3140083,7.1910854 L15.202897,4.40378406 C14.8694438,3.96352568 14.9560265,3.33630856 15.3962849,3.0028554 C15.8365433,2.66940224 16.4637604,2.75598497 16.7972136,3.19624335 L18.1670569,5.00484816 L22.2474786,0.341509094 Z')
+                        span(aria-label='completed')
+                      .track(style='background: rgb(24, 101, 242); left: 10px;')
+                  .infoWithinMobile
+                    .titleSubwayTracks(title='From the inventor: Welcome!', style='color: rgb(13, 146, 63);') From the inventor: Welcome!
+            .containerSubwayTracks(role='presentation')
+              .item_3iz8ff-o_O-itemWithinMobilePage_py3uvl(role='presentation', data-tutorial-nav-selected='false')
+                a#what-is-jquery-Video-tab.linkWithinMobilePage(role='tab', aria-controls='v/what-is-jquery-panel', aria-selected='false', href='/computing/computer-programming/html-js-jquery/jquery-intro/v/what-is-jquery')
+                  div
+                    .container
+                      .topTrack(style='background: rgb(102, 175, 233); left: 10px;')
+                      div
+                        span.tracksContainer(aria-label='Video', style='display: block; width: 23px; height: 22px; font-size: 22px;')
+                          svg(role='img', aria-hidden='true', focusable='false', width='1em', height='1em', viewBox='0 0 24 24')
+                            path(fill='#66afe9', d='M12,24 C5.372583,24 0,18.627417 0,12 C0,5.372583 5.372583,0 12,0 C18.627417,0 24,5.372583 24,12 C24,18.627417 18.627417,24 12,24 Z M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M10.5547002,7.16963112 L16.5547002,11.1696311 C17.1484333,11.5654532 17.1484333,12.4379097 16.5547002,12.8337317 L10.5547002,16.8337317 C9.89014547,17.2767682 9,16.8003768 9,16.0016814 L9,8.00168142 C9,7.20298603 9.89014547,6.72659464 10.5547002,7.16963112 Z')
+                        span(aria-label='started')
+                      .track(style='background: rgb(102, 175, 233); left: 10px;')
+                  .infoWithinMobile
+                    .titleSubwayTracks(title='What is jQuery?') What is jQuery?
+            .containerSubwayTracks(role='presentation')
+              .item_3iz8ff-o_O-itemWithinMobilePage_py3uvl(role='presentation', data-tutorial-nav-selected='false')
+                a#are-you-ready-to-learn-jquery-Article-tab.linkWithinMobilePage(role='tab', aria-controls='a/are-you-ready-to-learn-jquery-panel', aria-selected='false', href='/computing/computer-programming/html-js-jquery/jquery-intro/a/are-you-ready-to-learn-jquery')
+                  div
+                    .container
+                      .topTrack(style='background: rgb(24, 101, 242); left: 10px;')
+                      div
+                        span.tracksContainer(aria-label='Article', style='display: block; width: 23px; height: 22px; font-size: 22px;')
+                          svg(role='img', aria-hidden='true', focusable='false', width='1em', height='1em', viewBox='0 0 24 24')
+                            path(fill='#1865F2', d='M7,7.00247329 C7,6.44882258 7.45097518,6 7.99077797,6 L13,6 L13,10 L17,10 L17,17.0029699 C17,17.5536144 16.5443356,18 16.0046024,18 L7.99539757,18 C7.44565467,18 7,17.544239 7,16.9975267 L7,7.00247329 Z M14,6 L17,9 L14,9 L14,6 Z M9,13.5 C9,13.7680664 9.21983051,14 9.49100518,14 L14.5089948,14 C14.7721195,14 15,13.7761424 15,13.5 C15,13.2319336 14.7801695,13 14.5089948,13 L9.49100518,13 C9.22788048,13 9,13.2238576 9,13.5 Z M9,15.5 C9,15.7680664 9.21983051,16 9.49100518,16 L14.5089948,16 C14.7721195,16 15,15.7761424 15,15.5 C15,15.2319336 14.7801695,15 14.5089948,15 L9.49100518,15 C9.22788048,15 9,15.2238576 9,15.5 Z M16.4981533,0.871528211 C15.6684019,0.687418359 14.7661643,0.855198393 14.0355525,1.4085662 C13.8367454,1.55914334 13.6342979,1.7900273 13.4282098,2.10121808 C12.9617493,2.03451353 12.4849052,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 C17.5228475,22 22,17.5228475 22,12 C22,10.5791698 21.7036806,9.22754872 21.169469,8.00356407 L22.5927591,6.35639239 C23.4908797,8.03860341 24,9.95984599 24,12 C24,18.627417 18.627417,24 12,24 C5.372583,24 0,18.627417 0,12 C0,5.372583 5.372583,0 12,0 C13.5906458,0 15.1090071,0.309486342 16.4981533,0.871528211 Z')
+                          svg.overlay(role='img', aria-hidden='true', focusable='false', width='1em', height='1em', viewBox='0 0 24 24')
+                            path(fill='#30bf3c', d='M22.2474786,0.341509094 C22.6111606,-0.0741275376 23.2429232,-0.116245046 23.6585599,0.247437007 C24.0741965,0.61111906 24.116314,1.24288168 23.752632,1.65851831 L18.8637433,7.24581965 C18.4464894,7.72268121 17.6965804,7.69619558 17.3140083,7.1910854 L15.202897,4.40378406 C14.8694438,3.96352568 14.9560265,3.33630856 15.3962849,3.0028554 C15.8365433,2.66940224 16.4637604,2.75598497 16.7972136,3.19624335 L18.1670569,5.00484816 L22.2474786,0.341509094 Z')
+                        span(aria-label='completed')
+                      .track(style='background: rgb(24, 101, 242); left: 10px;')
+                  .infoWithinMobile
+                    .titleSubwayTracks(title='Get ready to learn jQuery') Get ready to learn jQuery
+            .containerSubwayTracks(role='presentation')
+              .item_3iz8ff-o_O-itemWithinMobilePage_py3uvl(role='presentation', data-tutorial-nav-selected='false')
+                a#getting-started-with-jquery-Scratchpad-tab.linkWithinMobilePage(role='tab', aria-controls='p/getting-started-with-jquery-panel', aria-selected='false', href='/computing/computer-programming/html-js-jquery/jquery-intro/p/getting-started-with-jquery')
+                  div
+                    .container
+                      .topTrack(style='background: rgb(102, 175, 233); left: 10px;')
+                      div
+                        span.tracksContainer(aria-label='Talk-through', style='display: block; width: 23px; height: 22px; font-size: 22px;')
+                          svg(role='img', aria-hidden='true', focusable='false', width='1em', height='1em', viewBox='0 0 24 24')
+                            path(fill='#66afe9', d='M10.555 7.17l6 4a1 1 0 0 1 0 1.664l-6 4A1 1 0 0 1 9 16.002v-8a1 1 0 0 1 1.555-.832z\
+                            M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0 2C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12z')
+                        span(aria-label='started')
+                      .track(style='background: rgb(102, 175, 233); left: 10px;')
+                  .infoWithinMobile
+                    .titleSubwayTracks(title='Getting started with jQuery') Getting started with jQuery
+            .containerSubwayTracks(role='presentation')
+              .item_3iz8ff-o_O-itemWithinMobilePage_py3uvl(role='presentation', data-tutorial-nav-selected='false')
+                a#challenge-your-first-jquery-Scratchpad-tab.linkWithinMobilePage(role='tab', aria-controls='p/challenge-your-first-jquery-panel', aria-selected='false', href='/computing/computer-programming/html-js-jquery/jquery-intro/p/challenge-your-first-jquery')
+                  div
+                    .container
+                      .topTrack(style='background: rgb(186, 190, 194); left: 10px;')
+                      div
+                        span.tracksContainer(aria-label='Challenge', style='display: block; width: 23px; height: 22px; font-size: 22px;')
+                          svg(role='img', aria-hidden='true', focusable='false', width='1em', height='1em', viewBox='0 0 24 24')
+                            path(fill='#BABEC2', d='M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0 2C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12z\
+                            M8.748 17.434a.5.5 0 0 1-.744-.496l.47-3.757-2.328-2.327a.5.5 0 0 1 .283-.849l3.258-.465 1.879-3.288a.5.5 0 0 1 .868 0l1.879 3.288 3.258.465a.5.5 0 0 1 .283.849l-2.328 2.327.47 3.757a.5.5 0 0 1-.744.496L12 15.576l-3.252 1.858z\
+                            M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0 2C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12z')
+                        span
+                  .infoWithinMobile
+                    .titleSubwayTracks(title='Challenge: Your first jQuery') Challenge: Your first jQuery
+          .upNextItem
+            a.link_1uvuyao-o_O-link_1sk734n(href='/computing/computer-programming/html-js-jquery/jquery-dom-access/p/finding-elements-with-jquery')
+              .upNext
+                .upNextTitle Next tutorial
+                .singleLineTitle(style='color: rgb(13, 146, 63);') DOM access with jQuery
 
-  
 
-    //
-      .resource-wrapper
-        - const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        - const publishedDate = monthNames[sermon.publisheddate.getMonth()] + " " + sermon.publisheddate.getDate() + ", " + sermon.publisheddate.getFullYear();
-        - const date = monthNames[sermon.date.getMonth()] + " " + sermon.date.getDate() + ", " + sermon.date.getFullYear();
-        if date ==publishedDate
-          time.published-date= date
-        else
-          time.published-date= date + "   |   " + publishedDate
-        h1.resource-title= sermon.title
-        .resource-authors
-          span Sermon by #{publisher}
-          .author-role Northlake Baptist Church Member, Garland, TX
-        .resource-body
-          p!= sermon.editor1
-          if user
-            if user.id ==sermon.publisher
-              a.btn.btn-light(href='/messages/edit/'+sermon._id) Edit
-              a.btn.btn-danger.delete-sermon(href="#",data-id=sermon._id) Delete
+
+  //
+    .resource-wrapper
+      - const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      - const publishedDate = monthNames[sermon.publisheddate.getMonth()] + " " + sermon.publisheddate.getDate() + ", " + sermon.publisheddate.getFullYear();
+      - const date = monthNames[sermon.date.getMonth()] + " " + sermon.date.getDate() + ", " + sermon.date.getFullYear();
+      if date ==publishedDate
+        time.published-date= date
+      else
+        time.published-date= date + "   |   " + publishedDate
+      h1.resource-title= sermon.title
+      .resource-authors
+        span Sermon by #{publisher}
+        .author-role Northlake Baptist Church Member, Garland, TX
+      .resource-body
+        p!= sermon.editor1
+        if user
+          if user.id ==sermon.publisher
+            a.btn.btn-light(href='/messages/edit/'+sermon._id) Edit
+            a.btn.btn-danger.delete-sermon(href="#",data-id=sermon._id) Delete
 
   include modal
   include partials/footer

@@ -68,7 +68,7 @@ var stickyNav = {
     pixalsDown = $(window).scrollTop();
   },
   hideOnScroll: function() {
-    if (pixalsDown >= this.$win.scrollTop() || !this.$sidebar.hasClass('sidebar--closed')) {
+    if (pixalsDown >= this.$win.scrollTop() || this.$sidebar.hasClass('sidebar--open')) {
         this.$header.css({ 'top': 0, 'position': 'fixed'});
     } else {
         $('nav').css({'top': '-67px', 'position': 'fixed'});
@@ -149,13 +149,13 @@ var sidebar = {
     this.$btn.on('click', this.toggleDrawer.bind(this));
   },
   toggleDrawer: function() {
-    this.$guide.toggleClass('sidebar--closed');
-    this.$container.toggleClass('page-wrapper--expand');
+    this.$guide.toggleClass('sidebar--open');
+    this.$container.toggleClass('page-wrapper--contract');
     // Reset CSS varialbes
-    if (this.$guide.hasClass('sidebar--closed')) {
-      document.documentElement.style.setProperty('--seriesDrawerWidth', '0px');
-    } else {
+    if (this.$guide.hasClass('sidebar--open')) {
       document.documentElement.style.setProperty('--seriesDrawerWidth', '256px');
+    } else {
+      document.documentElement.style.setProperty('--seriesDrawerWidth', '0px');
     }
   },
   changeButton: function() {
@@ -182,7 +182,7 @@ $(document).ready(sidebar.init());
 //     if (window.matchMedia("(max-width:1024px)").matches) {
 //       document.documentElement.style.setProperty('--seriesDrawerWidth', '0px');
 //     } else {
-//       if (this.$sidebar.hasClass('sidebar--closed')) {
+//       if (this.$sidebar.hasClass('sidebar--open')) {
 //         document.documentElement.style.setProperty('--seriesDrawerWidth', '0px');
 //       } else {
 //         document.documentElement.style.setProperty('--seriesDrawerWidth', '256px');
@@ -199,8 +199,8 @@ $(document).ready(function() {
     if (mediaNavMediaQuery.matches) { // If media query matches
         document.documentElement.style.setProperty('--seriesDrawerWidth', '0px');
     } else {
-        if ($('.sidebar').hasClass('sidebar--closed')) document.documentElement.style.setProperty('--seriesDrawerWidth', '0px');
-        else{document.documentElement.style.setProperty('--seriesDrawerWidth', '256px')}
+        if ($('.sidebar').hasClass('sidebar--open')) document.documentElement.style.setProperty('--seriesDrawerWidth', '256px');
+        else{document.documentElement.style.setProperty('--seriesDrawerWidth', '0px')}
     }
   }
   
@@ -1074,10 +1074,10 @@ window.addEventListener('mouseup', function(event){
 // Toggle Tutorial Nav Guide
 // $(document).ready(function() {
 // $('#guideButton').on('click', function() {
-//   $('.sidebar, .navHeaderShadow').toggleClass('sidebar--closed');
+//   $('.sidebar, .navHeaderShadow').toggleClass('sidebar--open');
 //   $('.page-wrapper').toggleClass('pageWithMediaNav--expand');  // Change Nav Guide Width Varialbe
 //   $(this).toggleClass('guideButton--change');
-//   if ($('.sidebar').hasClass('sidebar--closed')) document.documentElement.style.setProperty('--seriesDrawerWidth', '0px'); // set guide width variable to 0 if closed
+//   if ($('.sidebar').hasClass('sidebar--open')) document.documentElement.style.setProperty('--seriesDrawerWidth', '0px'); // set guide width variable to 0 if closed
 //   else{document.documentElement.style.setProperty('--seriesDrawerWidth', '256px')} // otherwise keep at 256px
 // });
 // });
@@ -1463,7 +1463,7 @@ function playInterval (audioObj, start, stop) {
 //   if (mediaNavMediaQuery.matches) { // If media query matches
 //       document.documentElement.style.setProperty('--seriesDrawerWidth', '0px');
 //   } else {
-//       if ($('.sidebar').hasClass('sidebar--closed')) document.documentElement.style.setProperty('--seriesDrawerWidth', '0px');
+//       if ($('.sidebar').hasClass('sidebar--open')) document.documentElement.style.setProperty('--seriesDrawerWidth', '0px');
 //       else{document.documentElement.style.setProperty('--seriesDrawerWidth', '256px')}
 //   }
 // }

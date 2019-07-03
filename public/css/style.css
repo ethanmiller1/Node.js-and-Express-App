@@ -49,9 +49,9 @@
 /* ===== 1. GLOBAL SETTINGS ===== */
 
 :root {
-  --seriesDrawerWidth: 256px;
-  --openTransition: 0.5s;
-  --closeTransition: 0.3s;
+  --seriesDrawerWidth: 0px;
+  --openTransition: 0;
+  --closeTransition: 0;
   --volumeHandleDiameter: 12px;
   --sliderWidth: calc(100% + var(--volumeHandleDiameter));
   --sliderHeight: 26px;
@@ -789,21 +789,20 @@ border-radius: 2px;
 }
 
 /* ___ sidebar ___ */
-.sidebar {
-    position: fixed;
-    top: 63px;
-    flex-shrink: 0;
+.sidebar--open {
     border-right: 1px solid #D6D8DA;
     height: 1080px;
     transition: all var(--openTransition);
-    overflow: auto;
-    z-index: 25;
-    background-color: #fff;
 }
-.sidebar--closed {
-  width: 0 !important;
+.sidebar {
+  position: fixed;
+  top: 63px;
+  flex-shrink: 0;
+  overflow: auto;
+  z-index: 25;
+  background-color: #fff;
+  width: var(--seriesDrawerWidth);
   transition: width var(--closeTransition);
-  border-right: none;
 }
 
 .sidebar__item {
@@ -1290,15 +1289,15 @@ form #form-group label {
 .page-wrapper {
   position: relative;
   background: #fff;
-  width: calc(100% - var(--seriesDrawerWidth));
-  margin-left: var(--seriesDrawerWidth);
-  transition: all var(--openTransition);
+  width: 100%;
+  transition: all var(--closeTransition);
   /* float: right; */
   right: 0;
 }
-.page-wrapper--expand {
-  width: 100%;
-  transition: all var(--closeTransition);
+.page-wrapper--contract {
+  width: calc(100% - var(--seriesDrawerWidth));
+  margin-left: var(--seriesDrawerWidth);
+  transition: all var(--openTransition);
 }
 
 /* ___ Video Element ___ */
