@@ -4,6 +4,10 @@
 
 A functional MVC web app.
 
+## Demo
+
+Check out a working demo of this web app on [this custom AWS link](http://bibleacademy-env.ftke2kg3mw.us-east-2.elasticbeanstalk.com/).
+
 ## Azure Board
 
 To view a history of project tasks and upcoming features to be added, view the [Azure Board](https://dev.azure.com/ethanromans58/Bible%20Academy) for this project.
@@ -50,7 +54,19 @@ npm install -g browser-sync
 Start Browsersync:
 
 ``` bash
-browser-sync start --proxy 'localhost:3000' --files '**/*'
+npm restart
+```
+
+OR
+
+``` bash
+browser-sync start --proxy 'localhost:8081' --files '**/*'
+```
+
+To specify the port you would like to use and remove the notifications, use:
+
+``` bash
+browser-sync start --proxy localhost:8081 --port 8082 --files '**/*' --no-notify
 ```
 
 ## Technologies
@@ -255,7 +271,82 @@ module.exports = {
 
 ##### Deploy to AWS
 
+1. From the [Console Home](https://us-east-2.console.aws.amazon.com/console/home?region=us-east-2) select "Build a web app.
+1. Access AWS environment variables using [`process.env.ENV_VARIABLE`](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_nodejs.container.html). After deploying the app, navigate to Configuration > Software (Modify) > Environment properties. Copy the keys from [`keys_prod.js`](https://github.com/king-melchizedek/Node.js-and-Express-App/blob/master/config/keys_prod.js) and the values from `keys_dev.js`. Search for any other process.env variables in your project.
 
+|Key|Value|
+|-|-|
+|MONGO_URI|mongodb+srv://melchizedek:kingofsalem@bibleacademy-lbizz.mongodb.net/test?retryWrites=true&w=majority|
+|SECRET_OR_KEY|SECRET|
+|NODE_ENV|production|
+|PORT|3000|
+
+Here is a quick [link](https://docs.aws.amazon.com/codedeploy/latest/userguide/tutorials-windows-update-and-redeploy-application.html) to Update and Redeploy if you require a minor change in your code.
+
+3. Add event listeners for local development and server delpoyment.
+
+``` js
+// Set port.
+let port = normalizePort(process.env.PORT || '8081');
+app.set('port', port);
+
+// Create http server.
+let server = http.createServer(app);
+
+// Listen on provided port, on all network interfaces.
+server.listen(port, () => {
+  console.log(`Server started on port ${port}...`);
+});
+server.on('error', onError);
+server.on('listening', onListening);
+
+// Normalize a port into a number, string, or false.
+function normalizePort(val) {
+  let port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+// Event listener for HTTP server "error" event.
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  let bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
+
+  // Handle specific listen errors with friendly messages.
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+// Event listener for HTTP server "listening" event.
+function onListening() {
+  let addr = server.address();
+  let bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}
+```
 
 ## Contributors
 

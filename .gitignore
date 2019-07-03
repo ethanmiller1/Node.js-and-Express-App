@@ -4,6 +4,8 @@ node_modules
 /config/database.js
 /package-lock.json
 /public/components
+/Node.js-and-Express-App-master.*
+/Node.js-and-Express-App-master
 
 # Individual files
 style-orig.css
