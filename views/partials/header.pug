@@ -27,31 +27,29 @@ html
           input#input-bar.input-bar(name='search', placeholder='Search Bible Academy...')
           button.search-button.no-focus(data-toggle='tooltip', data-placement='bottom', title='')
         button.toggle-nav-method.no-focus(data-toggle='tooltip', data-placement='bottom', title='Search')
-      //- button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+      //- button.navbar-toggler(type='button', data-toggle='adjust', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
         span.navbar-toggler-icon
-      #navbarsExampleDefault.collapse.navbar-collapse
-        ul.navbar-nav.mr-auto
-        ul.nav.navbar-nav.navbar-right
-          if user
-            ul.navbar-nav.mr-auto
-              a.nav-link#add-article(href='/articles/add', data-toggle='tooltip', data-placement='bottom', title='Add Article', data-delay='{"show":"500", "hide":"200"}')
-              a.nav-link#add-media-resource(href='/messages/add', data-toggle='tooltip', data-placement='bottom', title='Add Media Resource', data-delay='{"show":"500", "hide":"200"}')
-              a.nav-link#add-book(href='/articles/add', data-toggle='tooltip', data-placement='bottom', title='Add ebook', data-delay='{"show":"500", "hide":"9000"}')
-              li.nav-item.dropdown
-                button#avatar-btn(data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-                  img.img-shadow(alt='', height='40', width='40', src='/images/avatar-male.png')
-                .dropdown-menu.dropdown-menu-right.user-dropdown(aria-labelledby='dropdown01')
-                  .user-header
-                    a.user-profile(href='/profile/:id')
-                      img.img-dropdown(alt='', height='40', width='40', src='/images/avatar-male.png')
-                      .channel-container
-                        .user-name(ellipsis-truncate='', title='Ethan Miller') #{user.firstname} #{user.lastname}
-                        .email(ellipsis-truncate='', title='ethan.romans5.8@gmail.com') #{user.email}
-                  a.dropdown-item#user-profile(href='/users/edit/'+user._id) My Profile
-                  a.dropdown-item#switch-user(href='#') Switch User
-                  a.dropdown-item#logout(href='/users/logout') Logout
-          else
-            a.nav-link(href='/users/login') SIGN IN
+      .nav-topbar
+        if user
+          ul.nav-topbar__user-menu
+            a.nav-link#add-article(href='/articles/add', data-toggle='tooltip', data-placement='bottom', title='Add Article', data-delay='{"show":"500", "hide":"200"}')
+            a.nav-link#add-media-resource(href='/messages/add', data-toggle='tooltip', data-placement='bottom', title='Add Media Resource', data-delay='{"show":"500", "hide":"200"}')
+            a.nav-link#add-book(href='/articles/add', data-toggle='tooltip', data-placement='bottom', title='Add ebook', data-delay='{"show":"500", "hide":"9000"}')
+            li.nav-item.dropdown
+              button#avatar-btn(data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                img.img-shadow(alt='', height='40', width='40', src='/images/avatar-male.png')
+              .dropdown-menu.dropdown-menu-right.user-dropdown(aria-labelledby='dropdown01')
+                .user-header
+                  a.user-profile(href='/profile/:id')
+                    img.img-dropdown(alt='', height='40', width='40', src='/images/avatar-male.png')
+                    .channel-container
+                      .user-name(ellipsis-truncate='', title='Ethan Miller') #{user.firstname} #{user.lastname}
+                      .email(ellipsis-truncate='', title='ethan.romans5.8@gmail.com') #{user.email}
+                a.dropdown-item#user-profile(href='/users/edit/'+user._id) My Profile
+                a.dropdown-item#switch-user(href='#') Switch User
+                a.dropdown-item#logout(href='/users/logout') Logout
+        else
+          a.nav-link(href='/users/login') SIGN IN
     
     .sidebar
       .sidebar__item.sidebar__item--open#course-btn Course

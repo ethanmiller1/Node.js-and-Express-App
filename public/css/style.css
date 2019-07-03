@@ -546,7 +546,7 @@ border-radius: 2px;
   font-weight:700;
 }
 
-.main-nav .navbar-nav .nav-link {
+.main-nav .nav-topbar .nav-link {
   display: block;
   font-size: 15px;
   padding: 10px 16px;
@@ -556,7 +556,7 @@ border-radius: 2px;
   z-index: 50;
 }
 
-.main-nav .navbar-nav .nav-link:hover {
+.main-nav .nav-topbar .nav-link:hover {
   color: #1281d6;
 }
 
@@ -869,6 +869,20 @@ border-radius: 2px;
   color: #21242c;
 }
 
+/* Content creation user menu. */
+
+.nav-topbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-topbar__user-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
 /* ___ Subway Tracks ___ */
 
 .course-menu__subway-track {
@@ -951,33 +965,23 @@ border-radius: 2px;
   }
 }
 
-@media (min-width: 576px) {
-  .main-nav .navbar-nav .nav-link {
-    display: none;
-  }
+.main-nav .nav-topbar .nav-topbar__user-menu .nav-link {
+  display: none;
 }
-@media (min-width: 768px) {
-  .main-nav .navbar-nav .nav-link {
-    display: none;
-  }
-}
+
 @media (min-width: 992px) {
-  .main-nav .navbar-nav .nav-link {
-    display: none;
-  }
   .main-nav .nav-items {
     left: 75px;
   }
 }
 @media (min-width: 1200px) {
-  .main-nav .navbar-nav .nav-link {
+  .main-nav .nav-topbar .nav-topbar__user-menu .nav-link {
     display: block;
   }
   .main-nav .nav-items {
     left: 0;
   }
 }
-
 
 /****** Login Page *******/                                                     /****** Login Page *******/
 
