@@ -235,7 +235,7 @@ var mobileNav = {
     this.$nav.toggleClass('main-nav--expand');
   },
   showItems: function() {
-    this.$menu.toggleClass('show')
+    this.$menu.toggleClass('reveal')
   },
   changeButton: function() {
     this.$btn.toggleClass('guideButton--change');

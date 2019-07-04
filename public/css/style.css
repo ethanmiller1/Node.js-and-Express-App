@@ -471,19 +471,10 @@ border-radius: 2px;
   top: 0;
 }
 
-.main-nav.main-nav--expand {
-  height: 433px;
-  z-index: 70;
-}
-
 .main-nav .mobile-nav-items {
   position: absolute;
   left: 0;
   display: none;
-}
-
-.main-nav .mobile-nav-items.show {
-  display: block;
 }
 
 .main-nav .nav-items {
@@ -1000,8 +991,13 @@ border-radius: 2px;
     display: none
   }
   .mobileTutorialNav,
-  .main-nav #mobileMenuButton {
+  .main-nav #mobileMenuButton,
+  .main-nav .mobile-nav-items.reveal {
     display: block;
+  }
+  .main-nav.main-nav--expand {
+    height: 385px;
+    z-index: 70;
   }
   .main-nav .nav-items {
     justify-content: flex-end;
