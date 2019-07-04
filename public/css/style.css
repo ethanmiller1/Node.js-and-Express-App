@@ -1409,6 +1409,10 @@ form #form-group label {
 
 .page-wrapper {
   position: relative;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
   background: #fff;
   width: 100%;
   transition: all var(--closeTransition);
@@ -1425,8 +1429,9 @@ form #form-group label {
 
 .video-backdrop {
   position: relative;
+  left: -15px;
   background: #000;
-  width: 100%;
+  width: calc(100% + 30px);
   display: flex;
   justify-content: center;
 }
@@ -1538,8 +1543,9 @@ iframe.player {
 
 .audio-backdrop {
   position: relative;
+  left: -15px;
   background: #000;
-  width: 100%;
+  width: calc(100% + 30px);
   display: flex;
   justify-content: center;
 }
@@ -2018,7 +2024,9 @@ iframe.player {
 /* ___ Media Menu ___ */
 
 .media-menu-backdrop {
-  width: 100%;
+  position: relative;
+  left: -15px;
+  width: calc(100% + 30px);
   background-color: #000;
 }
 .media-menu {
