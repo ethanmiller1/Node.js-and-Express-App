@@ -872,9 +872,10 @@ border-radius: 2px;
 /* Content creation user menu. */
 
 .nav-topbar {
-  width: 100%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  padding: 8px 16px 8px 0px;
 }
 
 .nav-topbar__user-menu {
@@ -945,7 +946,7 @@ border-radius: 2px;
   }
   .main-nav .nav-items {
     justify-content: flex-end;
-    right: 60px;
+    /* right: 80px; */
   }
 }
 @media screen and (max-width:1024px) {
@@ -973,6 +974,15 @@ border-radius: 2px;
   .main-nav .nav-items {
     left: 75px;
   }
+  .nav-topbar {
+    margin-right: 75px;
+  }
+}
+@media (min-width: 1024px) {
+  .nav-topbar {
+    position: absolute;
+    right: 0;
+  }
 }
 @media (min-width: 1200px) {
   .main-nav .nav-topbar .nav-topbar__user-menu .nav-link {
@@ -980,6 +990,9 @@ border-radius: 2px;
   }
   .main-nav .nav-items {
     left: 0;
+  }
+  .nav-topbar {
+    margin-right: 0;
   }
 }
 
