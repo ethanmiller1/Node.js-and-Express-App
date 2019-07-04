@@ -493,7 +493,19 @@ border-radius: 2px;
   z-index: 50;
 }
 
-.main-nav #guideButton::before {
+.main-nav #mobileMenuButton {
+  outline: 0;
+  border: 0;
+  background: none;
+  padding: 0 15px;
+  cursor: pointer;
+  height: 63px;
+  line-height: 61px;
+  z-index: 50;
+  display: none;
+}
+
+.main-nav #guideButton::before, .main-nav #mobileMenuButton::before {
   font-size: 20px;
   content: "";
   font-family: dg-icons !important;
@@ -688,7 +700,6 @@ border-radius: 2px;
   color: #333333;
   padding: 10px;
   padding-right: 0;
-  margin-right: 11px;
   position: relative;
   top: 2px;
   right: 6px;
@@ -945,7 +956,8 @@ border-radius: 2px;
   .main-nav .-item {
     display: none
   }
-  .mobileTutorialNav {
+  .mobileTutorialNav,
+  .main-nav #mobileMenuButton {
     display: block;
   }
   .main-nav .nav-items {
@@ -953,7 +965,7 @@ border-radius: 2px;
     /* right: 80px; */
   }
   .input-bar.active {
-    width: calc(100vw - 383px) !important;
+    width: calc(100vw - 433px) !important;
   }
 }
 @media screen and (max-width:1024px) {
@@ -1006,7 +1018,7 @@ border-radius: 2px;
 
 @media (max-width: 620px) {
   .input-bar.active {
-    width: calc(100vw - 210px) !important;
+    width: calc(100vw - 260px) !important;
   }
 }
 
