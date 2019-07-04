@@ -1173,6 +1173,11 @@ border-radius: 2px;
   user-select: none;
 }
 
+.input-group.box1 {
+  display: flex;
+  justify-content: flex-start;
+}
+
 /*
 .was-validated .input-group-text {
     color: #a94442;
