@@ -471,8 +471,24 @@ border-radius: 2px;
   top: 0;
 }
 
+.main-nav.main-nav--expand {
+  height: 433px;
+  z-index: 70;
+}
+
+.main-nav .mobile-nav-items {
+  position: absolute;
+  left: 0;
+  display: none;
+}
+
+.main-nav .mobile-nav-items.show {
+  display: block;
+}
+
 .main-nav .nav-items {
   position: absolute;
+  top: 0;
   width: 100%;
   display: flex;
   justify-content: center;

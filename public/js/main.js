@@ -212,6 +212,38 @@ $(document).ready(function() {
   
 });
 
+/****** Sidebar ******/
+
+var mobileNav = {
+  init: function() {
+    this.cacheDom();
+    this.bindEvents();
+  },
+  cacheDom: function() {
+    this.$nav = $('.main-nav');
+    this.$btn = this.$nav.find('#mobileMenuButton');
+    this.$menu = this.$nav.find('.mobile-nav-items');
+  },
+  bindEvents: function() {
+    this.$btn.on('click', this.callFunctions.bind(this));
+  },
+  callFunctions: function() {
+    this.expandMenu()
+    this.showItems()
+  },
+  expandMenu: function() {
+    this.$nav.toggleClass('main-nav--expand');
+  },
+  showItems: function() {
+    this.$menu.toggleClass('show')
+  },
+  changeButton: function() {
+    this.$btn.toggleClass('guideButton--change');
+  }
+};
+
+$(document).ready(mobileNav.init());
+
 /* ===== VIDEO PAGE ===== */
 
 /****** Course Menu Toggle Transition (max-height CSS issue) ******/
