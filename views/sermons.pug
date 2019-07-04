@@ -1,11 +1,35 @@
 extends partials/header
 
 block content
-  .container
-    br
-    h1 #{title}
-    ul.list-group
-      each sermon, i in sermons
-        li.list-group-item
-          a(href='/messages/'+sermon._id)= sermon.title
+  br
+  .highlighted-section.articles-top
+    .grid-container
+      .article-header
+        h1.article-header__title #{title}
+  .card-list-view
+    table(style='width:100%')
+      tbody
+        each sermon, i in sermons
+          tr.resource-list-row
+            td.resource-list-item
+              a.resource-list-item__inner(href='/messages/'+sermon._id)
+                .resource-list-item__author-image
+                  img(alt='', height='30', width='30', src='/images/avatar-male.png')
+                h2.resource-list-item__title= sermon.title
+                span.resource-list-item__data= sermon.author
+                - const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                - const date = monthNames[sermon.date.getMonth()] + " " + sermon.date.getDate() + ", " + sermon.date.getFullYear();
+                span.resource-list-item__data= date
+            td.resource-list-item.resource-list-item__rating
+              .resource-list-item__inner.resource-list-item--center
+                span.resource-list-item__data Star ratings go here.
+            td.resource-list-item.resource-list-item__church
+              .resource-list-item__inner.resource-list-item--center
+                span.resource-list-item__data Northlake Baptist Church
+            td.resource-list-item.resource-list-item__topic
+              .resource-list-item__inner.resource-list-item--center
+                span.resource-list-item__data Marriage
+            td.resource-list-item.resource-list-item__reading-time
+              .resource-list-item__inner.resource-list-item--center
+                span.resource-list-item__data 5:47
   include partials/footer
