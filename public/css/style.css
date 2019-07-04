@@ -1182,6 +1182,10 @@ border-radius: 2px;
   justify-content: flex-start;
 }
 
+.cursor-text {
+  z-index: 50;
+}
+
 /*
 .was-validated .input-group-text {
     color: #a94442;
