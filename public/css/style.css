@@ -2762,16 +2762,14 @@ content: "";
 }
 
 body .grid-container {
-    max-width: 1388px;
     padding-left: 66px;
     padding-right: 66px;
 }
 
 .article-header {
-    padding-bottom: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin: 0;
+    width: 831px;
+    padding: 0 15px 30px 15px;
+    margin: 0 auto;
 }
 
 .article-header__title {
@@ -2890,6 +2888,6 @@ body .grid-container {
 
 .card-list-view {
   display: table;   /* Allow the centering to work */
-  /* margin: 0 auto; */
-  margin-left: 50px;
+  margin: 0 auto;
+  /* margin-left: 50px; */
 }
