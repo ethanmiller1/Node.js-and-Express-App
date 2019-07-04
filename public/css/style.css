@@ -976,6 +976,7 @@ border-radius: 2px;
   }
   .nav-topbar {
     margin-right: 75px;
+    height: 62.8px;
   }
 }
 @media (min-width: 1024px) {
