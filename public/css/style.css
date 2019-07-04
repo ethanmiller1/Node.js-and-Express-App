@@ -948,6 +948,9 @@ border-radius: 2px;
     justify-content: flex-end;
     /* right: 80px; */
   }
+  .input-bar.active {
+    width: calc(100vw - 383px) !important;
+  }
 }
 @media screen and (max-width:1024px) {
   .sidebar {
@@ -994,6 +997,12 @@ border-radius: 2px;
   }
   .nav-topbar {
     margin-right: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .input-bar.active {
+    width: calc(100vw - 210px) !important;
   }
 }
 
