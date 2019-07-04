@@ -1,11 +1,232 @@
 extends partials/header
 
 block content
-  .container
-    br
-    h1 #{title}
-    ul.list-group
-      each article, i in articles
-        li.list-group-item
-          a(href='/articles/'+article._id)= article.title
+  head
+    link(href='https://getbootstrap.com/docs/4.0/examples/carousel/carousel.css', rel='stylesheet')
+    style.
+      body {
+      padding: 0;
+      }
+      .page-wrapper {
+        padding: 0;
+      }
+      .h1, h1 {
+        font-size: 2.5rem;
+      }
+      .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        margin-bottom: .5rem;
+        font-family: inherit;
+        font-weight: 500;
+        line-height: 1.2;
+        color: inherit;
+      }
+      .btn-primary {
+        color: #fff !important;
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+
+      .btn-primary:hover {
+        color: #fff;
+        background-color: #0069d9;
+        border-color: #0062cc;
+      }
+
+      .btn-primary:focus, .btn-primary.focus {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+      }
+
+      .btn-primary.disabled, .btn-primary:disabled {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+
+      .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+      .show > .btn-primary.dropdown-toggle {
+        color: #fff;
+        background-color: #0062cc;
+        border-color: #005cbf;
+      }
+
+      .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+      .show > .btn-primary.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+      }
+      .btn-secondary {
+        color: #fff !important;
+        background-color: #6c757d;
+        border-color: #6c757d;
+      }
+
+      .btn-secondary:hover {
+        color: #fff;
+        background-color: #5a6268;
+        border-color: #545b62;
+      }
+
+      .btn-secondary:focus, .btn-secondary.focus {
+        box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+      }
+
+      .btn-secondary.disabled, .btn-secondary:disabled {
+        color: #fff;
+        background-color: #6c757d;
+        border-color: #6c757d;
+      }
+
+      .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active,
+      .show > .btn-secondary.dropdown-toggle {
+        color: #fff;
+        background-color: #545b62;
+        border-color: #4e555b;
+      }
+
+      .btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus,
+      .show > .btn-secondary.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+      }
+      .marketing h2 {
+          font-weight: 400;
+      }
+      .h2, h2 {
+          font-size: 2rem;
+      }
+      .marketing .col-lg-4 p {
+          margin-right: .75rem;
+          margin-left: .75rem;
+          font-size: 1rem;
+      }
+      p {
+          margin-top: 0;
+          margin-bottom: 1rem;
+      }
+      .carousel-indicators li {
+          position: relative;
+          -webkit-box-flex: 0;
+          -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+          width: 30px;
+          height: 3px;
+          margin-right: 3px;
+          margin-left: 3px;
+          text-indent: -999px;
+          background-color: rgba(255,255,255,.5);
+      }
+      .carousel-indicators .active {
+        width: 30px;
+        height: 3px;
+        margin: 1px 3px;
+        background-color: #fff;
+      }
+  body
+    main(role='main')
+      #myCarousel.carousel.slide(data-ride='carousel')
+        ol.carousel-indicators
+          li.active(data-target='#myCarousel', data-slide-to='0')
+          li(data-target='#myCarousel', data-slide-to='1')
+          li(data-target='#myCarousel', data-slide-to='2')
+        .carousel-inner
+          .carousel-item.active
+            img.first-slide(src='http://wowslider.com/sliders/demo-77/data1/images/idaho239691_1920.jpg', alt='First slide')
+            .container
+              .carousel-caption.text-left
+                h1 Example headline.
+                p
+                  | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                p
+                  a.btn.btn-lg.btn-primary(href='#', role='button') Sign up today
+          .carousel-item
+            img.second-slide(src='http://wowslider.com/sliders/demo-77/data1/images/road220058.jpg', alt='Second slide')
+            .container
+              .carousel-caption
+                h1 Another example headline.
+                p
+                  | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                p
+                  a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
+          .carousel-item
+            img.third-slide(src='https://s2.best-wallpaper.net/wallpaper/1920x1200/1506/Steppe-mountain-clouds-nature-scenery_1920x1200.jpg', alt='Third slide')
+            .container
+              .carousel-caption.text-right
+                h1 One more for good measure.
+                p
+                  | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                p
+                  a.btn.btn-lg.btn-primary(href='#', role='button') Browse gallery
+        a.carousel-control-prev(href='#myCarousel', role='button', data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#myCarousel', role='button', data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
+      //
+        Marketing messaging and featurettes
+        ==================================================
+      // Wrap the rest of the page in another container to center all the content.
+      .container.marketing
+        // Three columns of text below the carousel
+        .row
+          .col-lg-4
+            img.rounded-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
+            h2 Heading
+            p
+              | Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
+            p
+              a.btn.btn-secondary(href='#', role='button') View details »
+          // /.col-lg-4
+          .col-lg-4
+            img.rounded-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
+            h2 Heading
+            p
+              | Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+            p
+              a.btn.btn-secondary(href='#', role='button') View details »
+          // /.col-lg-4
+          .col-lg-4
+            img.rounded-circle(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Generic placeholder image', width='140', height='140')
+            h2 Heading
+            p
+              | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+            p
+              a.btn.btn-secondary(href='#', role='button') View details »
+          // /.col-lg-4
+          // /.row
+          // START THE FEATURETTES
+          hr.featurette-divider
+          .row.featurette
+            .col-md-7
+              h2.featurette-heading
+                | First featurette heading. 
+                span.text-muted It'll blow your mind.
+              p.lead
+                | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+            .col-md-5
+              img.featurette-image.img-fluid.mx-auto(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+          hr.featurette-divider
+          .row.featurette
+            .col-md-7.order-md-2
+              h2.featurette-heading
+                | Oh yeah, it's that good. 
+                span.text-muted See for yourself.
+              p.lead
+                | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+            .col-md-5.order-md-1
+              img.featurette-image.img-fluid.mx-auto(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+          hr.featurette-divider
+          .row.featurette
+            .col-md-7
+              h2.featurette-heading
+                | And lastly, this one. 
+                span.text-muted Checkmate.
+              p.lead
+                | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+            .col-md-5
+              img.featurette-image.img-fluid.mx-auto(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+          hr.featurette-divider
+          // /END THE FEATURETTES
+          // /.container
+          // FOOTER
   include partials/footer
+  // Just to make our placeholder images work. Don't actually copy the next line! TODO: Replace images and remove line.
+  script(src='https://getbootstrap.com/docs/4.0/assets/js/vendor/holder.min.js')
