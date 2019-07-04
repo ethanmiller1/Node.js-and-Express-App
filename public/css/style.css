@@ -558,6 +558,33 @@ border-radius: 2px;
   cursor: pointer;
 }
 
+.main-nav .mobile-nav-items {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.main-nav .mobile-nav-items .mobile-nav-item {
+  box-sizing: border-box;
+  height: 35px;
+  padding: 8px 16px;
+  left: 8px;
+  position: relative;
+  font-size: 15px;
+}
+
+.main-nav .mobile-nav-items .mobile-nav-item a {
+  border-left: 2px solid transparent;
+  padding: 8px 16px;
+  width: 100%;
+  padding-right: 100%;
+}
+
+.main-nav .mobile-nav-items .mobile-nav-item a:hover {
+  box-sizing: content-box;
+  color: #999;
+  border-left: 2px solid #c6000e;
+}
+
 .main-nav .-btn:before, .main-nav .-item:before {
   content: "";
   position: absolute;
@@ -968,8 +995,8 @@ border-radius: 2px;
 /* ___ Layout Media Queries ___ */
 
 @media screen and (max-width:1023px) {
-  .main-nav .-btn,
-  .main-nav .-item {
+  .main-nav .nav-items .-btn,
+  .main-nav .nav-items .-item {
     display: none
   }
   .mobileTutorialNav,
