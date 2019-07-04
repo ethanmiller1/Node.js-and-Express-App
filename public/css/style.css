@@ -127,6 +127,10 @@ border-radius: 2px;
   overflow: hidden;
 }
 
+.alert {
+  margin: 0;
+}
+
 /* ===== 4. IMPORTS ===== */
 
   /****** 4.1 Header Fonts ******/

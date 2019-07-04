@@ -72,10 +72,11 @@ router.get('/login', function(req, res){
 router.post('/login', function(req, res, next){
   passport.authenticate('local', {
     successRedirect:'/',
+    successFlash: 'You are now logged in',
     failureRedirect:'/users/login',
     failureFlash: true
   })(req, res, next);
-  req.flash('success','You are now logged in');
+  
 });
 
 // Load Edit Page
