@@ -27,6 +27,7 @@
     5.8 Sermon
     5.9 Modals
     5.10 Articles
+    5.11 Landing Page (Home)
 
 */
 
@@ -2890,4 +2891,33 @@ body .grid-container {
   display: table;   /* Allow the centering to work */
   margin: 0 auto;
   /* margin-left: 50px; */
+}
+
+/****** 5.11 Landing Page (Home) ******/                                                      /****** 5.11 Landing Page (Home) ******/
+
+.first-slide {
+  background: linear-gradient(#1abc9c, #2ecc71);
+  height: 100%;
+  background: linear-gradient(rgba(26, 188, 156, 0.2), rgb(36, 86, 120, 0.5)), url(https://ununsplash.imgix.net/photo-1416339134316-0e91dc9ded92?q=75&fm=jpg&s=883a422e10fc4149893984019f63c818);
+  background-size: cover;
+}
+
+.carousel-caption p {
+  background-color: rgba(0, 0, 0, .3);
+  box-shadow: 0 0 12px 12px rgba(0, 0, 0, .3);
+}
+
+.second-slide {
+  background: linear-gradient(#1abc9c, #2ecc71);
+  height: 100%;
+  background: linear-gradient(rgba(26, 188, 156, 0.2), rgb(36, 86, 120, 0.5)), url(http://wowslider.com/sliders/demo-77/data1/images/road220058.jpg);
+  background-size: cover;
+}
+
+.third-slide {
+  background: linear-gradient(#1abc9c, #2ecc71);
+  height: 100%;
+  background: linear-gradient(rgba(26, 188, 156, 0.2), rgb(36, 86, 120, 0.5)), url(https://108.jobs/images/company/gallery/company1/1479441033_578051231.jpg);
+  background-size: cover;
+  background-position: right 0 bottom 0;
 }
