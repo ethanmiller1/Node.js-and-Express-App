@@ -132,6 +132,10 @@ border-radius: 2px;
   margin: 0;
 }
 
+.hidden {
+  display: none;
+}
+
 /* ===== 4. IMPORTS ===== */
 
   /****** 4.1 Header Fonts ******/
@@ -1402,8 +1406,13 @@ form #form-group label {
   color: gray;
 }
 
-.hidden {
-  display: none;
+.user-page-wrapper {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.user-page-wrapper .card.card-body.mb-3 form {
+  max-width: 200px;
 }
 
 /****** 5.8 Sermon ******/                                                      /****** 5.8 Sermon ******/
