@@ -6,7 +6,7 @@ block content
     .card.card-body.mb-3
       <img src="/images/defaults/avatar-male.png" alt="", width='200', height='200'>
       br
-      form(action='/upload', method='POST', enctype='multipart/form-data')
+      form(action='/users/edit/'+user._id+'/upload', method='POST', enctype='multipart/form-data')
         .custom-file.mb-3
           input#file.custom-file-input(type='file', name='avatar', accept='image/x-png,image/jpeg')
           label.custom-file-label(for='file') Choose File

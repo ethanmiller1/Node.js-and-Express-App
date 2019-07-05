@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
+const multer = require('multer');
+const path = require('path');
 
 // Bring in Article Model
 let User = require('../models/user');
@@ -113,6 +115,24 @@ router.post('/edit/:id', function(req, res){
       res.redirect('/')
     }
   });
+});
+
+// Create storage engine
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, path.join(__dirname, '../public/images/users'))
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+  }
+})
+
+const upload = multer({ storage: storage });
+
+// Uploads file to Local Disk and link to userID avatar field
+router.post('/edit/:id/upload', upload.single('avatar'), (req, res) => {
+  console.log(req.file);
+  res.redirect('back');
 });
 
 // logout
