@@ -5,7 +5,7 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
     meta(name='description', content='Highly respected pastors and biblical teachers present content and resources for every topic and level. Always free.')
     meta(name='author', content='Ethan Miller')
-    link(rel='shortcut icon', href='/images/favicon2.ico')
+    link(rel='shortcut icon', href='/images/logo/favicon2.ico')
     title Bible Academy
     link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", crossorigin="anonymous")
     //- link(rel='stylesheet', href='/css/bootstrap-datepicker.css')
@@ -17,7 +17,7 @@ html
     nav.navbar.navbar-expand-md.navbar-dark.main-nav
       button#guideButton
       a.logo(href='/')
-        img(src='/images/bibleAcademy Logo.svg', alt='', width='154', height='24.2')
+        img(src='/images/logo/bibleAcademy Logo.svg', alt='', width='154', height='24.2')
       .nav-items
         a.-item(href='/articles') Articles
         a.-item(href='/messages') Sermons
@@ -40,11 +40,11 @@ html
               a.nav-link#add-book(href='/articles/add', data-toggle='tooltip', data-placement='bottom', title='Add ebook', data-delay='{"show":"500", "hide":"9000"}')
               li.nav-item.dropdown
                 button#avatar-btn(data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-                  img.img-shadow(alt='', height='40', width='40', src='/images/avatar-male.png')
+                  img.img-shadow(alt='', height='40', width='40', src='/images/defaults/avatar-male.png')
                 .dropdown-menu.dropdown-menu-right.user-dropdown(aria-labelledby='dropdown01')
                   .user-header
                     a.user-profile(href='/profile/:id')
-                      img.img-dropdown(alt='', height='40', width='40', src='/images/avatar-male.png')
+                      img.img-dropdown(alt='', height='40', width='40', src='/images/defaults/avatar-male.png')
                       .channel-container
                         .user-name(ellipsis-truncate='', title='Ethan Miller') #{user.firstname} #{user.lastname}
                         .email(ellipsis-truncate='', title='ethan.romans5.8@gmail.com') #{user.email}
@@ -84,31 +84,31 @@ html
         .course-menu__subway-tracks
           .course-menu__subway-track.course-menu--selected
             .course-menu__media-icon
-              img(src='/images/course-menu__video-completed.svg', alt='', width='23', height='22')
+              img(src='/images/icons/course-menu__video-completed.svg', alt='', width='23', height='22')
               .course-menu__bottom-track(style='background: rgb(24, 101, 242); left: 10px;')
             .course-menu__track-title Trinity 101
           .course-menu__subway-track
             .course-menu__media-icon
               .course-menu__top-track(style='background: rgb(102, 175, 233); left: 10px;')
-              img(src='/images/course-menu__video.svg', alt='', width='23', height='22')
+              img(src='/images/icons/course-menu__video.svg', alt='', width='23', height='22')
               .course-menu__bottom-track(style='background: rgb(102, 175, 233); left: 10px;')
             .course-menu__track-title Trinity Or Oneness Debate
           .course-menu__subway-track
             .course-menu__media-icon
               .course-menu__top-track(style='background: rgb(24, 101, 242); left: 10px;')
-              img(src='/images/course-menu__article-completed.svg', alt='', width='23', height='22')
+              img(src='/images/icons/course-menu__article-completed.svg', alt='', width='23', height='22')
               .course-menu__bottom-track(style='background: rgb(24, 101, 242); left: 10px;')
             .course-menu__track-title What Is the Doctrine of the Trinity?
           .course-menu__subway-track
             .course-menu__media-icon
               .course-menu__top-track(style='background: rgb(102, 175, 233); left: 10px;')
-              img(src='/images/course-menu__video.svg', alt='', width='23', height='22')
+              img(src='/images/icons/course-menu__video.svg', alt='', width='23', height='22')
               .course-menu__bottom-track(style='background: rgb(102, 175, 233); left: 10px;')
             .course-menu__track-title Trinity Spectrum
           .course-menu__subway-track
             .course-menu__media-icon
               .course-menu__top-track(style='background: rgb(186, 190, 194); left: 10px;')
-              img(src='/images/course-menu__challange.svg', alt='', width='23', height='22')
+              img(src='/images/icons/course-menu__challange.svg', alt='', width='23', height='22')
             .course-menu__track-title Challenge: Verses That Teach The Trinity
       .sidebar__item.series-menu Series
       .sidebar__item.playlists-menu Playlists
