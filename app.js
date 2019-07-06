@@ -109,9 +109,11 @@ app.get('/', function(req, res){
 let articles = require('./routes/articles');
 let users = require('./routes/users');
 let sermons = require('./routes/sermons');
+let search = require('./routes/search');
 app.use('/articles', articles);
 app.use('/users', users);
 app.use('/messages', sermons);
+app.use('/', search);
 
 // Set port.
 let port = normalizePort(process.env.PORT || '8081');
