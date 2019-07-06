@@ -20,15 +20,23 @@ router.post('/search', function(req, res){
       {abstract: {$regex : `.*${search}.*`}},
       {author: {$regex : `.*${search}.*`}}
     ]}, function(err, articles) {
+  Sermon.find(
+    {$or:[
+      {title: {$regex : `.*${search}.*`}},
+      {abstract: {$regex : `.*${search}.*`}},
+      {author: {$regex : `.*${search}.*`}}
+    ]}, function(err, sermons) {
       if(err) {
          console.log(err);
       }
       else{
         res.render('search', {
-        title:'Articles',
-        articles: articles
-      });
+          title:'Search',
+          articles: articles,
+          sermons: sermons
+        });
       }
+  });
   });
 });
 
@@ -43,7 +51,8 @@ router.get('/search', function(req, res){
         res.render('search', {
         title:'Search',
         articles: articles,
-        sermons:sermons
+        sermons:sermons,
+        resources: articles + sermons
         });
       }
     });
