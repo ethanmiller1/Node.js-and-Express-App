@@ -42,6 +42,30 @@ block content
           .gsc-wrapper
             table(style='width:100%')
               tbody
+                each sermon, i in sermons
+                  tr.resource-list-row
+                    td.resource-list-item
+                      a.resource-list-item__inner(href='/messages/'+sermon._id)
+                        .resource-list-item__author-image
+                          img(alt='', height='30', width='30', src='/images/defaults/avatar-male.png')
+                        h2.resource-list-item__title= sermon.title
+                        span.resource-list-item__data= sermon.author
+                        - const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                        - const date = monthNames[sermon.date.getMonth()] + " " + sermon.date.getDate() + ", " + sermon.date.getFullYear();
+                        span.resource-list-item__data= date
+                    td.resource-list-item.resource-list-item__rating
+                      .resource-list-item__inner.resource-list-item--center
+                        span.resource-list-item__data Star ratings go here.
+                    td.resource-list-item.resource-list-item__church
+                      .resource-list-item__inner.resource-list-item--center
+                        span.resource-list-item__data Northlake Baptist Church
+                    td.resource-list-item.resource-list-item__topic
+                      .resource-list-item__inner.resource-list-item--center
+                        span.resource-list-item__data= (sermon.topics.length === 0 ? 'Christianity' : sermon.topics[1])
+                    td.resource-list-item.resource-list-item__reading-time
+                      .resource-list-item__inner.resource-list-item--center
+                        span.resource-list-item__data 5:47
+                    td.resource-list-item.resource-list-item__abstract= sermon.abstract
                 each article, i in articles
                   tr.resource-list-row
                     td.resource-list-item

@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+// Bring in Sermon Model
+let Sermon = require('../models/sermon');
+
 // Bring in Article Model
 let Article = require('../models/article');
 
@@ -32,15 +35,18 @@ router.post('/search', function(req, res){
 // Render search page.
 router.get('/search', function(req, res){
   Article.find({}, function(err, articles) {
+    Sermon.find({}, function(err, sermons) {
       if(err) {
          console.log(err);
       }
       else{
         res.render('search', {
-        title:'Articles',
-        articles: articles
-      });
+        title:'Search',
+        articles: articles,
+        sermons:sermons
+        });
       }
+    });
   });
 });
 
