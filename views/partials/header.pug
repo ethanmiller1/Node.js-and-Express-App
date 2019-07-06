@@ -41,11 +41,11 @@ html
               a.nav-link#add-book(href='/articles/add', data-toggle='tooltip', data-placement='bottom', title='Add ebook', data-delay='{"show":"500", "hide":"9000"}')
               li.nav-item.dropdown
                 button#avatar-btn(data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-                  img.img-shadow(alt='', height='40', width='40', src='/images/defaults/avatar-male.png')
+                  img.img-shadow(alt='', height='40', width='40', src='/images/users/'+user.avatar, onerror="this.onerror=null;this.src='/images/defaults/avatar-male.png';")
                 .dropdown-menu.dropdown-menu-right.user-dropdown(aria-labelledby='dropdown01')
                   .user-header
                     a.user-profile(href='/profile/:id')
-                      img.img-dropdown(alt='', height='40', width='40', src='/images/defaults/avatar-male.png')
+                      img.img-dropdown(alt='', height='40', width='40', src='/images/users/'+user.avatar, onerror="this.onerror=null;this.src='/images/defaults/avatar-male.png';")
                       .channel-container
                         .user-name(ellipsis-truncate='', title='Ethan Miller') #{user.firstname} #{user.lastname}
                         .email(ellipsis-truncate='', title='ethan.romans5.8@gmail.com') #{user.email}

@@ -168,14 +168,17 @@ router.get('/:id', function(req, res){
 // Get Sermons Page
 router.get('/', function(req, res){
   Sermon.find({}, function(err, sermons){
-    if(err){
-      console.log(err);
-    } else {
-      res.render('sermons', {
-        title:'Sermons',
-        sermons:sermons
-      });
-    }
+    User.find({}, function(err, users){
+      if(err){
+        console.log(err);
+      } else {
+        res.render('sermons', {
+          title:'Sermons',
+          sermons:sermons,
+          users:users
+        });
+      }
+    });
   });
 });
 

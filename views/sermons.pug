@@ -15,6 +15,9 @@ block content
               a.resource-list-item__inner(href='/messages/'+sermon._id)
                 .resource-list-item__author-image
                   img(alt='', height='30', width='30', src='/images/defaults/avatar-male.png')
+                  //- TODO: users.findOne(userID)
+                  //- - function getAvatar(userID) { return users};
+                  //- .testss= getAvatar(sermon.publisher)
                 h2.resource-list-item__title= sermon.title
                 span.resource-list-item__data= sermon.author
                 - const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
