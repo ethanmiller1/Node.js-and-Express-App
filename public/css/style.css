@@ -1306,7 +1306,7 @@ form #form-group label {
 .resource-title {
   display: block;
   text-align: center;
-  font-size: 60px;
+  font-size: 3.75rem;
   font-weight: 700;
   line-height: 105%;
   margin-bottom: .2em;
@@ -1978,6 +1978,12 @@ iframe.player {
     padding: 20px 30px 15px 30px;
     background-color: #000;
   }
+
+  .resource-title {
+    font-size: 2.75rem;
+    line-height: 115%;
+  }
+
   #full-audio {
     /* position: relative; */
     width: 100%;
