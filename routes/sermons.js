@@ -64,13 +64,14 @@ router.post('/add', function(req, res){
     console.log(videoUrl);
     console.log(youtube_parser(req.body.videolink));
 
-    sermon.videolink = req.body.videolink;
+    sermon.videolink = videoId;
     sermon.audiolink = req.body.audiolink;
     sermon.title = req.body.title;
     sermon.publisher = req.user._id;
     sermon.author = req.body.author;
     sermon.doctrine = req.body.doctrine;
-    sermon.scripture = req.body.scripture;
+    sermon.scripture = req.body.scripture.split(',').map(item => item.trim());
+    sermon.topics = req.body.topics.split(',').map(item => item.trim());
     sermon.series = req.body.series;
     sermon.abstract = req.body.abstract;
 

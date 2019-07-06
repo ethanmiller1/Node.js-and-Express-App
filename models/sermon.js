@@ -32,6 +32,10 @@ let sermonSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  subtitle:{
+    type: String,
+    required: false
+  },
   abstract:{
     type: String,
     required: false
@@ -41,7 +45,11 @@ let sermonSchema = mongoose.Schema({
     required: false
   },
   scripture:{
-    type: String,
+    type: [String],
+    required: false
+  },
+  topics:{
+    type: [String],
     required: false
   },
   publisher:{

@@ -5,11 +5,11 @@ block content
     #full-video.media-container.responsive
       .size-limit
         .aspect-ratio
-          iframe.player(frameborder='0', allowfullscreen='', width='800', height='480', src='https://www.youtube-nocookie.com/embed/R0ZxB8_VsrY/?controls=1&enablejsapi=1&modestbranding=1&showinfo=0&origin=https%3A%2F%2Fwww.khanacademy.org&iv_load_policy=3&html5=1&autoplay=1&fs=1&rel=0&hl=en&cc_lang_pref=en&cc_load_policy=1&start=0')
+          iframe.player(frameborder='0', allowfullscreen='', width='800', height='480', src=`https://www.youtube-nocookie.com/embed/${sermon.videolink}/?controls=1&enablejsapi=1&modestbranding=1&showinfo=0&origin=https%3A%2F%2Fwww.khanacademy.org&iv_load_policy=3&html5=1&autoplay=1&fs=1&rel=0&hl=en&cc_lang_pref=en&cc_load_policy=1&start=0`)
   .audio-backdrop
     #full-audio.media-container(style='display:none;')
       .audio-player__title Stand on Your Head for Joy
-      audio#audio-element.processed(src='https://api.spreaker.com/listen/episode/13169500/http', type='audio/mpeg', preload='auto', style='width: 100%')
+      audio#audio-element.processed(src= sermon.audiolink, type='audio/mpeg', preload='auto', style='width: 100%')
       .audio-player__controls
         .audio-player__playpause-button
           button(type='button', aria-controls='mep_0', title='Play/Pause', aria-label='Play/Pause' data-toggle='tooltip', data-placement='bottom' data-delay='{"show":"500", "hide":"200"}')
@@ -56,25 +56,33 @@ block content
         .media-menu__link.media-menu__download Download
         ul.media-menu__sub
           li.media-menu__sub-item
-            a.media-menu__link(href='https://api.spreaker.com/download/episode/13169500.mp3') Audio (MP3)
+            a.media-menu__link(href= sermon.audiolink) Audio (MP3)
           li.media-menu__sub-item
           li.media-menu__sub-item
   .resource-header
-    time.resource-header__date(datetime='2017-10-29') October 29, 2017
+    - const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    - const publishedDate = monthNames[sermon.publisheddate.getMonth()] + " " + sermon.publisheddate.getDate() + ", " + sermon.publisheddate.getFullYear();
+    - const date = monthNames[sermon.date.getMonth()] + " " + sermon.date.getDate() + ", " + sermon.date.getFullYear();
+    //- Only display one date if they are the same.
+    if date ==publishedDate
+      time.resource-header__date(datetime='2017-10-29')= date
+    else
+      time.time.resource-header__date(datetime='2017-10-29')= date + "   |   " + publishedDate
     .resource-header__meta
       ul
         li#authors Resource by 
           .resource-header__author#modal(href='#author-modal', title='Author Modal' data-toggle='tooltip', data-placement='bottom' data-delay='{"show":"700", "hide":"200"}')
-            span Steven Anderson
+            span= sermon.author
             svg(width='20px', height='20px', viewBox='0 0 20 20', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
               title Modal
               path(d='M6,6 L3,6 L3,7 L6,7 L6,13 L7,13 L7,7 L13,7 L13,6 L7,6 L7,4 L6,4 L6,6 Z M14,13 L14,6 L13,6 L13,13 L6,13 L6,14 L13,14 L13,16 L14,16 L14,14 L17,14 L17,13 L14,13 Z M3,16 L14,16 L14,17 L3,17 L3,16 Z M3,7 L4,7 L4,16 L3,16 L3,7 Z M6,3 L16,3 L16,4 L6,4 L6,3 Z M16,3 L17,3 L17,13 L16,13 L16,3 Z', fill='#aaa')
         li Topics: 
-          a(href='#topics/the-bible') The Bible
-          | , 
-          a(href='#topics/the-gospel') The Gospel
-    .resource-header__title Trinity 101
-    h2.resource-header__subtitle The Reformation’s Rediscovery of God’s Favor in His Word
+          each topic, i in sermon.topics
+            a(href=`#topics/${sermon.topics[i].toLowerCase().replace(' ', '-')}`)= sermon.topics[i]
+            if sermon.topics[i] !=sermon.topics[sermon.topics.length - 1]
+              | , 
+    .resource-header__title= sermon.title
+    h2.resource-header__subtitle= sermon.subtitle
     hr
   .resource-info
     .resource-info__tablist(role='tablist')
@@ -89,10 +97,9 @@ block content
     .resource-info__tab-content(role='tabpanel')
       h3.resource-info__event Sunday Morning Service  |  Faithful Word Baptist Church  |  Tempe, Arizona
       .resource-info__description
-        span
-          strong Programming
-          |  is the process of creating a set of instructions that tell a computer how to perform a task. Programming can be done using a variety of computer "languages," such as SQL, Java, Python, and C++.
-        span Created by Pamela Fox.
+        span= sermon.abstract
+        //- TODO: Query the user name associated with sermon.publisher FK.
+        //- span= 'Created by ' + sermon.publisher
   .sharing-footer
     .separator
     .sharing-footer__utility-bar
