@@ -102,7 +102,6 @@ router.post('/edit/:id', function(req, res){
   user.church = req.body.church;
   user.role = req.body.role;
   user.churchcity = req.body.churchcity;
-  user.password = req.body.password;
 
   let query = {_id:req.params.id}
 
@@ -112,7 +111,7 @@ router.post('/edit/:id', function(req, res){
       return;
     } else {
       req.flash('success', 'User Account Updated');
-      res.redirect('/')
+      res.redirect('back')
     }
   });
 });
@@ -131,8 +130,22 @@ const upload = multer({ storage: storage });
 
 // Uploads file to Local Disk and link to userID avatar field
 router.post('/edit/:id/upload', upload.single('avatar'), (req, res) => {
-  console.log(req.file);
-  res.redirect('back');
+  // Create empty array to hold avatar filename.
+  let user = {};
+  user.avatar = req.file.filename;
+
+  // Create the query for MongoDB's update() function.
+  let query = {_id:req.params.id}
+
+  User.update(query, user, function(err){
+    if(err){
+      console.log(err);
+      return;
+    } else {
+      req.flash('success', 'Profile Picture Updated');
+      res.redirect('back')
+    }
+  });
 });
 
 // logout

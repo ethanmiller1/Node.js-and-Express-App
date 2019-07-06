@@ -4,7 +4,7 @@ block content
   .user-page-wrapper
     br
     .card.card-body.mb-3
-      <img src="/images/defaults/avatar-male.png" alt="", width='200', height='200'>
+      img(src='/images/users/'+user.avatar, onerror="this.onerror=null;this.src='/images/defaults/avatar-male.png';", alt='No image found', width='200', height='200')
       br
       form(action='/users/edit/'+user._id+'/upload', method='POST', enctype='multipart/form-data')
         .custom-file.mb-3
