@@ -126,7 +126,7 @@ router.post('/edit/:id', function(req, res){
       return;
     } else {
       req.flash('success', 'Article Updated');
-      res.redirect('/')
+      res.redirect('/articles/'+req.params.id)
     }
   });
 });

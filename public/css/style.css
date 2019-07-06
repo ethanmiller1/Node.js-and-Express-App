@@ -1286,7 +1286,7 @@ form #form-group label {
   border: none;
 }
 
-/****** Article Page ******/                                                    /****** Article Page ******/
+/****** 5.5 Article Page ******/                                                    /****** 5.5 Article Page ******/
 .resource-wrapper {
   position: relative;
   padding: 55px 0 15px 0;
@@ -1369,6 +1369,70 @@ form #form-group label {
   font-size: 13px;
   font-weight: 700;
   line-height: 150%;
+}
+
+.resource-body h1 {
+    font-size: 27px;
+    line-height: 125.8620689655%;
+    font-weight: 700;
+    margin-bottom: .2em
+}
+.resource-body h2 {
+    font-size: 24px;
+    line-height: 128.8620689655%;
+    font-weight: 700;
+    margin-bottom: .2em
+}
+.resource-body h3 {
+    font-size: 21px;
+    line-height: 132.7586206897%;
+    font-weight: 700;
+    margin-bottom: .2em
+}
+.resource-body h4 {
+    text-transform: uppercase
+}
+.resource-body h4,
+.resource-body h5,
+.resource-body h6 {
+    font-size: 18px;
+    line-height: 141.3793103448%;
+    font-weight: 700;
+    margin-bottom: .2em
+}
+.resource-body h6 {
+    font-style: italic
+}
+.resource-body h1,
+.resource-body h2,
+.resource-body h3,
+.resource-body h4,
+.resource-body h5,
+.resource-body h6 {
+    font-family: Balto Web, Helvetica, Arial, sans-serif;
+    margin-top: 2em;
+    margin-bottom: .8em
+}
+
+.resource-body p em {
+  font-style: italic;
+}
+
+.resource-body p strong {
+  font-weight: 600;
+}
+
+.resource-body p a {
+  color: #666;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: .2em;
+  target: "_blank";
+}
+
+.resource-body p a:hover {
+  color: #c6000e;
+  border-bottom: 1px solid #c6000e;
+  cursor: pointer;
 }
 
 /****** Edit User Page ******/                                                  /****** Edit User Page ******/
@@ -2836,7 +2900,7 @@ body .grid-container {
 .resource-list-item:first-child {
   box-sizing: border-box;
   display: block;
-  max-width: 317px;
+  max-width: 557px;
 }
 
 .resource-list-item__rating {
@@ -2879,7 +2943,6 @@ body .grid-container {
 
 .resource-list-item__data {
   box-sizing: border-box;
-  display: inline-block;
   margin-top: 6px;
   margin-right: 6px;
   padding: 0 8px 2px 0;
