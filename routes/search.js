@@ -9,7 +9,15 @@ let User = require('../models/user');
 
 // Add Route
 router.get('/search', function(req, res){
-  res.render('search', {
+  Article.find({}, function(err, articles){
+    if(err){
+      console.log(err);
+    } else {
+      res.render('search', {
+        title:'Articles',
+        articles: articles
+      });
+    }
   });
 });
 
