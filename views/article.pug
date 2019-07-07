@@ -12,7 +12,12 @@ block content
       time.published-date= date + "   |   " + publishedDate
     h1.resource-title= article.title
     .resource-authors
-      span Article by #{publisher}
+      span#authors Article by 
+        .resource-header__author#modal(href='#author-modal', title='Author Modal' data-toggle='tooltip', data-placement='bottom' data-delay='{"show":"700", "hide":"200"}')
+            span= article.author
+            svg(width='20px', height='20px', viewBox='0 0 20 20', version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink')
+              title Modal
+              path(d='M6,6 L3,6 L3,7 L6,7 L6,13 L7,13 L7,7 L13,7 L13,6 L7,6 L7,4 L6,4 L6,6 Z M14,13 L14,6 L13,6 L13,13 L6,13 L6,14 L13,14 L13,16 L14,16 L14,14 L17,14 L17,13 L14,13 Z M3,16 L14,16 L14,17 L3,17 L3,16 Z M3,7 L4,7 L4,16 L3,16 L3,7 Z M6,3 L16,3 L16,4 L6,4 L6,3 Z M16,3 L17,3 L17,13 L16,13 L16,3 Z', fill='#aaa')
       .author-role Northlake Baptist Church Member, Garland, TX
     .resource-body
       p!= article.editor1
@@ -20,4 +25,5 @@ block content
         if user.id ==article.publisher
           a.btn.btn-light(href='/articles/edit/'+article._id) Edit
           a.btn.btn-danger.delete-article(href="#",data-id=article._id) Delete
+  include modal
   include partials/footer

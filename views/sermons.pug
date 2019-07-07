@@ -19,10 +19,11 @@ block content
                   //- - function getAvatar(userID) { return users};
                   //- .testss= getAvatar(sermon.publisher)
                 h2.resource-list-item__title= sermon.title
-                span.resource-list-item__data= sermon.author
-                - const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                - const date = monthNames[sermon.date.getMonth()] + " " + sermon.date.getDate() + ", " + sermon.date.getFullYear();
-                span.resource-list-item__data= date
+                .resource-list-item__data
+                  span= sermon.author
+                  - const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                  - const date = monthNames[sermon.date.getMonth()] + " " + sermon.date.getDate() + ", " + sermon.date.getFullYear();
+                  span= date
             td.resource-list-item.resource-list-item__rating
               .resource-list-item__inner.resource-list-item--center
                 span.resource-list-item__data Star ratings go here.

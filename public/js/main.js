@@ -244,6 +244,42 @@ var mobileNav = {
 
 $(document).ready(mobileNav.init());
 
+/* ===== GENERIC PAGES ===== */
+
+var modal = {
+  init: function() {
+    this.cacheDom();
+    this.bindEvents();
+  },
+  cacheDom: function() {
+    this.$body = $('body');
+    this.$btn = $('.resource-header__author');
+    this.btn = document.getElementById('modal');
+    this.$modal = $('.author-modal');
+    this.$exit = $('.author-modal__exit');
+  },
+  bindEvents: function() {
+    this.$btn.on('click', this.openModal.bind(this));
+    this.$exit.on('click', this.closeModal.bind(this));
+  },
+  transformOrigin: function() {
+    var rect = this.btn.getBoundingClientRect();
+    var pix = ((rect.right + rect.left)/2)+"px"+" "+((rect.top + rect.bottom) / 2)+"px";
+    this.$modal.css('transform-origin', pix);
+  },
+  openModal: function() {
+    this.transformOrigin();
+    this.$modal.addClass('open display-elements');
+    this.$body.addClass('hide-scroll');
+  },
+  closeModal: function() {
+    this.$modal.removeClass('open display-elements');
+    this.$body.removeClass('hide-scroll');
+  }
+}
+
+$(document).ready(modal.init());
+
 /* ===== VIDEO PAGE ===== */
 
 /****** Course Menu Toggle Transition (max-height CSS issue) ******/
@@ -939,40 +975,6 @@ var sharePanel = {
 }
 
 $(document).ready(sharePanel.init());
-
-var modal = {
-  init: function() {
-    this.cacheDom();
-    this.bindEvents();
-  },
-  cacheDom: function() {
-    this.$body = $('body');
-    this.$btn = $('.resource-header__author');
-    this.btn = document.getElementById('modal');
-    this.$modal = $('.author-modal');
-    this.$exit = $('.author-modal__exit');
-  },
-  bindEvents: function() {
-    this.$btn.on('click', this.openModal.bind(this));
-    this.$exit.on('click', this.closeModal.bind(this));
-  },
-  transformOrigin: function() {
-    var rect = this.btn.getBoundingClientRect();
-    var pix = ((rect.right + rect.left)/2)+"px"+" "+((rect.top + rect.bottom) / 2)+"px";
-    this.$modal.css('transform-origin', pix);
-  },
-  openModal: function() {
-    this.transformOrigin();
-    this.$modal.addClass('open display-elements');
-    this.$body.addClass('hide-scroll');
-  },
-  closeModal: function() {
-    this.$modal.removeClass('open display-elements');
-    this.$body.removeClass('hide-scroll');
-  }
-}
-
-$(document).ready(modal.init());
 
 // Open / Collapse search background
 // $(document).ready(function(){
