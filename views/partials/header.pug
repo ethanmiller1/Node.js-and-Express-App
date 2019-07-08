@@ -73,7 +73,10 @@ html
           li.mobile-nav-item
             a(data-segment-header-donate='', href='#') Donate
           li.mobile-nav-item
-            a(href='https://github.com/king-melchizedek/Node.js-and-Express-App') Github       
+            a(href='https://github.com/king-melchizedek/Node.js-and-Express-App') Github
+          li.mobile-nav-item__search
+            form(novalidate='', method='POST', action='/search')
+              input.form-control(name='search', placeholder='Search Bible Academy...')
     .sidebar
       .sidebar__item.sidebar__item--open#course-btn Course
       .sidebar__container.course-menu

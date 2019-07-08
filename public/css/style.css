@@ -483,6 +483,7 @@ border-radius: 2px;
 .main-nav .mobile-nav-items {
   position: absolute;
   left: 0;
+  height: auto;
   display: none;
 }
 
@@ -570,6 +571,11 @@ border-radius: 2px;
   left: 8px;
   position: relative;
   font-size: 15px;
+}
+
+.main-nav .mobile-nav-items .mobile-nav-item__search {
+  padding: 8px 16px;
+  width: 250px
 }
 
 .main-nav .mobile-nav-items .mobile-nav-item a {
@@ -1000,7 +1006,9 @@ border-radius: 2px;
   .resource-list-item__rating,
   .resource-list-item__church,
   .resource-list-item__topic,
-  .resource-list-item__reading-time {
+  .resource-list-item__reading-time,
+  .search-bar,
+  .toggle-nav-method {
     display: none;
   }
   .grid-container .article-header {
@@ -1018,7 +1026,7 @@ border-radius: 2px;
     display: block;
   }
   .main-nav.main-nav--expand {
-    height: 385px;
+    height: 425px;
     z-index: 70;
   }
   .main-nav .nav-items {
@@ -3489,7 +3497,6 @@ td.resource-list-item.resource-list-item__abstract {
 .resource-list-item__spacer {
   position: relative;
   height: 35px;
-  d
 }
 
 .gs-bidi-start-align.pagination .next::after {
