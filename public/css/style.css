@@ -996,8 +996,15 @@ border-radius: 2px;
 
 @media screen and (max-width:1023px) {
   .main-nav .nav-items .-btn,
-  .main-nav .nav-items .-item {
-    display: none
+  .main-nav .nav-items .-item,
+  .resource-list-item__rating,
+  .resource-list-item__church,
+  .resource-list-item__topic,
+  .resource-list-item__reading-time {
+    display: none;
+  }
+  .grid-container .article-header {
+    width: 280px;
   }
   .mobileTutorialNav,
   .main-nav #mobileMenuButton,
