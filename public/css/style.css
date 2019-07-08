@@ -1006,6 +1006,12 @@ border-radius: 2px;
   .grid-container .article-header {
     width: 280px;
   }
+  .author-modal__exit svg {
+    pointer-events: auto;
+  }
+  .author-modal {
+    pointer-events: none;
+  }
   .mobileTutorialNav,
   .main-nav #mobileMenuButton,
   .main-nav .mobile-nav-items.reveal {
