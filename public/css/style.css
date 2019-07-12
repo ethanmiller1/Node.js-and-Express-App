@@ -770,6 +770,10 @@ border-radius: 2px;
   font: 400 16px Roboto,Noto,sans-serif;
 }
 
+.add-resource-menu .dropdown-item::before {
+  margin-right: 32px !important;
+}
+
 /* ___ Search Bar ___ */
 
 .toggle-nav-method {
