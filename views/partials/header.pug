@@ -45,7 +45,8 @@ html
                 #user-dropdown.dropdown-menu.dropdown-menu-right.user-dropdown(aria-labelledby='dropdown01')
                   .default-user-menu
                     .user-header
-                      a.user-profile(href='/profile/:id')
+                      //- TODO: Ref to /profile/:id
+                      a.user-profile(href='/users/edit/'+user._id)
                         img.img-dropdown(alt='', height='40', width='40', src='/images/users/'+user.avatar, onerror="this.onerror=null;this.src='/images/defaults/avatar-male.png';")
                         .channel-container
                           .user-name(ellipsis-truncate='', title='Ethan Miller') #{user.firstname} #{user.lastname}
