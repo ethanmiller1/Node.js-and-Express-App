@@ -706,13 +706,23 @@ var seekSlider = {
     seeking = false;
   },
   bindEvents: function() {
+    // TODO: Bind Mousedown and Touchstart, etc.
     audio.seekSlider.addEventListener('mousedown', this.clickSeeking.bind(this));
     audio.seekSlider.addEventListener('mousemove', this.dragSeeking.bind(this));
     audio.seekSlider.addEventListener('mouseup', this.doneSeeking.bind(this));
+    audio.seekSlider.addEventListener('touchstart', this.clickSeeking.bind(this));
+    audio.seekSlider.addEventListener('touchmove', this.dragSeeking.bind(this));
+    audio.seekSlider.addEventListener('touchend', this.doneSeeking.bind(this));
   },
   seek: function(event) {
+    // Determine where to look for clientX by the event type (mousedown or touchstart).
+    var eventType = event.type.toLowerCase();
+    var clientX = (eventType === 'mousedown' || eventType === 'mousemove' || eventType === 'mouseup')
+                ? event.clientX
+                : event.touches[0].clientX;
+
     if(seeking && audio.element.duration > 0) { // Wait for duration to load before invoking
-      audio.seekSlider.value = (event.clientX - audio.$seekSlider.offset().left) / audio.seekSlider.offsetWidth * audio.seekSlider.max;
+      audio.seekSlider.value = (clientX - audio.$seekSlider.offset().left) / audio.seekSlider.offsetWidth * audio.seekSlider.max;
       seekto = audio.element.duration * (audio.seekSlider.value / audio.seekSlider.max);
       audio.element.currentTime = seekto; 
     }
