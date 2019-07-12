@@ -317,7 +317,7 @@ var userMenu = {
   collapseMenu: function(e) {
     if (
       e.target.parentNode != this.btn &&
-      e.target.parentNode != this.dropdown
+      !this.dropdown.contains(e.target)
       ) {
       this.$dropdown.removeClass('show');
       // this.dropdown.classList.remove("show");
@@ -352,7 +352,6 @@ var resourceMenu = {
     this.$rsMenu.removeClass('hidden');
   },
   back: function() {
-    alert('text');
     this.$header.removeClass('hidden');
     this.$item.removeClass('hidden');
     this.$rsMenu.addClass('hidden');
