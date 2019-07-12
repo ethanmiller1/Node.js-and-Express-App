@@ -462,7 +462,7 @@ border-radius: 2px;
 }
 
 .main-nav {
-  width: 100%;
+  width: 100vw;
   height: 63px;
   overflow: visible;
   background-color: #fff;
@@ -2131,6 +2131,10 @@ iframe.player {
   .audio-player__time-total {
     width: calc(100vw - 63px);
   }
+  #audio-player__range {
+    width: calc(100vw - 63px + var(--volumeHandleDiameter));
+  }
+
   .audio-player__time-rail {
     width: calc(100vw - 61px);
   }
