@@ -43,16 +43,17 @@ html
                 button#avatar-btn
                   img.img-shadow(alt='', height='40', width='40', src='/images/users/'+user.avatar, onerror="this.onerror=null;this.src='/images/defaults/avatar-male.png';")
                 #user-dropdown.dropdown-menu.dropdown-menu-right.user-dropdown(aria-labelledby='dropdown01')
-                  .user-header
-                    a.user-profile(href='/profile/:id')
-                      img.img-dropdown(alt='', height='40', width='40', src='/images/users/'+user.avatar, onerror="this.onerror=null;this.src='/images/defaults/avatar-male.png';")
-                      .channel-container
-                        .user-name(ellipsis-truncate='', title='Ethan Miller') #{user.firstname} #{user.lastname}
-                        .email(ellipsis-truncate='', title='ethan.romans5.8@gmail.com') #{user.email}
-                  a.dropdown-item#user-profile(href='/users/edit/'+user._id) My Profile
-                  a.dropdown-item#switch-user(href='#') Switch User
-                  a.dropdown-item#add-resource(href='#') Add Resource
-                  a.dropdown-item#logout(href='/users/logout') Logout
+                  .default-user-menu
+                    .user-header
+                      a.user-profile(href='/profile/:id')
+                        img.img-dropdown(alt='', height='40', width='40', src='/images/users/'+user.avatar, onerror="this.onerror=null;this.src='/images/defaults/avatar-male.png';")
+                        .channel-container
+                          .user-name(ellipsis-truncate='', title='Ethan Miller') #{user.firstname} #{user.lastname}
+                          .email(ellipsis-truncate='', title='ethan.romans5.8@gmail.com') #{user.email}
+                    a.dropdown-item#user-profile(href='/users/edit/'+user._id) My Profile
+                    a.dropdown-item#switch-user(href='#') Switch User
+                    a.dropdown-item#add-resource(href='#') Add Resource
+                    a.dropdown-item#logout(href='/users/logout') Logout
                   .add-resource-menu.hidden
                     .add-resource-header
                       button#button.style-scope.yt-icon-button(aria-label='Back')    

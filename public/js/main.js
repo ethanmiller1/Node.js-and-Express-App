@@ -337,8 +337,7 @@ var resourceMenu = {
   cacheDom: function() {
     this.$menu = $('.user-dropdown');
     this.$btn = this.$menu.find('#add-resource');
-    this.$header = this.$menu.find('.user-header');
-    this.$item = this.$menu.find('.dropdown-item');
+    this.$defMenu = this.$menu.find('.default-user-menu');
     this.$rsMenu = this.$menu.find('.add-resource-menu');
     this.$rsBtn = this.$rsMenu.find('button');
   },
@@ -347,13 +346,11 @@ var resourceMenu = {
     this.$rsBtn.on('click', this.back.bind(this));
   },
   switchMenu: function() {
-    this.$header.addClass('hidden');
-    this.$item.addClass('hidden');
+    this.$defMenu.addClass('hidden');
     this.$rsMenu.removeClass('hidden');
   },
   back: function() {
-    this.$header.removeClass('hidden');
-    this.$item.removeClass('hidden');
+    this.$defMenu.removeClass('hidden');
     this.$rsMenu.addClass('hidden');
   }
 }
