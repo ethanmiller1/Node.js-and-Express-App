@@ -425,6 +425,7 @@ var hashApp = {
   init: function() {
     this.cacheDom();
     this.bindEvents();
+    this.onRefresh();
   },
   cacheDom: function() {
     this.$hashContent = $('.media-container');
@@ -459,6 +460,13 @@ var hashApp = {
       this.$abtn.addClass('media-menu__link--selected');
       // Set the video button colors to show it isn't selected.
       this.$vbtn.removeClass('media-menu__link--selected');
+    }
+  },
+  onRefresh: function() {
+    if (location.hash === '#full-audio') {
+      $('#full-audio').show();
+      $('#full-video').hide();
+      this.changeBtn();
     }
   }
 };
