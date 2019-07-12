@@ -246,6 +246,8 @@ $(document).ready(mobileNav.init());
 
 /* ===== GENERIC PAGES ===== */
 
+/****** Author Modal ******/
+
 var modal = {
   init: function() {
     this.cacheDom();
@@ -279,6 +281,74 @@ var modal = {
 }
 
 $(document).ready(modal.init());
+
+/****** User Dropdown Menu ******/
+
+var userMenu = {
+  init: function() {
+    this.cacheDom();
+    this.bindEvents();
+  },
+  cacheDom: function() {
+    this.$container = $('.nav-item.dropdown');
+    this.$btn = this.$container.find('#avatar-btn');
+    this.$dropdown = this.$container.find('.user-dropdown');
+    this.btn = document.getElementById('avatar-btn');
+    this.dropdown = document.getElementById('user-dropdown');
+  },
+  bindEvents: function() {
+    this.$btn.on('click', this.toggleMenu.bind(this));
+    // TODO: Add event listener only when menu is open.
+    window.addEventListener('click', this.collapseMenu.bind(this));
+  },
+  toggleMenu: function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    this.$dropdown.toggleClass('show');
+  },
+  jQueryClose: function() {
+    // TODO: Learn how to close on outside click with jQuery.
+    if($dropdown.has(e.target).length === 0){
+      $dropdown.removeClass('show');
+    } else {
+      $(document).one('click', closeMenu);
+    }
+  },  
+  collapseMenu: function(e) {
+    if (
+      e.target.parentNode != this.btn &&
+      e.target.parentNode != this.dropdown
+      ) {
+      this.$dropdown.removeClass('show');
+      // this.dropdown.classList.remove("show");
+    }
+  }
+}
+
+$(document).ready(userMenu.init());
+
+/****** Content Creation Menu ******/
+
+var resourceMenu = {
+  init: function() {
+    this.cacheDom();
+    this.bindEvents();
+  },
+  cacheDom: function() {
+    this.$menu = $('.user-dropdown');
+    this.$btn = this.$menu.find('#add-resource');
+    this.$header = this.$menu.find('.user-header');
+    this.$item = this.$menu.find('.dropdown-item');
+  },
+  bindEvents: function() {
+    this.$btn.on('click', this.switchMenu.bind(this));
+  },
+  switchMenu: function() {
+    this.$header.addClass('hidden');
+  }
+}
+
+$(document).ready(resourceMenu.init());
 
 /* ===== VIDEO PAGE ===== */
 

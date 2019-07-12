@@ -40,9 +40,9 @@ html
               a.nav-link#add-media-resource(href='/messages/add', data-toggle='tooltip', data-placement='bottom', title='Add Media Resource', data-delay='{"show":"500", "hide":"200"}')
               a.nav-link#add-book(href='/articles/add', data-toggle='tooltip', data-placement='bottom', title='Add ebook', data-delay='{"show":"500", "hide":"9000"}')
               li.nav-item.dropdown
-                button#avatar-btn(data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                button#avatar-btn
                   img.img-shadow(alt='', height='40', width='40', src='/images/users/'+user.avatar, onerror="this.onerror=null;this.src='/images/defaults/avatar-male.png';")
-                .dropdown-menu.dropdown-menu-right.user-dropdown(aria-labelledby='dropdown01')
+                #user-dropdown.dropdown-menu.dropdown-menu-right.user-dropdown(aria-labelledby='dropdown01')
                   .user-header
                     a.user-profile(href='/profile/:id')
                       img.img-dropdown(alt='', height='40', width='40', src='/images/users/'+user.avatar, onerror="this.onerror=null;this.src='/images/defaults/avatar-male.png';")
