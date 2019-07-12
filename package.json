@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "restart": "browser-sync start --proxy localhost:8081 --port 8082 --files '**/*' --no-notify"
+    "proxy": "browser-sync start --proxy localhost:8081 --port 8082 --files '**/*' --no-notify"
   },
   "author": "Ethan Miller",
   "license": "MIT",

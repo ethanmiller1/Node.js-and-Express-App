@@ -51,6 +51,7 @@ html
                         .email(ellipsis-truncate='', title='ethan.romans5.8@gmail.com') #{user.email}
                   a.dropdown-item#user-profile(href='/users/edit/'+user._id) My Profile
                   a.dropdown-item#switch-user(href='#') Switch User
+                  a.dropdown-item#add-resource(href='#') Add Resource
                   a.dropdown-item#logout(href='/users/logout') Logout
           else
             a.nav-link(href='/users/login') SIGN IN
@@ -73,7 +74,7 @@ html
           li.mobile-nav-item
             a(data-segment-header-donate='', href='#') Donate
           li.mobile-nav-item
-            a(href='https://github.com/king-melchizedek/Node.js-and-Express-App') Github
+            a(href='https://github.com/ethanmiller1/Node.js-and-Express-App') Github
           li.mobile-nav-item__search
             form(novalidate='', method='POST', action='/search')
               input.form-control(name='search', placeholder='Search Bible Academy...')

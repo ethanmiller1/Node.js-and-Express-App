@@ -680,7 +680,7 @@ border-radius: 2px;
   font: 400 14px Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
 }
 
-#user-profile::before, #switch-user::before, #logout::before {
+#user-profile::before, #switch-user::before, #add-resource::before, #logout::before {
   font-size: 24px;
   font-family: dg-icons !important;
   color: #888888;
@@ -693,11 +693,14 @@ border-radius: 2px;
 #switch-user::before {
   content: "";
 }
+#add-resource::before {
+  content: "";
+}
 #logout::before {
   content: "";
 }
 
-#switch-user::after {
+#switch-user::after, #add-resource::after {
   position: absolute;
   right: 24px;
   font: 700 20px dg-icons;

@@ -254,7 +254,7 @@ client.connect(err => {
 });
 ```
 
-7. Create a [`keys.js`](https://github.com/king-melchizedek/Node.js-and-Express-App/tree/master/config/keys.js) file, a [`keys_prod.js`](https://github.com/king-melchizedek/Node.js-and-Express-App/tree/master/config/keys_prod.js) file, and a `keys_dev.js` file in the config folder.
+7. Create a [`keys.js`](https://github.com/ethanmiller1/Node.js-and-Express-App/tree/master/config/keys.js) file, a [`keys_prod.js`](https://github.com/ethanmiller1/Node.js-and-Express-App/tree/master/config/keys_prod.js) file, and a `keys_dev.js` file in the config folder.
 
 The keys_dev.js file should contain the following code:
 
@@ -265,14 +265,14 @@ module.exports = {
 };
 ```
 
-8. Replace references to [`config/database`](https://github.com/king-melchizedek/Node.js-and-Express-App/blob/master/config/database.js) with [`config/keys.js`](https://github.com/king-melchizedek/Node.js-and-Express-App/tree/master/config/keys.js) in [`app.js`](https://github.com/king-melchizedek/Node.js-and-Express-App/blob/master/app.js).
+8. Replace references to [`config/database`](https://github.com/ethanmiller1/Node.js-and-Express-App/blob/master/config/database.js) with [`config/keys.js`](https://github.com/ethanmiller1/Node.js-and-Express-App/tree/master/config/keys.js) in [`app.js`](https://github.com/ethanmiller1/Node.js-and-Express-App/blob/master/app.js).
 
 (Note that config.database will be config.mongoURI.)
 
 ##### Deploy to AWS
 
 1. From the [Console Home](https://us-east-2.console.aws.amazon.com/console/home?region=us-east-2) select "Build a web app.
-1. Access AWS environment variables using [`process.env.ENV_VARIABLE`](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_nodejs.container.html). After deploying the app, navigate to Configuration > Software (Modify) > Environment properties. Copy the keys from [`keys_prod.js`](https://github.com/king-melchizedek/Node.js-and-Express-App/blob/master/config/keys_prod.js) and the values from `keys_dev.js`. Search for any other process.env variables in your project.
+1. Access AWS environment variables using [`process.env.ENV_VARIABLE`](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_nodejs.container.html). After deploying the app, navigate to Configuration > Software (Modify) > Environment properties. Copy the keys from [`keys_prod.js`](https://github.com/ethanmiller1/Node.js-and-Express-App/blob/master/config/keys_prod.js) and the values from `keys_dev.js`. Search for any other process.env variables in your project.
 
 |Key|Value|
 |-|-|
