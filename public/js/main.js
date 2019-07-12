@@ -339,12 +339,23 @@ var resourceMenu = {
     this.$btn = this.$menu.find('#add-resource');
     this.$header = this.$menu.find('.user-header');
     this.$item = this.$menu.find('.dropdown-item');
+    this.$rsMenu = this.$menu.find('.add-resource-menu');
+    this.$rsBtn = this.$rsMenu.find('button');
   },
   bindEvents: function() {
     this.$btn.on('click', this.switchMenu.bind(this));
+    this.$rsBtn.on('click', this.back.bind(this));
   },
   switchMenu: function() {
     this.$header.addClass('hidden');
+    this.$item.addClass('hidden');
+    this.$rsMenu.removeClass('hidden');
+  },
+  back: function() {
+    alert('text');
+    this.$header.removeClass('hidden');
+    this.$item.removeClass('hidden');
+    this.$rsMenu.addClass('hidden');
   }
 }
 
