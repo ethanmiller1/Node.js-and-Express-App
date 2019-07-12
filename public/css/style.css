@@ -1841,7 +1841,7 @@ iframe.player {
   height: var(--volumeHandleDiameter);
   border-radius: 50%;
   transform: translate3d(0, -10.5px, 0);
-  cursor: w-resize;
+  cursor: pointer;
   margin: 0;
   background: #fff;
   transition : all .3s;
