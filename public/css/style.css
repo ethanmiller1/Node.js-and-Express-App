@@ -3101,6 +3101,10 @@ a.resource-list-item__inner {
   target: "_blank";
 }
 
+.row.featurette .lower img {
+  margin-top: 105px
+}
+
 /****** 5.12 Search ******/                                                      /****** 5.12 Search ******/
 
 /*! CSS Used from: Embedded */
