@@ -3094,6 +3094,13 @@ a.resource-list-item__inner {
   background-position: right 0 bottom 0;
 }
 
+.container.marketing p a {
+  color: #9c9c9c;
+  border-bottom: 1px solid #9c9c9c;
+  margin-bottom: .2em;
+  target: "_blank";
+}
+
 /****** 5.12 Search ******/                                                      /****** 5.12 Search ******/
 
 /*! CSS Used from: Embedded */

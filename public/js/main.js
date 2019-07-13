@@ -298,13 +298,12 @@ var userMenu = {
   },
   bindEvents: function() {
     this.$btn.on('click', this.toggleMenu.bind(this));
-    // TODO: Add event listener only when menu is open.
-    window.addEventListener('click', this.collapseMenu.bind(this));
   },
   toggleMenu: function(e) {
     e.preventDefault();
     e.stopPropagation();
     this.$dropdown.toggleClass('show');
+    this.toggleListener();
   },
   jQueryClose: function() {
     // TODO: Learn how to close on outside click with jQuery.
@@ -321,6 +320,19 @@ var userMenu = {
       ) {
       this.$dropdown.removeClass('show');
       // this.dropdown.classList.remove("show");
+    }
+  },
+  toggleListener: function() {
+    // Add event listener only when menu is open.
+    let i = 1
+    if (i == 1) {
+      // If menu is open, listen.
+      window.addEventListener('click', this.collapseMenu.bind(this));
+      i = 0;
+    } else {
+      // Otherwise remove listener.
+      window.removeEventListener('click', this.collapseMenu.bind(this));
+      i = 1;
     }
   }
 }
