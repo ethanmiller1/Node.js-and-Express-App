@@ -15,17 +15,11 @@ router.post('/search', function(req, res){
   let search = req.body.search;
 
   Article.find(
-    {$or:[
-      {title: {$regex : `.*${search}.*`}},
-      {abstract: {$regex : `.*${search}.*`}},
-      {author: {$regex : `.*${search}.*`}}
-    ]}, function(err, articles) {
+    {$text: { $search : search }},
+    function(err, articles) {
   Sermon.find(
-    {$or:[
-      {title: {$regex : `.*${search}.*`}},
-      {abstract: {$regex : `.*${search}.*`}},
-      {author: {$regex : `.*${search}.*`}}
-    ]}, function(err, sermons) {
+    {$text: { $search : search }},
+    function(err, sermons) {
       if(err) {
          console.log(err);
       }
