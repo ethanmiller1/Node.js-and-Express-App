@@ -62,4 +62,14 @@ let sermonSchema = mongoose.Schema({
   }
 });
 
+// Create text index for search bar.
+
+sermonSchema.index({
+  title: 'text',
+  subtitle: 'text',
+  abstract: 'text',
+  author: 'text',
+  scripture: 'text'
+});
+
 let Sermon = module.exports = mongoose.model('Sermon', sermonSchema);

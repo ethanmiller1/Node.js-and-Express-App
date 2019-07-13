@@ -57,4 +57,13 @@ let articleSchema = mongoose.Schema({
   }
 });
 
+// Create text index for search bar.
+
+articleSchema.index({
+  title: 'text',
+  abstract: 'text',
+  author: 'text',
+  scripture: 'text'
+});
+
 let Article = module.exports = mongoose.model('Article', articleSchema);

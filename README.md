@@ -231,6 +231,22 @@ cls
 | db.articles.find(); | Show all documents in the 'articles' collection |
 | db.articles.find().pretty(); | Show all documents in the 'articles' collection as a formatted JSON |
 
+#### MongoDB Indexes
+
+Don't forget to create an [index](https://mongoosejs.com/docs/guide.html#indexes) for your search bar in each collection model you want to search:
+
+``` js
+articleSchema.index({
+  title: 'text',
+  subtitle: 'text',
+  abstract: 'text',
+  author: 'text',
+  scripture: 'text'
+});
+```
+
+View indexes in the [Atlas Data Explorer](https://www.youtube.com/watch?v=gn5FUqjKltk) by navigating to "Collections" > "Indexes" in the ClusterS tab.
+
 #### OR Connect to MongoDB Atlas
 
 1. Visit the [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) page and click "Start Free."

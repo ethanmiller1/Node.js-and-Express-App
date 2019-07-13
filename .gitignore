@@ -6,6 +6,7 @@ node_modules
 /public/components
 /Node.js-and-Express-App-master.*
 /Node.js-and-Express-App-master
+/config/mongodb.js
 
 # Individual files
 style-orig.css
