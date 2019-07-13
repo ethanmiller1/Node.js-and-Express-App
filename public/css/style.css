@@ -3172,16 +3172,16 @@ a.resource-list-item__inner {
 		transition-duration: .2s;
 		transition-timing-function: ease-in-out;
 		box-sizing: border-box;
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		border-radius: 0;
-		font-size: 13px;
+    border-radius: 0;
+    height: 40px;
+    padding: 4px 10px;
+		font-size: 16px;
 		line-height: 150%;
 		border: 1px solid #ccc;
 		margin: 0 17px 10px 0;
 		color: #3a3c3f;
 		outline: none;
-	}
+  }
   table.gsc-search-box td.gsc-input .gsc-input-box input {
     width: 100%;
     padding: 0px;
