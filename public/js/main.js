@@ -42,6 +42,28 @@ $(document).ready(tooltips.init());
 
 /* ===== LAYOUT ===== */
 
+
+/****** Loader ******/
+
+var fade = {
+  init: function() {
+    this.cacheDom();
+    this.bindEvents();
+  },
+  cacheDom: function() {
+    this.$window = $(window);
+    this.$wrapper = $('.loader-wrapper');
+  },
+  bindEvents: function() {
+    this.$window.on('load', this.fade.bind(this));
+  },
+  fade: function() {
+    this.$wrapper.fadeOut('slow');
+  }
+}
+
+$(document).ready(fade.init());
+
 /****** Navbar ******/
 
 var stickyNav = {

@@ -1,0 +1,185 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='Highly respected pastors and biblical teachers present content and resources for every topic and level. Always free.')
+    meta(name='author', content='Ethan Miller')
+    link(rel='shortcut icon', href='/images/logo/favicon2.ico')
+    title Bible Academy
+    link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T", crossorigin="anonymous")
+    //- link(rel='stylesheet', href='/css/bootstrap-datepicker.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/bootstrap-datepicker.css')
+    link(rel='stylesheet' href='/css/style.css')
+    style.
+      /* loader css */
+      .loader-wrapper {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #242f3f;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        z-index:1000;
+      }
+      .loader {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        border: 4px solid #Fff;
+        animation: loader 2s infinite ease;
+      }
+      .loader-inner {
+        vertical-align: top;
+        display: inline-block;
+        width: 100%;
+        background-color: #fff;
+        animation: loader-inner 2s infinite ease-in;
+      }
+      @keyframes loader {
+        0% { transform: rotate(0deg);}
+        25% { transform: rotate(180deg);}
+        50% { transform: rotate(180deg);}
+        75% { transform: rotate(360deg);}
+        100% { transform: rotate(360deg);}
+      }
+      @keyframes loader-inner {
+        0% { height: 0%;}
+        25% { height: 0%;}
+        50% { height: 100%;}
+        75% { height: 100%;}
+        100% { height: 0%;}
+      }
+  body
+    .loader-wrapper
+      span.loader
+        span.loader-inner
+    .nav-placeholder
+    nav.navbar.navbar-expand-md.navbar-dark.main-nav
+      button#guideButton
+      a.logo(href='/')
+        img(src='/images/logo/bibleAcademy Logo.svg', alt='', width='154', height='24.2')
+      .nav-items
+        a.-item(href='/articles') Articles
+        a.-item(href='/messages') Sermons
+        a.-item(href='#topics') Topics
+        a.-item(href='#books/all') Books
+        a.-item(href='#podcasts') Podcasts
+        button.-btn(data-ix='ix-features-nav') Features
+        a.-item(href='#about-us') About
+        a.-item(data-segment-header-donate='', href='#donate') Donate
+        .search-bar#search-bar
+          form(novalidate='', method='POST', action='/search')
+            input#input-bar.input-bar(name='search', placeholder='Search Bible Academy...')
+            button.search-button.no-focus(type='submit', data-toggle='tooltip', data-placement='bottom', title='')
+        button.toggle-nav-method.no-focus(data-toggle='tooltip', data-placement='bottom', title='Search')
+        button#mobileMenuButton
+        .nav-topbar
+          if user
+            ul.nav-topbar__user-menu
+              a.nav-link#add-article(href='/articles/add', data-toggle='tooltip', data-placement='bottom', title='Add Article', data-delay='{"show":"500", "hide":"200"}')
+              a.nav-link#add-media-resource(href='/messages/add', data-toggle='tooltip', data-placement='bottom', title='Add Media Resource', data-delay='{"show":"500", "hide":"200"}')
+              a.nav-link#add-book(href='/articles/add', data-toggle='tooltip', data-placement='bottom', title='Add ebook', data-delay='{"show":"500", "hide":"9000"}')
+              li.nav-item.dropdown
+                button#avatar-btn
+                  img.img-shadow(alt='', height='40', width='40', src='/images/users/'+user.avatar, onerror="this.onerror=null;this.src='/images/defaults/avatar-male.png';")
+                #user-dropdown.dropdown-menu.dropdown-menu-right.user-dropdown(aria-labelledby='dropdown01')
+                  .default-user-menu
+                    .user-header
+                      //- TODO: Ref to /profile/:id
+                      a.user-profile(href='/users/edit/'+user._id)
+                        img.img-dropdown(alt='', height='40', width='40', src='/images/users/'+user.avatar, onerror="this.onerror=null;this.src='/images/defaults/avatar-male.png';")
+                        .channel-container
+                          .user-name(ellipsis-truncate='', title='Ethan Miller') #{user.firstname} #{user.lastname}
+                          .email(ellipsis-truncate='', title='ethan.romans5.8@gmail.com') #{user.email}
+                    a.dropdown-item#user-profile(href='/users/edit/'+user._id) My Profile
+                    a.dropdown-item#switch-user(href='#') Switch User
+                    a.dropdown-item#add-resource(href='#') Add Resource
+                    a.dropdown-item#logout(href='/users/logout') Logout
+                  .add-resource-menu.hidden
+                    .add-resource-header
+                      button#button.style-scope.yt-icon-button(aria-label='Back')    
+                        svg.style-scope.yt-icon(viewBox='0 0 24 24', preserveAspectRatio='xMidYMid meet', focusable='false')
+                          g.style-scope.yt-icon(mirror-in-rtl='')
+                            path.style-scope.yt-icon(d='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z')
+                      .add-resource-header__title Add Resource
+                    a.dropdown-item#add-article(href='/articles/add') Add Article
+                    a.dropdown-item#add-media-resource(href='/messages/add') Add Media Resource
+                    a.dropdown-item#add-book(href='/articles/add') Add ebook
+                    a.dropdown-item#logout(href='/users/logout') Logout
+          else
+            a.nav-link(href='/users/login') SIGN IN
+      .mobile-nav-items
+        ul 
+          li.mobile-nav-item.active
+            a(href='/articles') Articles
+          li.mobile-nav-item
+            a(href='/messages') Sermons
+          li.mobile-nav-item
+            a(href='#') Topics
+          li.mobile-nav-item
+            a(href='#') Books
+          li.mobile-nav-item
+            a(href='#') Podcasts
+          li.mobile-nav-item
+            a(href='#') Features
+          li.mobile-nav-item
+            a(href='#') About
+          li.mobile-nav-item
+            a(data-segment-header-donate='', href='#') Donate
+          li.mobile-nav-item
+            a(href='https://github.com/ethanmiller1/Node.js-and-Express-App') Github
+          li.mobile-nav-item__search
+            form(novalidate='', method='POST', action='/search')
+              input.form-control(name='search', placeholder='Search Bible Academy...')
+    .sidebar
+      .sidebar__item.sidebar__item--open#course-btn Course
+      .sidebar__container.course-menu
+        .course-menu__header
+          .course-menu__breadcrumbs
+            a.breadcrumbs__link(href='#') Trinity
+            a.breadcrumbs__link(href='#') Refuting Modalism
+          .course-menu__title Welcome to jQuery
+        .course-menu__subway-tracks
+          .course-menu__subway-track.course-menu--selected
+            .course-menu__media-icon
+              img(src='/images/icons/course-menu__video-completed.svg', alt='', width='23', height='22')
+              .course-menu__bottom-track(style='background: rgb(24, 101, 242); left: 10px;')
+            .course-menu__track-title Trinity 101
+          .course-menu__subway-track
+            .course-menu__media-icon
+              .course-menu__top-track(style='background: rgb(102, 175, 233); left: 10px;')
+              img(src='/images/icons/course-menu__video.svg', alt='', width='23', height='22')
+              .course-menu__bottom-track(style='background: rgb(102, 175, 233); left: 10px;')
+            .course-menu__track-title Trinity Or Oneness Debate
+          .course-menu__subway-track
+            .course-menu__media-icon
+              .course-menu__top-track(style='background: rgb(24, 101, 242); left: 10px;')
+              img(src='/images/icons/course-menu__article-completed.svg', alt='', width='23', height='22')
+              .course-menu__bottom-track(style='background: rgb(24, 101, 242); left: 10px;')
+            .course-menu__track-title What Is the Doctrine of the Trinity?
+          .course-menu__subway-track
+            .course-menu__media-icon
+              .course-menu__top-track(style='background: rgb(102, 175, 233); left: 10px;')
+              img(src='/images/icons/course-menu__video.svg', alt='', width='23', height='22')
+              .course-menu__bottom-track(style='background: rgb(102, 175, 233); left: 10px;')
+            .course-menu__track-title Trinity Spectrum
+          .course-menu__subway-track
+            .course-menu__media-icon
+              .course-menu__top-track(style='background: rgb(186, 190, 194); left: 10px;')
+              img(src='/images/icons/course-menu__challange.svg', alt='', width='23', height='22')
+            .course-menu__track-title Challenge: Verses That Teach The Trinity
+      .sidebar__item.series-menu Series
+      .sidebar__item.playlists-menu Playlists
+      .sidebar__item.subscriptions-menu Subscriptions
+    .page-wrapper
+      != messages('message', locals)
+      if errors
+        each error, i in errors
+          div(class="alert alert-danger") #{error.msg}
+      block content
