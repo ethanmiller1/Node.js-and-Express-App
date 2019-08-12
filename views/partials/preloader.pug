@@ -64,13 +64,6 @@ style.
     overflow:hidden;
   }
 
-  .preloader-bg.height-animate {
-    background: #242f3f;
-    transform: scaleY(0);
-    -webkit-transition: all 700ms cubic-bezier(0.605, 0.020, 0.000, 1.035); 
-    /* transform-origin: top; */
-  }
-
   .preloader .preloader-bg>div{
     position:absolute;
     z-index:0;
@@ -140,6 +133,23 @@ style.
     box-sizing:border-box;
   }
 
+  /* Event Changes */
+  .preloader-msg {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  .preloader-bg.height-animate {
+    background: #242f3f;
+    transform: scaleY(0);
+    -webkit-transition: all 700ms cubic-bezier(0.605, 0.020, 0.000, 1.035); 
+  }
+
+  .preloader .shrink {
+    transform: scale(0);
+    opacity: 0 !important;
+    -webkit-transition: all 300ms ease-out;
+  }
 
   /*! CSS Used fontfaces */
   @font-face{font-family:'Rajdhani';font-style:normal;font-weight:500;src:local('Rajdhani Medium'), local('Rajdhani-Medium'), url(https://fonts.gstatic.com/s/rajdhani/v9/LDI2apCSOBg7S-QT7pb0EPOqeef2kg.woff2) format('woff2');unicode-range:U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;}
@@ -155,7 +165,7 @@ style.
 
 .preloader
   .preloader-content
-    figure
+    figure.preloader-animation
       img(src='images/preloader/spin-breathe.gif')
   p.preloader-msg(style='opacity: 1; transform: translateY(0px);') Loading
   .preloader-bg

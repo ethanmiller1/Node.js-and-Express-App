@@ -54,8 +54,11 @@ var fade = {
   cacheDom: function() {
     this.$window = $(window);
     this.$wrapper = $('.loader-wrapper');
-    this.$bg = $('.preloader-bg');
+    this.$preloader = $('.preloader')
+    this.$bg = this.$preloader.find('.preloader-bg');
     this.$pattern = this.$bg.find('.preloader-bg__pattern')
+    this.$animation = this.$preloader.find('.preloader-animation');
+    this.$text = this.$preloader.find('.preloader-msg');
   },
   bindEvents: function() {
     this.$window.on('load', this.fade.bind(this));
@@ -69,6 +72,8 @@ var fade = {
   },
   scaleOut: function() {
     this.$bg.addClass('height-animate');
+    this.$animation.addClass('shrink');
+    this.$text.addClass('shrink');
   }
 }
 
