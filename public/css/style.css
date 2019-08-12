@@ -1044,6 +1044,10 @@ border-radius: 2px;
   background: rgba(246, 247, 247, 0.5);
 }
 
+/* Background */
+
+/* Page-wrapper goes here */
+
 /* ___ Layout Media Queries ___ */
 
 @media screen and (max-width:1023px) {

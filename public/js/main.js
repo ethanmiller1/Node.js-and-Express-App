@@ -45,7 +45,7 @@ $(document).ready(tooltips.init());
 
 /****** Loader ******/
 
-var fade = {
+var preloader = {
   init: function() {
     this.cacheDom();
     this.scaleIn();
@@ -76,11 +76,11 @@ var fade = {
     this.$text.addClass('shrink');
     setTimeout(function () {
       $('.preloader').remove()
-    }, 700);
+    }, 700); // Set to match preloader.pug height-animate rule
   },
 }
 
-$(document).ready(fade.init());
+$(document).ready(preloader.init());
 
 /****** Navbar ******/
 
