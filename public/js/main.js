@@ -48,17 +48,27 @@ $(document).ready(tooltips.init());
 var fade = {
   init: function() {
     this.cacheDom();
+    this.scaleIn();
     this.bindEvents();
   },
   cacheDom: function() {
     this.$window = $(window);
     this.$wrapper = $('.loader-wrapper');
+    this.$bg = $('.preloader-bg');
+    this.$pattern = this.$bg.find('.preloader-bg__pattern')
   },
   bindEvents: function() {
     this.$window.on('load', this.fade.bind(this));
   },
   fade: function() {
     this.$wrapper.fadeOut('slow');
+    this.scaleOut();
+  },
+  scaleIn: function() {
+    this.$pattern.addClass('visible');
+  },
+  scaleOut: function() {
+    this.$bg.addClass('height-animate');
   }
 }
 
