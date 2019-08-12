@@ -74,7 +74,10 @@ var fade = {
     this.$bg.addClass('height-animate');
     this.$animation.addClass('shrink');
     this.$text.addClass('shrink');
-  }
+    setTimeout(function () {
+      $('.preloader').remove()
+    }, 700);
+  },
 }
 
 $(document).ready(fade.init());
