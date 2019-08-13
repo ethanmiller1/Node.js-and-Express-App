@@ -1364,7 +1364,7 @@ form #form-group label {
 /****** 5.5 Article Page ******/                                                    /****** 5.5 Article Page ******/
 .resource-wrapper {
   position: relative;
-  padding: 55px 0 15px 0;
+  padding: 55px 15px 15px 15px;
 }
 
 .published-date {
