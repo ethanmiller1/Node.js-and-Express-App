@@ -150,7 +150,7 @@ var preloader = {
     this.$text = this.$preloader.find('.preloader-msg');
   },
   bindEvents: function() {
-    this.$window.on('load', this.fade.bind(this));
+    this.$window.on('load', setTimeout(this.fade.bind(this), 700));
   },
   fade: function() {
     this.$wrapper.fadeOut('slow');
@@ -164,7 +164,7 @@ var preloader = {
     this.$animation.addClass('shrink');
     this.$text.addClass('shrink');
     setTimeout(function () {
-      $('.preloader').remove()
+      $('.preloader').remove();
     }, 700); // Set to match preloader.pug height-animate rule
   },
 }
