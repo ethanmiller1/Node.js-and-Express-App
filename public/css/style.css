@@ -111,6 +111,10 @@
   outline: none;
 }
 
+.row {
+  margin: 0;
+}
+
 div.arrow::before {
   display: none;
 }
@@ -1558,10 +1562,6 @@ form #form-group label {
 
 .page-wrapper {
   position: relative;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
   background: #fff;
   width: 100%;
   transition: all var(--closeTransition);
@@ -1578,9 +1578,8 @@ form #form-group label {
 
 .video-backdrop {
   position: relative;
-  left: -15px;
   background: #000;
-  width: calc(100% + 30px);
+  width: calc(100%);
   display: flex;
   justify-content: center;
 }
@@ -1692,9 +1691,8 @@ iframe.player {
 
 .audio-backdrop {
   position: relative;
-  left: -15px;
   background: #000;
-  width: calc(100% + 30px);
+  width: calc(100%);
   display: flex;
   justify-content: center;
 }
@@ -2184,8 +2182,7 @@ iframe.player {
 
 .media-menu-backdrop {
   position: relative;
-  left: -15px;
-  width: calc(100% + 30px);
+  width: calc(100%);
   background-color: #000;
 }
 .media-menu {
