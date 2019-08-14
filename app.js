@@ -115,6 +115,12 @@ app.use('/users', users);
 app.use('/messages', sermons);
 app.use('/', search);
 
+// Route Pages
+app.get('/about-us', function(req, res){
+  res.render('about');
+});
+
+
 // Set port.
 let port = normalizePort(process.env.PORT || '8081');
 app.set('port', port);

@@ -1,0 +1,801 @@
+extends partials/header
+
+block content
+  head
+    style.
+      /*! CSS Used from: http://anafi.parrot.com/assets/builds/bundle.css */
+      *{margin:0;padding:0;border-collapse:inherit;}
+      *,:after,:before{box-sizing:inherit;}
+      :not(body){background-repeat:no-repeat;background-position:50%;background-size:cover;}
+      *{box-sizing:border-box;}
+      .noselect{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+      .nopointer{pointer-events:none;}
+      .fixed-background.background{background:#18589d;position:fixed;z-index:0;top:0;left:0;bottom:0;width:100%;overflow:hidden;}
+      .fixed-background.background>img{width:100%;height:auto;position:absolute;bottom:0;left:0;will-change:transform;z-index:1;}
+      .fixed-background.background>img:nth-child(5){z-index:3;bottom:-2px;}
+      .fixed-background.background>img:nth-child(4){bottom:19vw;}
+      .fixed-background.background>img:nth-child(3){bottom:50vw;}
+      .fixed-background.background>img:first-child,.fixed-background.background>img:nth-child(2){bottom:58vw;}
+      @media (min-width:1441px){
+      .fixed-background.background>img:nth-child(4){bottom:calc(120px + 7%);}
+      .fixed-background.background>img:nth-child(3){bottom:calc(1210px - 39%);}
+      .fixed-background.background>img:nth-child(2){bottom:calc(750px + 3%);}
+      .fixed-background.background>img:first-child{bottom:calc(740px + 2%);}
+      }
+      @media (min-width:1701px){
+      .fixed-background.background>img:nth-child(4){bottom:calc(240px - 7vw);}
+      .fixed-background.background>img:nth-child(3){bottom:calc(620px + 2.6vw);}
+      .fixed-background.background>img:first-child,.fixed-background.background>img:nth-child(2){bottom:calc(620px + 7.6vw);}
+      }
+      .fixed-background.background .filler{position:absolute;z-index:2;left:0;bottom:-45vh;width:100%;height:45vh;background:#000;}
+      /*! CSS Used from: https://www.desiringgod.org/dist/application_new.703a7ef6.css ; media=all */
+      @media all{
+      a,div,footer,form,h1,h2,h3,header,iframe,label,li,nav,p,span,ul{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;box-sizing:border-box;}
+      footer,header,nav{display:block;}
+      ul{list-style:none;}
+      a{text-decoration:none;color:inherit;}
+      .sans-light{font-weight:200;}
+      .sans-light,.sans-normal{font-family:Balto Web,Helvetica,Arial,sans-serif;}
+      .sans-normal{font-weight:400;}
+      .sans-bold{font-family:Balto Web,Helvetica,Arial,sans-serif;font-weight:700;}
+      .fs-4{font-size:48px;}
+      .fs-5{font-size:32px;}
+      .fs-9{font-size:19px;}
+      .fs-10{font-size:16px;}
+      .fs-11{font-size:15px;}
+      .fs-12{font-size:14px;}
+      .fs-13{font-size:13px;}
+      .uppercase{text-transform:uppercase;}
+      .track-out{letter-spacing:.1em;}
+      .lh-tight{line-height:1;}
+      .lh-title{line-height:1.25;}
+      .container{width:90%;margin:0 auto;max-width:1400px;}
+      .grid{display:flex;flex-direction:row;flex-wrap:wrap;}
+      [class*=col-]{box-sizing:border-box;display:flex;flex-direction:column;padding:1rem;flex-basis:1;}
+      .fb-40{flex-basis:40%;max-width:40%;}
+      .fb-60{flex-basis:60%;max-width:60%;}
+      .w-100{width:100%;}
+      .fb-100{flex-basis:100%;max-width:100%;}
+      .col-33{width:33.3333%;}
+      .col-66{width:66.6666%;}
+      @media screen and (max-width:1024px){
+      .col-45-m{width:45%;}
+      .col-55-m{width:55%;}
+      }
+      @media screen and (max-width:640px){
+      .fb-100-s{flex-basis:100%;max-width:100%;}
+      }
+      .row{box-sizing:border-box;display:-webkit-box;display:flex;flex:0 1 auto;-webkit-box-flex:0;-webkit-box-orient:horizontal;-webkit-box-direction:normal;flex-direction:row;flex-wrap:wrap;}
+      .col{flex-grow:1;position:relative;}
+      @media screen and (max-width:640px){
+      [class*=col-]{width:100%;}
+      }
+      .page-background{
+        position:relative;
+        z-index:20;
+        padding-top:30px;
+        background:rgba(245,245,245,0);
+        transition:transform .7s cubic-bezier(.19,1,.22,1);
+        transform:translateX(0);
+      }
+      .mb-1{margin-bottom:.5rem;}
+      .mt-2{margin-top:1rem;}
+      .mb-2{margin-bottom:1rem;}
+      .p-3{padding:2rem;}
+      .mt-3{margin-top:2rem;}
+      .mb-3{margin-bottom:2rem;}
+      .pv-4{padding-top:3rem;padding-bottom:3rem;}
+      .pr-5{padding-right:4rem;}
+      .pl-5{padding-left:4rem;}
+      .pv-6{padding-top:5rem;padding-bottom:5rem;}
+      @media screen and (max-width:640px){
+      .pb-0-s{padding-bottom:0;}
+      .pb-2-s{padding-bottom:1rem;}
+      .pt-3-s{padding-top:2rem;}
+      .pv-4-s{padding-top:3rem;padding-bottom:3rem;}
+      .pt-5-s{padding-top:4rem;}
+      }
+      .block{display:block;}
+      .relative{position:relative;}
+      @media screen and (max-width:640px){
+      .center-s{text-align:center;}
+      }
+      .bt{border-top:1px solid #dcdcdc;}
+      .bl{border-left:1px solid #dcdcdc;}
+      @media screen and (max-width:640px){
+      .bt-s{border-top:1px solid #dcdcdc;}
+      }
+      .white{color:#fff;}
+      .bg-gray-dark{background-color:#333;}
+      .bd-gray{border-color:#555;}
+      .gpu{backface-visibility:hidden;perspective:1000;}
+      .responsive-video{position:relative;overflow:hidden;padding-bottom:56.25%;height:0;}
+      .responsive-video iframe{position:absolute;top:0;left:0;width:100%;height:100%;}
+      .share-popup{position:absolute;visibility:hidden;display:none;margin-top:-63px;z-index:30;opacity:0;transition:none;user-select:none;}
+      .share-popup .share__options{position:static;display:block;margin:0;width:auto;opacity:1;transition:none;background-color:#333;height:50px;border:0;padding:14px 5px 10px;}
+      .share-popup .share__options:after{border-width:6px;margin-left:-6px;margin-top:-2px;top:100%;left:50%;border-top-color:#333;}
+      .share-popup .share__option{margin:0 3px;}
+      .share-popup .share__option svg{width:20px;height:20px;}
+      .share-popup .share__option svg path{fill:#ccc;}
+      .share-popup .share__option svg:hover path{fill:#fff;}
+      .svg{display:inline-block;vertical-align:top;}
+      .svg-facebook{vertical-align:text-top;height:16px;width:16px;}
+      .svg-twitter{vertical-align:text-top;margin-left:1px;height:15px;width:15px;}
+      @media print{
+      .page-background{margin-top:0!important;margin-bottom:0!important;padding-top:0!important;padding-bottom:0!important;}
+      .page-background{padding-top:30px!important;}
+      }
+      }
+      /*! CSS Used from: https://www.desiringgod.org/dist/donate.983f599a.css ; media=all */
+      @media all{
+      .Donate .container{max-width:1080px;}
+      .Donate .page-background{background-color:#fff;padding-top:63px;}
+      .Donate .js-reach-number{font-family:Menlo,Consolas,Monaco,monospace;font-size:36px;margin-top:1.25rem;}
+      .Donate .js-reach-number:after{content:"People for one month";font-family:Balto Web,Helvetica,Arial,sans-serif;font-size:12px;font-weight:400;display:inline-block;width:58px;margin-left:10px;line-height:1.3;}
+      .Donate .-submit-btn{box-sizing:border-box;outline:0;border:0;background:none;cursor:default;line-height:normal;color:inherit;font:inherit;text-align:inherit;overflow:visible;margin:0;border-radius:0;appearance:none;text-align:center;user-select:none;-webkit-touch-callout:none;background-color:#c6000e;color:#fff;padding:0 12px;line-height:48px;font-size:16px;height:48px;cursor:pointer;transform:translateZ(0);}
+      .Donate .-submit-btn:disabled{animation:pulsate-opacity 1s ease-in-out infinite;}
+      .Donate .-footer a{text-decoration:underline;}
+      .Donate .-audit-badges{margin-left:-3px;}
+      .Donate .-audit-badges svg{width:57px;height:57px;}
+      .Donate .-audit-badges a{display:inline-block;margin-right:10px;text-decoration:none;}
+      .Donate .-audit-links a{margin-right:5px;}
+      .-amount-input{box-sizing:border-box;outline:0;border:0;background:none;cursor:default;line-height:normal;color:inherit;font:inherit;text-align:inherit;overflow:visible;padding:0;margin:0;border-radius:0;appearance:none;}
+      .-amount-btn,.-amount-input{font-size:16px;line-height:42px;height:42px;text-align:center;position:relative;transition:background-color .5s cubic-bezier(.19,1,.22,1),border-color .5s cubic-bezier(.19,1,.22,1);}
+      .-amount-btn{border:1px solid hsla(0,0%,100%,.3);}
+      .-amount-btn:first-of-type,.-amount-btn:nth-of-type(2){flex-basis:23%;max-width:23%;}
+      .-amount-btn:nth-of-type(2){border-left-color:hsla(0,0%,100%,0);border-right-color:hsla(0,0%,100%,0);}
+      .-amount-btn:nth-of-type(3){flex-basis:25%;max-width:25%;}
+      .-amount-btn:before{content:"$";vertical-align:super;font-size:10px;line-height:1;margin-right:1px;}
+      .-amount-btn:hover{background-color:hsla(0,0%,100%,.03);}
+      .-amount-input-holder{position:relative;flex-basis:29%;max-width:29%;}
+      .-amount-input-holder:before{position:absolute;content:"$";vertical-align:super;font-size:10px;z-index:20;top:12px;left:12px;line-height:1;}
+      .-amount-input{color:#fff;padding:0 12px 0 18px;text-align:left;font-size:16px;line-height:1;border:1px solid hsla(0,0%,100%,0);cursor:text;background-color:hsla(0,0%,100%,.1);}
+      .-amount-input::-webkit-input-placeholder{color:#fff;}
+      .-amount-input::-moz-placeholder{color:#fff;}
+      .-amount-input:-ms-input-placeholder{color:#fff;}
+      .-amount-input:-moz-placeholder{color:#fff;}
+      .-fieldset{background-color:rgba(0,0,0,.03);position:relative;display:flex;flex-wrap:wrap;border:1px solid #dcdcdc;padding:0;}
+      .-label{flex:1;display:flex;line-height:66px;font-size:15px;color:#555;line-height:24px;font-size:14px;padding:8px 12px;}
+      .-input-text,.-label,.-select{box-sizing:border-box;height:66px;}
+      .-input-text,.-select{background:transparent;position:absolute;top:0;left:0;right:0;z-index:0;font-family:Menlo,Consolas,Monaco,monospace;font-size:15px;padding:20px 12px 0;margin:0;outline:0;appearance:none;-webkit-appearance:none;-moz-appearance:none;border:0;border-radius:0;width:100%;color:#333;text-indent:0;}
+      .-select+label:after{font-family:dg-icons;content:"&#59654;";font-size:16px;line-height:46px;position:absolute;text-align:center;top:20px;right:12px;z-index:0;}
+      .-recurring label{padding:2rem 2rem 2rem calc(2rem + 34px);line-height:1.2;cursor:pointer;}
+      .-checkbox{display:block;outline:0;-webkit-appearance:button;width:20px;height:20px;cursor:pointer;position:relative;box-sizing:border-box;position:absolute;top:1.875rem;left:2rem;margin:0;border:1px solid #fff;transition:opacity .7s cubic-bezier(.19,1,.22,1);opacity:.3;}
+      .-checkbox:checked,.-checkbox:checked+label:after{opacity:1;}
+      .-checkbox+label:after{box-sizing:border-box;font-family:dg-icons;content:"&#59666;";text-align:center;line-height:20px;font-size:18px;position:absolute;top:1.875rem;left:2rem;width:20px;height:20px;transition:opacity .7s cubic-bezier(.19,1,.22,1);color:#fff;opacity:0;}
+      .-payment .-input-text{font-family:Menlo,Consolas,Monaco,monospace;}
+      .-input-text+label,.-input-text:focus+label,.-input-text:valid+label{color:#555;}
+      .-address,.-address-2,.-city,.-country,.-credit-card,.-cvc,.-email,.-expiration,.-name,.-state,.-zip{position:relative;}
+      .-address,.-address-2,.-credit-card,.-email,.-name{flex-basis:100%;max-width:100%;}
+      .-city,.-country,.-cvc,.-expiration,.-state,.-zip{flex-basis:50%;max-width:50%;}
+      .-address,.-address-2,.-city,.-credit-card,.-name,.-state{border-bottom:1px solid #dcdcdc;}
+      .-country,.-cvc,.-state{border-left:1px solid #dcdcdc;}
+      .-website{display:none!important;}
+      @media screen and (max-width:640px){
+      .Donate .-header{border:0;padding-right:1rem;}
+      .Donate .-main{border:0;padding-left:1rem;}
+      .Donate .-dg-brand{order:3;}
+      .Donate .-other-ways{padding-left:1rem;}
+      .Donate .-dg-brand,.Donate .-stewardship{padding-top:2rem;padding-bottom:2rem;border-top:1px solid #dcdcdc;}
+      }
+      }
+      /*! CSS Used from: Embedded ; media=all */
+      @media all{
+      .st0{fill:#325A8B;}
+      .st1{fill:#E4E4EC;}
+      .st2{fill:#231F20;}
+      .st3{fill:#8890B2;}
+      }
+      /*! CSS Used from: Embedded ; media=all */
+      @media all{
+      .gsp_st0{fill:#9FB1BF;}
+      .gsp_st1{fill:none;stroke:#D8A669;stroke-width:1.1676;stroke-miterlimit:10;}
+      .gsp_st2{fill:#596872;}
+      }
+      /*! CSS Used keyframes */
+      @keyframes pulsate-opacity{0%{opacity:1;}50%{opacity:.5;}to{opacity:1;}}
+  .page-background.gpu
+    .container
+      .grid
+        header.-header.col-33.col-45-m.pv-6.pt-5-s.pb-0-s.pr-5
+          h1.sans-bold.fs-4.center-s.mb-3.lh-tight Fuel More Joy in Jesus Christ
+          .block
+            .responsive-video
+              iframe(src='https://player.vimeo.com/video/113337270?api=1&player_id=vvvvimeoVideo-0' width='640' height='360' frameborder='0' webkitallowfullscreen='' mozallowfullscreen='' allowfullscreen='')
+          p.sans-normal.fs-10.mt-3
+            | Your prayers and gifts fuel this ministry and impact lives each day. Every $1 you give provides a one-month supply of God-centered resources to 8 people. So would you join us as we bring as many people as we can into the fullest enjoyment of the greatest treasure in all the world?
+        main.-main.col-66.col-55-m.pl-5.pv-6.pv-4-s.bl(role='main' data-breakpoints='w < 520')
+          form#js-donation-form.js-donation-form(data-client-token='eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiIzMzgyMWRmNzBiMTBkNzMyMGY5MzQ4ZTAyYWJkOWNmZGJmMDk0ZjZhMmE1MzdiOTBmOTI3NDYzNzYzZTAwZWVlfGNyZWF0ZWRfYXQ9MjAxOS0wOC0xNFQwMTozMDo1MC42NTg1NjA3NjArMDAwMFx1MDAyNm1lcmNoYW50X2lkPXN4Y3RwNG12anM5eHMybjZcdTAwMjZwdWJsaWNfa2V5PWZweHJ2NTJzZzNweGJramIiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzL3N4Y3RwNG12anM5eHMybjYvY2xpZW50X2FwaS92MS9jb25maWd1cmF0aW9uIiwiZ3JhcGhRTCI6eyJ1cmwiOiJodHRwczovL3BheW1lbnRzLmJyYWludHJlZS1hcGkuY29tL2dyYXBocWwiLCJkYXRlIjoiMjAxOC0wNS0wOCJ9LCJjaGFsbGVuZ2VzIjpbImN2diIsInBvc3RhbF9jb2RlIl0sImVudmlyb25tZW50IjoicHJvZHVjdGlvbiIsImNsaWVudEFwaVVybCI6Imh0dHBzOi8vYXBpLmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvc3hjdHA0bXZqczl4czJuNi9jbGllbnRfYXBpIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9hc3NldHMuYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhdXRoVXJsIjoiaHR0cHM6Ly9hdXRoLnZlbm1vLmNvbSIsImFuYWx5dGljcyI6eyJ1cmwiOiJodHRwczovL2NsaWVudC1hbmFseXRpY3MuYnJhaW50cmVlZ2F0ZXdheS5jb20vc3hjdHA0bXZqczl4czJuNiJ9LCJ0aHJlZURTZWN1cmVFbmFibGVkIjpmYWxzZSwicGF5cGFsRW5hYmxlZCI6ZmFsc2UsIm1lcmNoYW50SWQiOiJzeGN0cDRtdmpzOXhzMm42IiwidmVubW8iOiJvZmYifQ==' data-merchant='sxctp4mvjs9xs2n6' data-segment='donate-submit' data-ewp='true' data-btt='12345' action='/donate' accept-charset='UTF-8' method='post')
+            input(name='utf8' type='hidden' value='✓')
+            input(type='hidden' name='authenticity_token' value='49JDpwtX/w4NUEnrmqDJixOqXxzcYsU+OBr+yF+VksM=')
+            input#donation_order_nonce.js-nonce(type='hidden' name='donation_order[nonce]')
+            input#donation_order_device_data.js-device-data(type='hidden' name='donation_order[device_data]')
+            input#donation_order_amount.js-amount(type='hidden' name='donation_order[amount]')
+            .row.mb-3.bg-gray-dark.white
+              .-your-donation.col.fb-60.fb-100-s.p-3
+                h2.sans-normal.uppercase.track-out.fs-13.mb-2 Your Donation
+                .row.js-amount-holder
+                  a.col.-amount-btn(href='#') 30
+                  a.col.-amount-btn(href='#') 60
+                  a.col.-amount-btn(href='#') 120
+                  .col.-amount-input-holder
+                    input#donation_amount_other.js-amount-input.block.w-100.-amount-input(type='tel' placeholder='Other' spellcheck='off')
+              .-your-reach.col.fb-40.fb-100-s.p-3.bl.bt-s.bd-gray
+                h2.sans-normal.uppercase.track-out.fs-13.mb-1 Your Reach
+                h3.sans-light.fs-5.lh-tight.js-reach-number 0
+              .col.fb-100.-recurring.bt.bd-gray
+                input(name='donation_order[recurring]' type='hidden' value='0')
+                input#donation_order_recurring.-checkbox.js-checkbox(type='checkbox' value='1' name='donation_order[recurring]')
+                label.fs-11.w-100.relative.block(for='donation_order_recurring') Extend your reach every month by making this a monthly recurring donation?
+            .-fieldset.mb-3
+              .col.-name
+                input#donation_order_name.-input-text.js-name(autocapitalize='on' autocomplete='name' autocorrect='off' required='required' spellcheck='off' x-autocompletetype='name-full' data-placeholder='Name' data-validation='notempty' type='text' name='donation_order[name]')
+                label.-label(for='donation_order_name') Name
+              .col.-email
+                input#donation_order_email.-input-text(autocapitalize='off' autocomplete='email' autocorrect='off' required='required' spellcheck='off' x-autocompletetype='email' data-placeholder='Email' data-validation='email' type='text' name='donation_order[email]')
+                label.-label(data-text='Email' for='donation_order_email') Email
+              input.-input-text.-website.js-website(type='text' name='donation_order[website]' value='' tabindex='-1' autocomplete='off')
+            .-fieldset.mb-3
+              .col.-address
+                input#donation_order_street_address.-input-text(autocomplete='address-line1' x-autocompletetype='address-line1' required='required' data-placeholder='Address line 1' data-validation='notempty' type='text' name='donation_order[street_address]')
+                label.-label(data-text='Address line 1' for='donation_order_street_address') Address line 1
+              .col.-address-2
+                input#donation_order_extended_address.-input-text(autocomplete='address-line2' x-autocompletetype='address-line2' data-placeholder='Address line 2 (optional)' data-validation='optional' type='text' name='donation_order[extended_address]')
+                label.-label(data-text='Address line 2 (optional)' for='donation_order_extended_address') Address line 2 (optional)
+              .col.-city
+                input#donation_order_locality.-input-text.js-city(autocomplete='locality' x-autocompletetype='locality' required='required' data-placeholder='City' data-validation='notempty' type='text' name='donation_order[locality]')
+                label.-label(data-text='City' for='donation_order_locality') City
+              .col.-state
+                input#donation_order_region.-input-text.js-state(required='required' data-placeholder='State or province' data-validation='notempty' type='text' name='donation_order[region]')
+                label.-label(data-text='State or province' for='donation_order_region') State or province
+              .col.-zip
+                input#donation_order_postal_code.-input-text(autocomplete='postal-code' x-autocompletetype='postal-code' required='required' data-placeholder='Postal code' data-validation='notempty' type='text' name='donation_order[postal_code]')
+                label.-label(data-text='Postal code' for='donation_order_postal_code') Postal code
+              .col.-country
+                select#donation_order_country_name.-select.js-country(autocomplete='country-name' x-autocompletetype='country' required='required' data-placeholder='Country' data-validation='notempty' name='donation_order[country_name]')
+                  option(value='')
+                  option(value='United States') United States
+                  option(value='Canada') Canada
+                  option(value='United Kingdom') United Kingdom
+                  option(value='Australia') Australia
+                  option(value='Singapore') Singapore
+                  option(value='' disabled='disabled') -------------
+                  option(value='Afghanistan') Afghanistan
+                  option(value='�land Islands') &#xFFFD;land Islands
+                  option(value='Albania') Albania
+                  option(value='Algeria') Algeria
+                  option(value='American Samoa') American Samoa
+                  option(value='Andorra') Andorra
+                  option(value='Angola') Angola
+                  option(value='Anguilla') Anguilla
+                  option(value='Antarctica') Antarctica
+                  option(value='Antigua and Barbuda') Antigua and Barbuda
+                  option(value='Argentina') Argentina
+                  option(value='Armenia') Armenia
+                  option(value='Aruba') Aruba
+                  option(value='Austria') Austria
+                  option(value='Azerbaijan') Azerbaijan
+                  option(value='Bahamas') Bahamas
+                  option(value='Bahrain') Bahrain
+                  option(value='Bangladesh') Bangladesh
+                  option(value='Barbados') Barbados
+                  option(value='Belarus') Belarus
+                  option(value='Belgium') Belgium
+                  option(value='Belize') Belize
+                  option(value='Benin') Benin
+                  option(value='Bermuda') Bermuda
+                  option(value='Bhutan') Bhutan
+                  option(value='Bolivia') Bolivia
+                  option(value='Bonaire, Sint Eustatius and Saba') Bonaire, Sint Eustatius and Saba
+                  option(value='Bosnia and Herzegovina') Bosnia and Herzegovina
+                  option(value='Botswana') Botswana
+                  option(value='Bouvet Island') Bouvet Island
+                  option(value='Brazil') Brazil
+                  option(value='British Indian Ocean Territory') British Indian Ocean Territory
+                  option(value='Brunei Darussalam') Brunei Darussalam
+                  option(value='Bulgaria') Bulgaria
+                  option(value='Burkina Faso') Burkina Faso
+                  option(value='Burundi') Burundi
+                  option(value='Cambodia') Cambodia
+                  option(value='Cameroon') Cameroon
+                  option(value='Cape Verde') Cape Verde
+                  option(value='Cayman Islands') Cayman Islands
+                  option(value='Central African Republic') Central African Republic
+                  option(value='Chad') Chad
+                  option(value='Chile') Chile
+                  option(value='China') China
+                  option(value='Christmas Island') Christmas Island
+                  option(value='Cocos (Keeling) Islands') Cocos (Keeling) Islands
+                  option(value='Colombia') Colombia
+                  option(value='Comoros') Comoros
+                  option(value='Congo') Congo
+                  option(value='Congo, The Democratic Republic of the') Congo, The Democratic Republic of the
+                  option(value='Cook Islands') Cook Islands
+                  option(value='Costa Rica') Costa Rica
+                  option(value="C�te d'Ivoire") C&#xFFFD;te d&apos;Ivoire
+                  option(value='Croatia') Croatia
+                  option(value='Cuba') Cuba
+                  option(value='Cura�ao') Cura&#xFFFD;ao
+                  option(value='Cyprus') Cyprus
+                  option(value='Czech Republic') Czech Republic
+                  option(value='Denmark') Denmark
+                  option(value='Djibouti') Djibouti
+                  option(value='Dominica') Dominica
+                  option(value='Dominican Republic') Dominican Republic
+                  option(value='Ecuador') Ecuador
+                  option(value='Egypt') Egypt
+                  option(value='El Salvador') El Salvador
+                  option(value='Equatorial Guinea') Equatorial Guinea
+                  option(value='Eritrea') Eritrea
+                  option(value='Estonia') Estonia
+                  option(value='Eswatini') Eswatini
+                  option(value='Ethiopia') Ethiopia
+                  option(value='Falkland Islands (Malvinas)') Falkland Islands (Malvinas)
+                  option(value='Faroe Islands') Faroe Islands
+                  option(value='Fiji') Fiji
+                  option(value='Finland') Finland
+                  option(value='France') France
+                  option(value='French Guiana') French Guiana
+                  option(value='French Polynesia') French Polynesia
+                  option(value='French Southern Territories') French Southern Territories
+                  option(value='Gabon') Gabon
+                  option(value='Gambia') Gambia
+                  option(value='Georgia') Georgia
+                  option(value='Germany') Germany
+                  option(value='Ghana') Ghana
+                  option(value='Gibraltar') Gibraltar
+                  option(value='Greece') Greece
+                  option(value='Greenland') Greenland
+                  option(value='Grenada') Grenada
+                  option(value='Guadeloupe') Guadeloupe
+                  option(value='Guam') Guam
+                  option(value='Guatemala') Guatemala
+                  option(value='Guernsey') Guernsey
+                  option(value='Guinea') Guinea
+                  option(value='Guinea-Bissau') Guinea-Bissau
+                  option(value='Guyana') Guyana
+                  option(value='Haiti') Haiti
+                  option(value='Heard Island and McDonald Islands') Heard Island and McDonald Islands
+                  option(value='Holy See (Vatican City State)') Holy See (Vatican City State)
+                  option(value='Honduras') Honduras
+                  option(value='Hong Kong') Hong Kong
+                  option(value='Hungary') Hungary
+                  option(value='Iceland') Iceland
+                  option(value='India') India
+                  option(value='Indonesia') Indonesia
+                  option(value='Iran, Islamic Republic of') Iran, Islamic Republic of
+                  option(value='Iraq') Iraq
+                  option(value='Ireland') Ireland
+                  option(value='Isle of Man') Isle of Man
+                  option(value='Israel') Israel
+                  option(value='Italy') Italy
+                  option(value='Jamaica') Jamaica
+                  option(value='Japan') Japan
+                  option(value='Jersey') Jersey
+                  option(value='Jordan') Jordan
+                  option(value='Kazakhstan') Kazakhstan
+                  option(value='Kenya') Kenya
+                  option(value='Kiribati') Kiribati
+                  option(value="Korea, Democratic People's Republic of") Korea, Democratic People&apos;s Republic of
+                  option(value='Korea, Republic of') Korea, Republic of
+                  option(value='Kuwait') Kuwait
+                  option(value='Kyrgyzstan') Kyrgyzstan
+                  option(value="Lao People's Democratic Republic") Lao People&apos;s Democratic Republic
+                  option(value='Latvia') Latvia
+                  option(value='Lebanon') Lebanon
+                  option(value='Lesotho') Lesotho
+                  option(value='Liberia') Liberia
+                  option(value='Libya') Libya
+                  option(value='Liechtenstein') Liechtenstein
+                  option(value='Lithuania') Lithuania
+                  option(value='Luxembourg') Luxembourg
+                  option(value='Macao') Macao
+                  option(value='Republic of North Macedonia') Republic of North Macedonia
+                  option(value='Madagascar') Madagascar
+                  option(value='Malawi') Malawi
+                  option(value='Malaysia') Malaysia
+                  option(value='Maldives') Maldives
+                  option(value='Mali') Mali
+                  option(value='Malta') Malta
+                  option(value='Marshall Islands') Marshall Islands
+                  option(value='Martinique') Martinique
+                  option(value='Mauritania') Mauritania
+                  option(value='Mauritius') Mauritius
+                  option(value='Mayotte') Mayotte
+                  option(value='Mexico') Mexico
+                  option(value='Micronesia, Federated States of') Micronesia, Federated States of
+                  option(value='Moldova, Republic of') Moldova, Republic of
+                  option(value='Monaco') Monaco
+                  option(value='Mongolia') Mongolia
+                  option(value='Montenegro') Montenegro
+                  option(value='Montserrat') Montserrat
+                  option(value='Morocco') Morocco
+                  option(value='Mozambique') Mozambique
+                  option(value='Myanmar') Myanmar
+                  option(value='Namibia') Namibia
+                  option(value='Nauru') Nauru
+                  option(value='Nepal') Nepal
+                  option(value='Netherlands') Netherlands
+                  option(value='New Caledonia') New Caledonia
+                  option(value='New Zealand') New Zealand
+                  option(value='Nicaragua') Nicaragua
+                  option(value='Niger') Niger
+                  option(value='Nigeria') Nigeria
+                  option(value='Niue') Niue
+                  option(value='Norfolk Island') Norfolk Island
+                  option(value='Northern Mariana Islands') Northern Mariana Islands
+                  option(value='Norway') Norway
+                  option(value='Oman') Oman
+                  option(value='Pakistan') Pakistan
+                  option(value='Palau') Palau
+                  option(value='Palestine, State of') Palestine, State of
+                  option(value='Panama') Panama
+                  option(value='Papua New Guinea') Papua New Guinea
+                  option(value='Paraguay') Paraguay
+                  option(value='Peru') Peru
+                  option(value='Philippines') Philippines
+                  option(value='Pitcairn') Pitcairn
+                  option(value='Poland') Poland
+                  option(value='Portugal') Portugal
+                  option(value='Puerto Rico') Puerto Rico
+                  option(value='Qatar') Qatar
+                  option(value='Reunion') Reunion
+                  option(value='Romania') Romania
+                  option(value='Russian Federation') Russian Federation
+                  option(value='Rwanda') Rwanda
+                  option(value='Saint Barth�lemy') Saint Barth&#xFFFD;lemy
+                  option(value='Saint Helena, Ascension and Tristan da Cunha') Saint Helena, Ascension and Tristan da Cunha
+                  option(value='Saint Kitts and Nevis') Saint Kitts and Nevis
+                  option(value='Saint Lucia') Saint Lucia
+                  option(value='Saint Martin (French Part)') Saint Martin (French Part)
+                  option(value='Saint Pierre and Miquelon') Saint Pierre and Miquelon
+                  option(value='Saint Vincent and the Grenadines') Saint Vincent and the Grenadines
+                  option(value='Samoa') Samoa
+                  option(value='San Marino') San Marino
+                  option(value='Sao Tome and Principe') Sao Tome and Principe
+                  option(value='Saudi Arabia') Saudi Arabia
+                  option(value='Senegal') Senegal
+                  option(value='Serbia') Serbia
+                  option(value='Seychelles') Seychelles
+                  option(value='Sierra Leone') Sierra Leone
+                  option(value='Sint Maarten (Dutch Part)') Sint Maarten (Dutch Part)
+                  option(value='Slovakia') Slovakia
+                  option(value='Slovenia') Slovenia
+                  option(value='Solomon Islands') Solomon Islands
+                  option(value='Somalia') Somalia
+                  option(value='South Africa') South Africa
+                  option(value='South Georgia and the South Sandwich Islands') South Georgia and the South Sandwich Islands
+                  option(value='South Sudan') South Sudan
+                  option(value='Spain') Spain
+                  option(value='Sri Lanka') Sri Lanka
+                  option(value='Sudan') Sudan
+                  option(value='Suriname') Suriname
+                  option(value='Svalbard and Jan Mayen') Svalbard and Jan Mayen
+                  option(value='Sweden') Sweden
+                  option(value='Switzerland') Switzerland
+                  option(value='Syrian Arab Republic') Syrian Arab Republic
+                  option(value='Taiwan') Taiwan
+                  option(value='Tajikistan') Tajikistan
+                  option(value='Tanzania, United Republic of') Tanzania, United Republic of
+                  option(value='Thailand') Thailand
+                  option(value='Timor-Leste') Timor-Leste
+                  option(value='Togo') Togo
+                  option(value='Tokelau') Tokelau
+                  option(value='Tonga') Tonga
+                  option(value='Trinidad and Tobago') Trinidad and Tobago
+                  option(value='Tunisia') Tunisia
+                  option(value='Turkey') Turkey
+                  option(value='Turkmenistan') Turkmenistan
+                  option(value='Turks and Caicos Islands') Turks and Caicos Islands
+                  option(value='Tuvalu') Tuvalu
+                  option(value='Uganda') Uganda
+                  option(value='Ukraine') Ukraine
+                  option(value='United Arab Emirates') United Arab Emirates
+                  option(value='United States Minor Outlying Islands') United States Minor Outlying Islands
+                  option(value='Uruguay') Uruguay
+                  option(value='Uzbekistan') Uzbekistan
+                  option(value='Vanuatu') Vanuatu
+                  option(value='Venezuela') Venezuela
+                  option(value='Viet Nam') Viet Nam
+                  option(value='Virgin Islands, British') Virgin Islands, British
+                  option(value='Virgin Islands, U.S.') Virgin Islands, U.S.
+                  option(value='Wallis and Futuna') Wallis and Futuna
+                  option(value='Western Sahara') Western Sahara
+                  option(value='Yemen') Yemen
+                  option(value='Zambia') Zambia
+                  option(value='Zimbabwe') Zimbabwe
+                label.-label(data-text='Country' for='donation_order_country_name') Country
+            .-fieldset.-payment.mb-3
+              .col.-credit-card
+                label.-label Credit card
+                #card-number.-input-text
+                  iframe#braintree-hosted-field-number(src='https://assets.braintreegateway.com/web/3.45.0/html/hosted-fields-frame.min.html#a17c247b-b6ac-4024-9157-031d6a123d0d' frameborder='0' allowtransparency='true' scrolling='no' type='number' name='braintree-hosted-field-number' title='Secure Credit Card Frame - Credit Card Number' style='border: none; width: 100%; height: 100%; float: left;')
+                  div(style='clear: both;')
+              .col.-expiration
+                label.-label Expiration
+                #expiration-date.-input-text
+                  iframe#braintree-hosted-field-expirationDate(src='https://assets.braintreegateway.com/web/3.45.0/html/hosted-fields-frame.min.html#a17c247b-b6ac-4024-9157-031d6a123d0d' frameborder='0' allowtransparency='true' scrolling='no' type='expirationDate' name='braintree-hosted-field-expirationDate' title='Secure Credit Card Frame - Expiration Date' style='border: none; width: 100%; height: 100%; float: left;')
+                  div(style='clear: both;')
+              .col.-cvc
+                label.-label Security code
+                #cvv.-input-text
+                  iframe#braintree-hosted-field-cvv(src='https://assets.braintreegateway.com/web/3.45.0/html/hosted-fields-frame.min.html#a17c247b-b6ac-4024-9157-031d6a123d0d' frameborder='0' allowtransparency='true' scrolling='no' type='cvv' name='braintree-hosted-field-cvv' title='Secure Credit Card Frame - CVV' style='border: none; width: 100%; height: 100%; float: left;')
+                  div(style='clear: both;')
+            button.-submit-btn.js-donate-submit-btn.fs-11.col.fb-100.block.w-100(type='submit') Submit Your Donation
+    footer.-footer.pv-4.pt-3-s.pb-2-s.bt
+      .container
+        .grid
+          .-dg-brand.col-33
+            .svg
+              svg(width='28px' height='28px' viewbox='0 0 28 28' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:sketch='http://www.bohemiancoding.com/sketch/ns')
+                title Mark - Large
+                g(stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' sketch:type='MSPage')
+                  g(sketch:type='MSArtboardGroup' fill='#333333')
+                    path(d='M26.8662033,8.37880104 L22.18245,8.37880104 L26.9973936,3.56559513 C26.2397915,2.62119896 25.3831451,1.76020851 24.4396177,1 L19.6238054,5.81841877 L19.6238054,1.13466551 L16,1.13466551 L16,12 L26.8662033,12 L26.8662033,8.37880104 Z M26.8662033,19.621199 L22.18245,19.621199 L26.9973936,24.4344049 C26.2397915,25.378801 25.3831451,26.2397915 24.4396177,27 L19.6238054,22.1815812 L19.6238054,26.8653345 L16,26.8653345 L16,16 L26.8662033,16 L26.8662033,19.621199 Z M1.13119027,8.37880104 L5.81494353,8.37880104 L1,3.56559513 C1.75760209,2.62119896 2.61424848,1.76020851 3.55777585,1 L8.37358818,5.81841877 L8.37358818,1.13466551 L11.9973936,1.13466551 L11.9973936,12 L1.13119027,12 L1.13119027,8.37880104 Z M1.13119027,19.621199 L5.81494353,19.621199 L1,24.4344049 C1.75760209,25.378801 2.61424848,26.2397915 3.55777585,27 L8.37358818,22.1815812 L8.37358818,26.8653345 L11.9973936,26.8653345 L11.9973936,16 L1.13119027,16 L1.13119027,19.621199 Z' sketch:type='MSShapeGroup' fill='#c6000e')
+            p.sans-normal.fs-9.mt-2.lh-title
+              | God is most glorified in us
+              br
+              | when we are most satisfied in him
+          .-other-ways.col-33.pl-5
+            h2.sans-normal.uppercase.track-out.fs-13.mb-2 Other ways to donate
+            h3.sans-bold.fs-12 Check
+            p.sans-normal.fs-12.mb-2
+              | Post Office Box 2901
+              br
+              | Minneapolis, MN 55402
+            h3.sans-bold.fs-12 Phone
+            p.sans-normal.fs-12.mb-2 1.888.346.4700
+            h3.sans-bold.fs-12 Giving Questions?
+            p.sans-normal.fs-12
+              | Please 
+              a(href='mailto:partners@desiringgod.org') contact us
+              | .
+          .-stewardship.col-33
+            h2.sans-normal.uppercase.track-out.fs-13.mb-2 Financial Stewardship
+            .mb-2.-audit-badges
+              a(href='http://www.ecfa.org/MemberProfile.aspx?ID=19165' target='_blank' rel='noopener noreferrer')
+                .svg
+                  svg#ACCREDITED(version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewbox='0 0 115 115' style='enable-background:new 0 0 115 115;' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve')
+                    g
+                      path.st0(d='M13.97,70.59c5.62,18.73,22.99,32.38,43.55,32.38c20.56,0,37.92-13.65,43.55-32.38H13.97z')
+                      g
+                        path.st1(d='M31.72,85.54l0.02,0.11l0.27,1.81h1.78l-1.83-9.6h-2.23l-1.85,9.6h1.77l0.24-1.92H31.72z M30.11,83.91\
+                        l0.61-4.53h0.23l0.04,0.11l0.58,4.57h-1.48L30.11,83.91z')
+                        path.st1(d='M37.34,77.61c-1.79,0-2.59,0.93-2.59,3.01v4.05c0,2.05,0.78,3.01,2.47,3.01c2.32,0,2.8-1.49,2.8-2.75v-1.08\
+                        h-1.77v0.76c0,0.46,0,1.55-0.88,1.55c-0.57,0-0.86-0.34-0.86-1.01l0.01-4.88c0-0.32,0.03-0.71,0.27-0.95\
+                        c0.15-0.14,0.35-0.21,0.61-0.21c0.01,0,0.02,0,0.04,0c0.48,0,0.77,0.53,0.77,1.41v0.5h1.77v-0.7\
+                        C39.98,78.51,39.12,77.61,37.34,77.61z')
+                        path.st1(d='M43.88,77.61c-1.8,0-2.6,0.93-2.6,3.01v4.05c0,2.05,0.78,3.01,2.47,3.01c2.31,0,2.8-1.49,2.8-2.75v-1.08\
+                        h-1.77v0.76c0,0.42,0,1.55-0.88,1.55c-0.57,0-0.86-0.34-0.86-1.01l0.01-4.88c0-0.32,0.03-0.71,0.27-0.95\
+                        c0.15-0.14,0.35-0.21,0.61-0.21c0.49-0.02,0.81,0.5,0.81,1.41v0.5h1.77v-0.7C46.52,78.51,45.65,77.61,43.88,77.61z')
+                        path.st1(d='M51.25,84.72c0.03,0.35,0.03,0.77,0.03,1.21c0,0.34,0,0.71,0.01,1.09c0.01,0.16,0.04,0.31,0.08,0.44h1.95\
+                        c-0.07-0.1-0.12-0.21-0.15-0.3c-0.08-0.44-0.11-1.29-0.14-2.05c-0.02-0.42-0.03-0.82-0.05-1.1c-0.03-0.6-0.36-1.02-0.91-1.16\
+                        l-0.1-0.03v-0.18l0.07-0.06c0.72-0.38,1-0.98,1-2.13c0-1.82-0.71-2.59-2.36-2.59h-2.84v9.6h1.77v-3.89h0.8\
+                        C51.06,83.61,51.2,84.21,51.25,84.72z M49.62,79.37l0.13,0c0.56-0.02,1-0.01,1.26,0.25c0.21,0.2,0.3,0.53,0.3,1.08\
+                        c0,1.12-0.47,1.35-0.86,1.35h-0.83V79.37z')
+                        polygon.st1(points='58.75,83.35 58.75,81.64 56.21,81.64 56.21,79.56 58.83,79.56 58.83,77.85 54.44,77.85 54.44,87.45 \
+                        58.97,87.45 58.97,85.74 56.21,85.74 56.21,83.35 		')
+                        path.st1(d='M64.66,87.02c0.54-0.38,0.8-1.05,0.81-2.03v-4.38c0-0.87-0.1-1.82-0.85-2.32c-0.61-0.4-1.46-0.44-2.21-0.44\
+                        h-2.07v9.6h2.6C63.49,87.45,64.14,87.4,64.66,87.02z M62.22,85.94l-0.12-0.01v-6.57l0.13,0c1.06,0.03,1.46,0.15,1.47,1.38v3.22\
+                        c0.02,0.77,0.04,1.38-0.32,1.72c-0.19,0.18-0.47,0.27-0.88,0.27C62.42,85.95,62.32,85.95,62.22,85.94z')
+                        rect.st1(x='66.92' y='77.85' width='1.77' height='9.6')
+                        polygon.st1(points='74.92,77.85 69.91,77.85 69.91,79.56 71.51,79.56 71.51,87.45 73.28,87.45 73.28,79.56 74.92,79.56 \
+                        ')
+                        polygon.st1(points='80.39,83.35 80.39,81.64 77.85,81.64 77.85,79.56 80.47,79.56 80.47,77.85 76.08,77.85 76.08,87.45 \
+                        80.61,87.45 80.61,85.74 77.85,85.74 77.85,83.35 		')
+                        path.st1(d='M86.3,87.02c0.54-0.38,0.8-1.04,0.81-2.03v-4.38c0-0.87-0.1-1.82-0.85-2.32c-0.61-0.4-1.47-0.44-2.21-0.44\
+                        h-2.07v9.6h2.6C85.14,87.45,85.78,87.4,86.3,87.02z M83.86,85.94l-0.12-0.01v-6.57l0.13,0c1.05,0.03,1.45,0.15,1.47,1.38v3.22\
+                        c0.02,0.86,0.02,1.4-0.32,1.72c-0.19,0.18-0.47,0.27-0.89,0.27C84.05,85.95,83.96,85.95,83.86,85.94z')
+                      path.st0(d='M100.95,44.01c-5.75-18.53-23.02-31.98-43.43-31.98c-20.42,0-37.69,13.46-43.44,31.98H100.95z')
+                      path.st2(d='M0,57.5C0,89.2,25.79,115,57.5,115c31.71,0,57.5-25.8,57.5-57.5S89.21,0,57.5,0C25.79,0,0,25.79,0,57.5z\
+                      M0.79,57.5c0-31.27,25.44-56.71,56.71-56.71c31.27,0,56.71,25.44,56.71,56.71c0,31.27-25.44,56.71-56.71,56.71\
+                      C26.23,114.21,0.79,88.77,0.79,57.5z')
+                      path.st2(d='M1.87,57.5c0,30.67,24.95,55.63,55.63,55.63c30.67,0,55.62-24.95,55.62-55.63c0-30.67-24.95-55.62-55.62-55.62\
+                      C26.83,1.87,1.87,26.83,1.87,57.5z M4.4,57.5c0-29.28,23.82-53.1,53.1-53.1c29.28,0,53.1,23.82,53.1,53.1\
+                      c0,29.28-23.82,53.1-53.1,53.1C28.22,110.6,4.4,86.78,4.4,57.5z')
+                      path.st2(d='M13.65,67.04V47.55h20.24v3.55H20.5v4h9.28v3.51H20.5v4.77h13.39v3.65H13.65z')
+                      path.st2(d='M46.34,67.31c-2.74,0-5.48-0.7-7.43-1.98c-2.53-1.63-3.85-4.28-3.85-8c0-3.83,1.37-6.51,4.11-8.18\
+                      c2.01-1.22,4.8-1.91,7.75-1.91c5.59,0,9.17,2.26,10.33,5.6l-6.43,0.77c-0.74-1.95-2.06-2.85-4.11-2.85c-3.06,0-4.53,1.67-4.53,6.44\
+                      c0,4.84,1.37,6.58,4.9,6.58c2.21,0,3.85-1.04,5.06-3.17l5.54,1.08C55.57,65.64,51.88,67.31,46.34,67.31z')
+                      path.st2(d='M67.11,51.13v4.07h10.55v3.55H67.11v8.28h-6.85V47.55h20.3v3.58H67.11z')
+                      path.st2(d='M94.36,67.04l-1.63-4.42h-7.01l-1.63,4.42h-7.12l8.96-19.49h6.59l9.02,19.49H94.36z M89.25,53.98l-2.16,5.12\
+                      h4.27L89.25,53.98z')
+                      g
+                        polygon.st3(points='72.82,99.49 69.1,88.18 68.3,88.18 		')
+                        path.st3(d='M66.12,79.24v-0.1l-2.82-8.54h-2.03l2.61,6.53c0.4,0.08,0.8,0.21,1.15,0.44\
+                        C65.67,77.99,65.97,78.6,66.12,79.24z')
+                        polygon.st3(points='70.02,80.29 70.7,81.38 70.7,80.29 		')
+                        polygon.st3(points='69.46,77 69.57,77 66.13,70.59 64.02,70.59 67.99,77 69.11,77 		')
+                        polygon.st3(points='75.28,87.62 74.05,85.33 74.05,86.78 79.88,96.19 75.58,88.18 75.28,88.18 		')
+                        polygon.st3(points='57.54,102.2 57.97,88.18 57.1,88.18 		')
+                        polygon.st3(points='58.51,70.59 56.55,70.59 56.75,77 58.31,77 		')
+                        polygon.st3(points='60.82,70.59 58.84,70.59 60.18,77 61.75,77 		')
+                        path.st3(d='M62.51,88.18l2.78,13.33l-1.93-13.35c-0.15,0.01-0.3,0.02-0.45,0.02H62.51z')
+                        polygon.st3(points='79.04,70.59 96.23,79.82 81.33,70.59 		')
+                        polygon.st3(points='69.62,70.59 67.38,70.59 73.11,77 74.66,77 		')
+                        polygon.st3(points='86.26,91.72 83.47,88.18 83.1,88.18 		')
+                        polygon.st3(points='81.24,77 81.46,77 74.28,70.59 71.94,70.59 80.07,77 80.9,77 		')
+                        polygon.st3(points='87.88,82.74 87.88,83.15 91.77,86.2 		')
+                        polygon.st3(points='21.07,70.59 15.51,72.82 22.26,70.59 		')
+                        polygon.st3(points='33.79,70.59 18.8,79.88 36.09,70.59 		')
+                        polygon.st3(points='94.11,70.59 92.95,70.59 99.52,72.75 		')
+                        polygon.st3(points='23.28,86.26 28,82.54 28.12,81.93 		')
+                        polygon.st3(points='43.16,70.59 40.81,70.59 32.75,77.79 32.92,78.66 		')
+                        path.st3(d='M39.78,87.65l-4.6,8.58l5.77-9.32c-0.08-0.15-0.15-0.3-0.21-0.47C40.53,86.92,40.2,87.33,39.78,87.65z')
+                        path.st3(d='M46.56,77.85l0.49-0.79V77h0.04l3.97-6.41h-2.12l-3.46,6.46C45.91,77.23,46.27,77.5,46.56,77.85z')
+                        path.st3(d='M40.64,78.5l7.06-7.9h-2.24l-5.5,6.99C40.24,77.83,40.47,78.14,40.64,78.5z')
+                        polygon.st3(points='28.79,91.77 31.99,88.18 31.61,88.18 		')
+                        path.st3(d='M51.22,77.03l2.57-6.44h-2.03L49.65,77h1.02C50.87,77,51.05,77.01,51.22,77.03z')
+                        path.st3(d='M46.13,87.7l-3.89,11.81l4.8-12.03v-1.02C46.85,86.97,46.54,87.38,46.13,87.7z')
+                        polygon.st3(points='49.77,101.53 52.55,88.18 51.7,88.18 		')
+                        path.st3(d='M53.63,77h1.25l1.33-6.41h-1.98l-1.07,7.42c0.2,0.26,0.36,0.55,0.47,0.91V77z')
+                        polygon.st0(points='47.05,77.06 47.08,77 47.05,77 		')
+                      g
+                        polygon.st3(points='45.07,44.01 47.27,44.01 28.74,23.28 		')
+                        polygon.st3(points='48.65,44.01 50.74,44.01 35.12,18.8 		')
+                        polygon.st3(points='51.57,44.01 53.57,44.01 42.18,15.5 		')
+                        polygon.st3(points='40.28,44.01 42.57,44.01 23.23,28.79 		')
+                        polygon.st3(points='19.91,44.01 20.86,44.01 15.48,42.24 		')
+                        polygon.st3(points='33.03,44.01 35.24,44.01 18.77,35.18 		')
+                        polygon.st3(points='56.5,44.01 58.44,44.01 57.46,12.8 		')
+                        polygon.st3(points='54.12,44.01 56.07,44.01 49.7,13.48 		')
+                        polygon.st3(points='72.34,44.01 74.63,44.01 91.72,28.74 		')
+                        polygon.st3(points='58.87,44.01 60.82,44.01 65.23,13.47 		')
+                        polygon.st3(points='93.92,44.01 94.9,44.01 99.5,42.18 		')
+                        polygon.st3(points='67.65,44.01 69.85,44.01 86.21,23.23 		')
+                        polygon.st3(points='79.63,44.01 81.84,44.01 96.19,35.12 		')
+                        polygon.st3(points='61.36,44.01 63.37,44.01 72.75,15.48 		')
+                        polygon.st3(points='64.19,44.01 66.28,44.01 79.82,18.76 		')
+              a(href='https://www.guidestar.org/profile/01-0797083' target='_blank' rel='noopener noreferrer')
+                .svg
+                  svg#Layer_1(version='1.1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewbox='0 0 115 115' style='enable-background:new 0 0 115 115;' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve')
+                    g#Seal_of_transparency
+                      g
+                        path.gsp_st0(d='M45.08,14.57c0.98-0.26,1.4-0.89,1.17-1.76c-0.23-0.85-0.88-1.17-1.86-0.9l-0.73,0.2l0.72,2.65L45.08,14.57z')
+                        polygon.gsp_st0(points='54.52,10.84 53.64,14.17 55.76,14.06 		')
+                        path.gsp_st0(d='M20.47,32.03c1.47,1.16,2.91,1.26,3.74,0.19c0.84-1.08,0.4-2.43-1.08-3.59c-1.47-1.16-2.9-1.27-3.74-0.19\
+                        C18.56,29.51,19,30.88,20.47,32.03z')
+                        path.gsp_st0(d='M82.87,19.19c0.47-0.77,0.26-1.43-0.63-1.98l-0.5-0.31l-1.46,2.36l0.47,0.29\
+                        C81.63,20.1,82.36,20.01,82.87,19.19z')
+                        path.gsp_st0(d='M95.82,31.97c0.71-0.51,0.78-1.23,0.19-2.06l-0.44-0.61l-2.23,1.6l0.42,0.59\
+                        C94.36,32.32,95.09,32.5,95.82,31.97z')
+                        polygon.gsp_st0(points='14.31,47.88 10.87,48.21 13.86,49.95 		')
+                        path.gsp_st0(d='M71.37,5.02c-28.9-7.74-58.61,9.41-66.35,38.31C1.18,57.64,3.46,72.15,10.24,84.1\
+                        c1.26-0.29,2.52-0.56,3.78-0.83c0.55-0.11,1.1-0.23,1.65-0.34c1.04-0.21,2.07-0.41,3.1-0.61c0.64-0.12,1.27-0.23,1.91-0.35\
+                        c0.83-0.15,1.65-0.29,2.48-0.43c0.52-0.09,1.04-0.18,1.55-0.26c1.2-0.19,2.4-0.38,3.61-0.55c1.11-0.16,2.22-0.31,3.34-0.45\
+                        c0.06-0.01,0.13-0.02,0.19-0.02c7.95-1,15.87-1.53,23.8-1.6c1.24-0.01,2.48-0.01,3.72,0c6.53,0.07,13.07,0.45,19.62,1.16\
+                        c1.06,0.11,2.13,0.24,3.19,0.37c0,0.01-0.01,0.01-0.01,0.01c1.01,0.13,2.03,0.25,3.05,0.4c0,0,0-0.01,0.01-0.01\
+                        c0.49,0.07,0.97,0.13,1.46,0.2c0,0-0.01,0.01-0.01,0.01c4.38,0.64,8.75,1.42,13.12,2.33c0.15,0.03,0.29,0.06,0.44,0.09\
+                        c1.4,0.3,2.8,0.61,4.2,0.93c2.24-3.94,4.02-8.22,5.25-12.8C117.42,42.47,100.27,12.76,71.37,5.02z M97.58,29.08\
+                        c1.33,1.85,1.27,3.55-0.31,4.68c-1.06,0.77-2.17,0.75-3.21,0.12l-1.47,3.9L90.83,36l1.5-3.62l-0.34-0.48l-2.63,1.89L88,31.91\
+                        l7.66-5.51L97.58,29.08z M91.66,22.17l-3.74,9.02l-2.01-1.3l0.86-1.99l-2.41-2.19l-1.78,1.03l-1.7-1.54l8.88-4.75L91.66,22.17z\
+                        M83.28,15.78c1.96,1.21,2.62,2.82,1.54,4.57c-1.12,1.82-2.99,1.95-4.93,0.75l-0.51-0.32l-1.65,2.67l-1.99-1.23l4.96-8.04\
+                        L83.28,15.78z M72.51,18.99c0.63,0.24,1.16,0.15,1.37-0.38c0.19-0.5,0.03-0.83-1.02-1.78c-1.49-1.36-2.03-2.24-1.47-3.69\
+                        c0.66-1.69,2.34-2.08,4.02-1.42c1.15,0.45,1.8,0.95,2.42,1.62l-1.05,1.7c-0.61-0.77-1.34-1.35-2.01-1.61\
+                        c-0.66-0.26-1.09-0.1-1.25,0.3c-0.17,0.45-0.02,0.76,0.91,1.61c1.65,1.45,2.14,2.41,1.59,3.81c-0.75,1.91-2.48,2.2-4.22,1.52\
+                        c-1.18-0.46-2.08-1.11-2.81-1.86l1.05-1.73C70.75,17.93,71.63,18.65,72.51,18.99z M61.72,8.44l2.24,0.38l2.53,5.79l0.89-5.2\
+                        l2.14,0.37l-1.59,9.29l-1.99-0.34l-2.71-6.19l-0.95,5.56l-2.14-0.37L61.72,8.44z M44.16,10.15c2.2-0.6,3.77,0.06,4.28,1.93\
+                        c0.34,1.27-0.06,2.3-1.02,3.05l3.06,2.68l2.76-9.31l2.57-0.14l3.79,8.99l-2.34,0.52l-0.81-2.01l-3.25,0.18l-0.52,1.99l-2.29,0.13\
+                        l0.06-0.22l-2.17,0.98l-2.86-2.68l-0.57,0.15l0.84,3.13l-2.24,0.6l-2.46-9.11L44.16,10.15z M24.02,58.19\
+                        c0-0.23-0.02-0.45-0.02-0.68c0-8.6,3.24-16.44,8.57-22.37l17.08,21.27L24.02,58.19z M40.09,61.1l-14.32,7.19\
+                        c-0.92-2.7-1.49-5.56-1.69-8.53L40.09,61.1z M53.56,50.03L33.74,33.9c5.18-5.22,12.07-8.73,19.75-9.65L53.56,50.03z M38.37,11.96\
+                        l1.17,1.63l-2.49,1.23l3.3,6.68l-2.11,1.04l-3.31-6.68l-2.39,1.18l-0.88-1.78L38.37,11.96z M53.49,21.1l0,1.27\
+                        c-8.24,0.99-15.61,4.78-21.14,10.39l-0.98-0.8C37.14,26.07,44.86,22.1,53.49,21.1z M27.26,18.29l1.27,1.49L26,21.94l1.25,1.47\
+                        l1.87-1.6l1.52,1.27l-2.12,1.81l2.34,2.74l-1.77,1.51l-6.13-7.18L27.26,18.29z M17.96,27.3c1.69-2.15,4.33-2.32,6.62-0.52\
+                        c2.29,1.8,2.76,4.43,1.07,6.59c-1.67,2.13-4.32,2.31-6.61,0.51C16.74,32.08,16.27,29.45,17.96,27.3z M7.5,54.4l1.89,0.02\
+                        l-0.05,3.59l1.78,0.02l0.04-2.74l1.88-0.28L13,58.05l2,0.03l0.05-3.71l1.9,0.03l-0.08,6.01l-9.44-0.12L7.5,54.4z M17.37,67.95\
+                        l-2.03-0.02c0.36-1.04,0.53-2.17,0.38-3.1c-0.11-0.66-0.47-1.07-1.02-0.98c-0.53,0.09-0.73,0.4-1.01,1.79\
+                        c-0.41,1.98-0.89,2.89-2.43,3.14c-1.8,0.29-2.98-0.96-3.27-2.74C7.8,64.83,7.9,64,8.16,63.13l2,0.03C9.81,64.08,9.68,65,9.8,65.72\
+                        c0.11,0.7,0.47,0.99,0.9,0.92c0.47-0.08,0.66-0.37,0.92-1.6c0.41-2.16,0.98-3.07,2.47-3.31c2.02-0.33,3.16,1.01,3.46,2.86\
+                        C17.74,65.84,17.65,66.94,17.37,67.95z M18.37,47.45l-2.15,0.25l-0.69,3.18l1.78,1.03l-0.49,2.25l-8.55-5.32l0.54-2.51l9.68-1.27\
+                        L18.37,47.45z M19.16,44.62l-8.68-3.7l0.92-2.15l6.82,2.91l1.14-2.67l1.98,0.51L19.16,44.62z M20.84,57.78\
+                        c0-9.67,3.72-18.46,9.79-25.04l0.8,0.99c-5.79,6.34-9.33,14.78-9.33,24.05c0,0.18,0.01,0.36,0.01,0.54l-1.26,0.09\
+                        C20.85,58.2,20.84,57.99,20.84,57.78z M22.84,69.76c-1.11-3.24-1.79-6.69-1.95-10.27l1.27,0.11c0.17,3.34,0.8,6.56,1.82,9.59\
+                        L22.84,69.76z M27.95,79.55c-1.84-2.52-3.36-5.28-4.53-8.22l1.22-0.34c1.2,3.01,2.8,5.82,4.73,8.37\
+                        C28.89,79.42,28.42,79.48,27.95,79.55z M31.83,79.03c-2.15-2.56-3.92-5.46-5.23-8.59l22.61-6.36l-5.62,8.69l0.07,0.66l0.65,0.07\
+                        l10.7-6.77l0.56,10.71C47.67,77.5,39.76,78.03,31.83,79.03z M58.88,68.18l-0.49,0.38l-0.46-0.42l-0.75-5.75l-4.23,2.65l-0.6-0.07\
+                        l-0.04-0.61l2.39-3.46l-9.54,1.94l-0.56-0.34l0.29-0.58l4.99-1.89l-2.98-0.41l-0.41-0.47l0.4-0.47L54,57.57l-7.23-8.54l0.01-0.64\
+                        l0.64-0.06l8.92,6.62l-0.48-15.42c-0.01-0.25,0.18-0.46,0.43-0.49c0.25-0.02,0.47,0.15,0.52,0.4l2.56,15.55l2.98-4.04l0.58-0.15\
+                        l0.27,0.54l-0.7,2.97l4.58-3.16l0.64,0.08l-0.02,0.65l-5.35,5.66l6.59,2.45l0.31,0.52l-0.48,0.4h-5.42l8.04,7.26l0.06,0.65\
+                        l-0.38,0.19l-0.27-0.09l-10.53-7.37L58.88,68.18z M67.76,39.74l-0.62,0.2l-6.46,9.43l-4.3-25.34c0.38-0.01,0.75-0.03,1.13-0.03\
+                        c10.72,0,20.25,5.04,26.39,12.87l-0.34-0.05L67.42,47.51l0.69-7.22L67.76,39.74z M59.68,77.45l3.05-11.79L77.4,78.45\
+                        C71.49,77.86,65.58,77.52,59.68,77.45z M83.48,78.67l-13.46-15.4l12.86,0.01c0.26,0,0.48-0.19,0.53-0.44\
+                        c0.04-0.25-0.1-0.5-0.36-0.58l-16.14-5.56l17.33-19.07l0.01-0.31c4.25,5.62,6.78,12.61,6.78,20.2\
+                        C91.02,65.54,88.19,72.9,83.48,78.67z M87.5,79.71c-0.47-0.07-0.95-0.13-1.42-0.2c4.63-6.02,7.38-13.55,7.38-21.72\
+                        c0-19.7-15.97-35.68-35.67-35.68c-0.58,0-1.15,0.02-1.72,0.04l-0.21-1.26c0.64-0.03,1.29-0.05,1.94-0.05\
+                        c20.4,0,36.94,16.54,36.94,36.94C94.72,66,92.04,73.57,87.5,79.71z M92.52,38.49l8.55-4l2.49,5.33l-1.71,0.8l-1.52-3.25\
+                        l-1.61,0.75l1.16,2.48l-1.57,1.07l-1.29-2.75l-1.81,0.85l1.57,3.36l-1.72,0.81L92.52,38.49z M95.41,44.76l9.16-2.28l0.55,2.2\
+                        l-4.29,4.64l5.12-1.27l0.52,2.11l-9.16,2.28l-0.49-1.96l4.59-4.97l-5.48,1.36L95.41,44.76z M106.66,64.66l-4.2,1.36l3.42,2.6\
+                        l-0.42,2.45l-5.3-4.37l-3.42-0.59l0.4-2.3l3.4,0.59l6.22-2.24L106.66,64.66z M106.6,60.22l-2.12-0.26\
+                        c0.42-0.57,0.73-1.24,0.7-2.06c-0.05-1.48-1.2-2.39-3-2.33c-1.83,0.06-2.9,1.09-2.85,2.57c0.02,0.77,0.33,1.44,0.79,2.12\
+                        l-1.95,0.36c-0.46-0.74-0.78-1.61-0.81-2.71c-0.09-2.82,1.75-4.59,4.73-4.68c2.93-0.09,4.95,1.64,5.04,4.49\
+                        C107.17,58.71,106.97,59.52,106.6,60.22z')
+                        polygon.gsp_st0(points='89,23.01 86.01,24.73 87.58,26.15 		')
+                      path.gsp_st1(d='M22.35,73.83')
+                      path.gsp_st0(d='M57.5,0C25.74,0,0,25.74,0,57.5S25.74,115,57.5,115S115,89.26,115,57.5S89.26,0,57.5,0z M43,110.89\
+                      C13.42,102.97-4.13,72.57,3.8,43c7.93-29.57,38.33-47.12,67.9-39.2c29.57,7.93,47.12,38.32,39.2,67.9\
+                      C102.97,101.27,72.57,118.82,43,110.89z')
+                      g
+                        path.gsp_st0(d='M78.09,101.62c-0.15-0.42-0.49-0.56-0.98-0.39l-0.36,0.13l0.46,1.32l0.35-0.12\
+                        C78.04,102.39,78.24,102.06,78.09,101.62z')
+                        polygon.gsp_st0(points='72.43,104.68 73.47,104.41 72.53,102.92 		')
+                        path.gsp_st0(d='M53.08,104.41l-0.43-0.03l-0.19,2.95l0.43,0.03c0.85,0.06,1.41-0.35,1.47-1.38\
+                        C54.43,104.96,53.89,104.46,53.08,104.41z')
+                        path.gsp_st0(d='M57.18,95.38c-11.55,0-23.03,1.05-35.01,3.18c5.95,5.08,13.09,8.95,21.16,11.12\
+                        c17.86,4.79,36.03,0.06,49.13-11.07C80.38,96.44,68.82,95.38,57.18,95.38z M39.24,104.82c0.46,0.14,0.81,0.14,1.19,0.07l0.44-1.46\
+                        l-1.33-0.4l0.15-1.06l2.64,0.8l-0.95,3.13c-0.74,0.21-1.63,0.23-2.51-0.03c-2.08-0.63-2.81-2.35-2.2-4.38\
+                        c0.62-2.04,2.25-3.05,4.25-2.44c0.84,0.25,1.41,0.66,1.84,1.13l-0.54,1.12c-0.39-0.5-0.9-0.95-1.62-1.17\
+                        c-1.29-0.39-2.22,0.35-2.64,1.75C37.54,103.28,37.92,104.42,39.24,104.82z M47.42,105.76c-0.25,1.31-1.22,1.79-2.37,1.57\
+                        c-1.16-0.22-1.84-1-1.59-2.32l0.55-2.85l1.18,0.23l-0.55,2.85c-0.12,0.61,0.09,1.02,0.61,1.12c0.53,0.1,0.87-0.19,0.98-0.8\
+                        l0.55-2.86l1.18,0.23L47.42,105.76z M49.68,107.98l-1.18-0.15l0.62-4.77l1.18,0.15L49.68,107.98z M52.89,108.28l-1.68-0.11\
+                        l0.31-4.8l1.66,0.11c1.67,0.11,2.47,1.13,2.38,2.56C55.46,107.47,54.51,108.39,52.89,108.28z M56.79,108.45l-0.07-4.8l2.99-0.04\
+                        l0.01,0.96l-1.82,0.03l0.01,0.9l1.39-0.02l0.17,0.95l-1.54,0.02l0.01,1.02l1.88-0.03l0.01,0.97L56.79,108.45z M63.53,108.23\
+                        c-0.92,0.09-1.71-0.04-2.43-0.29l0.11-1.47c0.74,0.31,1.54,0.49,2.23,0.43c0.48-0.05,0.8-0.29,0.76-0.69\
+                        c-0.04-0.39-0.25-0.55-1.25-0.82c-1.42-0.39-2.05-0.78-2.16-1.91c-0.13-1.32,0.84-2.12,2.14-2.24c0.89-0.09,1.48,0.03,2.1,0.26\
+                        l-0.12,1.45c-0.65-0.3-1.31-0.43-1.83-0.38c-0.51,0.05-0.74,0.29-0.71,0.61c0.03,0.35,0.24,0.5,1.12,0.74\
+                        c1.55,0.4,2.18,0.86,2.28,1.95C65.91,107.34,64.88,108.1,63.53,108.23z M69.51,107.29l-1.18,0.22l-0.68-3.74l-1.34,0.24\
+                        l-0.18-0.99l3.74-0.68l0.35,0.96l-1.39,0.25L69.51,107.29z M74.59,106.16l-0.6-0.92l-1.6,0.41l-0.06,1.04l-1.13,0.29l0.47-5.1\
+                        l1.27-0.33l2.79,4.11L74.59,106.16z M78.03,105.05l-1.12,0.39l-1.57-4.54l1.59-0.55c1.1-0.38,1.92-0.1,2.24,0.83\
+                        c0.22,0.63,0.05,1.17-0.41,1.59l1.69,1.29l-1.13,0.6l-1.55-1.26l-0.28,0.1L78.03,105.05z')
+                      g
+                        path.gsp_st2(d='M23.76,90.96l-0.42,0.05l0.3,2.69L21,93.99l-1-8.96l3.1-0.35c2.31-0.26,3.84,0.58,4.07,2.65\
+                        C27.41,89.45,26.02,90.71,23.76,90.96z M23.17,86.64l-0.32,0.04l0.27,2.4l0.3-0.03c0.88-0.1,1.32-0.54,1.23-1.39\
+                        C24.55,86.88,24.05,86.54,23.17,86.64z')
+                        path.gsp_st2(d='M30.2,93.02l-0.75-8.98l2.67-0.22l0.56,6.72l2.54-0.21l0.55,2.23L30.2,93.02z')
+                        path.gsp_st2(d='M40.15,83.22l2.98-0.16l3.44,8.55l-2.68,0.56l-0.6-1.57l-2.83,0.15l-0.36,1.53l-2.58,0.14L40.15,83.22z\
+                        M40.93,88.69l1.65-0.09l-0.96-2.8L40.93,88.69z')
+                        path.gsp_st2(d='M52.42,85.03l0.14,6.79l-2.67,0.06l-0.14-6.79l-2.42,0.05l-0.05-2.22l7.24-0.15l0.41,2.21L52.42,85.03z')
+                        path.gsp_st2(d='M57.47,91.76l0.03-9l2.67,0.01l-0.03,9L57.47,91.76z')
+                        path.gsp_st2(d='M68.52,91.96l-2.8-4.79l-0.15,4.7l-2.48-0.08l0.28-9l2.64,0.08l2.55,4.39l0.13-4.31l2.48,0.08l-0.28,9\
+                        L68.52,91.96z')
+                        path.gsp_st2(d='M77.52,92.55c-2.2-0.15-3.77-1.36-3.6-4.01l0.35-5.37l2.67,0.18l-0.36,5.41c-0.07,0.99,0.36,1.54,1.11,1.59\
+                        c0.81,0.05,1.24-0.47,1.3-1.41l0.36-5.43l2.67,0.18l-0.35,5.37C81.51,91.67,79.7,92.69,77.52,92.55z')
+                        path.gsp_st2(d='M91.9,93.69l0.24-5.5l-1.78,5.34l-2.58-0.27l-0.65-5.59l-0.88,5.43l-2.29-0.24l1.57-8.89l3.44,0.36l0.71,5.79\
+                        l1.89-5.53l3.35,0.35l-0.29,9.02L91.9,93.69z')
+            nav.-audit-links.sans-normal.fs-12
+              h3.sans-bold.fs-12 Audited Financial Statements
+              a(target='_blank' href='https://document.desiringgod.org/audited-financial-statements-2018-en.pdf?ts=1550003093') 2018
+              a(target='_blank' href='https://document.desiringgod.org/audited-financial-statements-2017-en.pdf?ts=1515617535') 2017
+              a(target='_blank' href='https://document.desiringgod.org/audited-financial-statements-2016-en.pdf?ts=1485816706') 2016
+              a(target='_blank' href='https://document.desiringgod.org/audited-financial-statements-2015-en.pdf?ts=1456866793') 2015
+              a(target='_blank' href='https://document.desiringgod.org/audited-financial-statements-2014-en.pdf?ts=1561658340') 2014
+    span.share-popup.js-share-popup
+      .share.js-share-values(data-link='/' data-title='Desiring God')
+        ul.share__options
+          li.share__option.js-popup-twitter-badge
+            .share-option__symbol
+              .svg
+                svg.svg-twitter(width='20px' height='20px' viewbox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:sketch='http://www.bohemiancoding.com/sketch/ns')
+                  title Twitter
+                  g(stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' sketch:type='MSPage')
+                    g(sketch:type='MSArtboardGroup' fill='#333333')
+                      path(d='M19,4.83999195 C18.8731929,4.99666575 18.739174,5.1662929 18.5997463,5.3488734 C18.4597175,5.53145389 18.313679,5.70108104 18.1610297,5.85775484 C18.0083804,6.01381182 17.8431104,6.17048562 17.6652199,6.32715943 C17.4873293,6.48383323 17.3094387,6.62755369 17.1315482,6.75770397 L17.1315482,6.87551774 C17.1315482,6.90142443 17.137558,6.94028447 17.1501786,6.99271468 C17.1634002,7.04514489 17.16941,7.08400492 17.16941,7.10991162 L17.16941,7.26658542 C17.16941,8.4928355 16.940436,9.75239419 16.483089,11.0440278 C16.0251411,12.3356615 15.3514407,13.4903597 14.4619879,14.5075058 C13.5719342,15.5252687 12.4727388,16.3672362 11.1631999,17.0321746 C9.85366098,17.6977299 8.3602217,18.0172457 6.68228106,17.991339 C6.14800841,18.0172457 5.63356816,17.9851708 5.13775834,17.8932637 C4.64194852,17.8019734 4.15214851,17.6915616 3.66956028,17.5607945 C3.18637107,17.4306442 2.72842309,17.254232 2.29631732,17.0321746 C1.86421155,16.8107341 1.43210577,16.5825084 1,16.3474977 C1.07632466,16.3215911 1.15264933,16.314806 1.22897399,16.3277593 C1.30469767,16.3407127 1.38102234,16.3474977 1.457347,16.3474977 C1.53367166,16.3474977 1.60999633,16.353666 1.68632099,16.3672362 C1.76264565,16.3801895 1.83897032,16.3734044 1.91529498,16.3474977 C2.34740075,16.3734044 2.76688591,16.3407127 3.17375046,16.2494224 C3.580615,16.1581322 3.97425795,16.0538886 4.35588127,15.9366916 C4.73690361,15.8188779 5.10590631,15.6492507 5.46168742,15.4278102 C5.81746853,15.2057528 6.16062903,14.9904806 6.49116891,14.7819934 C6.08490535,14.7295632 5.69667123,14.645058 5.32826951,14.5272442 C4.95986778,14.4100473 4.6227171,14.2274668 4.31741845,13.9795027 C4.01272078,13.7315387 3.75189476,13.4576679 3.53614237,13.1572737 C3.31978899,12.8574963 3.14790825,12.4985035 3.02110113,12.0809123 C3.07218457,12.1333425 3.12927782,12.1592492 3.19238089,12.1592492 C3.25608494,12.1592492 3.31978899,12.1660343 3.38349304,12.1789877 C3.44659611,12.191941 3.50429034,12.191941 3.5547728,12.1789877 C3.60585623,12.1660343 3.65693967,12.1722026 3.70742212,12.1987261 C3.80898801,12.1722026 3.89793329,12.1660343 3.97425795,12.1789877 C4.05058262,12.191941 4.13351808,12.1851559 4.22246336,12.1592492 C4.31140863,12.1333425 4.39374311,12.1203892 4.47006778,12.1203892 C4.54639244,12.1203892 4.6227171,12.0938657 4.69904177,12.0420523 C4.266936,11.9637154 3.87269206,11.8070416 3.51691095,11.5720309 C3.16112985,11.3370202 2.84922039,11.0631494 2.58238456,10.7504186 C2.31554873,10.437071 2.10580615,10.0719101 1.95315682,9.65431885 C1.8005075,9.23672765 1.72418283,8.80618311 1.72418283,8.36268522 L1.72418283,8.34294678 C1.72418283,8.35590013 1.72418283,8.34973187 1.72418283,8.32320835 L1.72418283,8.30408675 C1.72418283,8.31704009 1.72418283,8.31025501 1.72418283,8.28434831 C1.85159093,8.38859191 1.98500885,8.46076055 2.12503756,8.49962059 C2.26446529,8.53848062 2.40449401,8.58412575 2.54452272,8.63655596 C2.68395045,8.68898617 2.82397917,8.72167795 2.96400788,8.73463129 C3.10343561,8.74758464 3.25007512,8.76732307 3.40212347,8.79322976 C3.14790825,8.58412575 2.92554506,8.37563856 2.73503389,8.16715137 C2.54452272,7.95804736 2.37264198,7.71008331 2.21999265,7.42325922 C2.06794431,7.13643513 1.95315682,6.84899422 1.87683216,6.56217013 C1.8005075,6.27534604 1.76264565,5.94904509 1.76264565,5.5838841 C1.76264565,5.45311699 1.77526627,5.29644319 1.8005075,5.11386269 C1.8263497,4.9312822 1.85760075,4.76844013 1.89606357,4.62471968 C1.93452639,4.48099922 1.98500885,4.32432542 2.0487129,4.15469827 C2.11241695,3.98507112 2.18213081,3.84813575 2.25845548,3.74389215 C2.71580248,4.29225046 3.22423291,4.80730017 3.78374679,5.29027493 C4.34326066,5.77263286 4.94724717,6.17727071 5.59510534,6.50357166 C6.24356449,6.82987261 6.92387566,7.09695827 7.63543788,7.30606228 C8.34760108,7.51454947 9.08500551,7.63174641 9.84765116,7.65826993 C9.84765116,7.60583972 9.84104037,7.54045616 9.82841975,7.46211926 C9.81579914,7.38439919 9.80257754,7.31223054 9.78995693,7.24684699 C9.77733632,7.18208026 9.7713265,7.10991162 9.7713265,7.03157471 L9.7713265,6.83604087 C9.7713265,6.28829939 9.86628159,5.79237129 10.0573937,5.3488734 C10.2479049,4.9053755 10.5087309,4.50073765 10.8386698,4.13557666 C11.1692097,3.76979884 11.5634536,3.4959281 12.0214016,3.31334761 C12.4787486,3.13076711 12.9619378,3.02652352 13.4703683,3 C13.7245835,3.02652352 13.9787987,3.0592153 14.2330139,3.09807533 C14.4872291,3.13693537 14.7288237,3.21527227 14.9577977,3.33308604 C15.1861707,3.45028298 15.4025241,3.58105009 15.6056559,3.72415372 C15.8093887,3.86787418 15.9872792,4.04428641 16.1399285,4.2527736 C16.3430603,4.1744367 16.5467931,4.10905314 16.7499249,4.05723976 C16.9536576,4.00480955 17.1567894,3.93942599 17.3599212,3.86108909 C17.563654,3.78336902 17.7541651,3.69824703 17.9320557,3.60695678 C18.1099462,3.51566653 18.2878368,3.40463785 18.4663283,3.27448757 C18.4152449,3.53540497 18.3323094,3.7568455 18.2181229,3.93942599 C18.1039364,4.12200649 17.9831391,4.31137207 17.855731,4.50752274 C17.7289239,4.70305658 17.5762746,4.86589864 17.398384,4.99666575 C17.2204935,5.12681604 17.0426029,5.27053649 16.8641114,5.4272103 C17.0426029,5.37478009 17.2265033,5.33592005 17.4176154,5.30939653 C17.6081266,5.28348984 17.792628,5.23784472 17.9705185,5.17246116 C18.1484091,5.1070776 18.3196888,5.04847914 18.4849588,4.99666575 C18.6502287,4.94423554 18.8221094,4.87885199 19,4.80051508 L19,4.83999195' sketch:type='MSShapeGroup')
+            span Share on Twitter
+          li.share__option.js-popup-facebook-badge
+            .share-option__symbol
+              .svg
+                svg.svg-facebook(width='20px' height='20px' viewbox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:sketch='http://www.bohemiancoding.com/sketch/ns')
+                  title Facebook
+                  g(stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' sketch:type='MSPage')
+                    g(sketch:type='MSArtboardGroup' fill='#333333')
+                      path(d='M11.5113801,4.85631128 C11.4250798,4.9027115 11.3513532,4.96637692 11.2902,5.04784708 C11.2284754,5.1287777 11.1793243,5.22751305 11.1427467,5.3435136 C11.1055976,5.45951415 11.0873088,5.58738453 11,5.72658519 L11,7.57234282 L14.4444444,7.57234282 L14.4444444,10.1847832 L11,10.1847832 L11,18 L8,18 L8,10.1847832 L5,10.1847832 L5,7.57234282 L8,7.57234282 L8,6.00552606 C8,5.34351349 7.97592873,4.96044201 8.1725332,4.47270015 C8.36913767,3.98549783 8.64004034,3.55602602 8.98409817,3.18428471 C9.32872752,2.81308294 9.73451,2.52281179 10.2014456,2.31347126 C10.6689528,2.10467027 11.185611,2 11.7514204,2 L14.4444444,2 L14.4444444,4.78617141 L11.7514204,4.78617141 C11.6771222,4.78617141 11.5976803,4.80991106 11.5113801,4.85631128 Z' sketch:type='MSShapeGroup')
+            span Share on Facebook
+          li.share__option.js-popup-email-badge
+            .share-option__symbol
+              .svg
+                svg.svg-email(width='20px' height='20px' viewbox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:sketch='http://www.bohemiancoding.com/sketch/ns')
+                  title Email (Filled)
+                  g(stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' sketch:type='MSPage')
+                    g(sketch:type='MSArtboardGroup' fill='#333333')
+                      path(d='M2,6.14937457 L2.00000002,16 L18,16 L18,6.14937457 L10.3156668,12.4050897 L10,12.6620699 L9.68433318,12.4050897 L2,6.14937457 L2,6.14937457 Z M17.8279088,5 L2.17209124,5 L2.31566682,5.116883 L10,11 L17.6843332,5.116883 L17.8279088,5 L17.8279088,5 Z' sketch:type='MSShapeGroup')
+            span Share with Email
+    #facebook-app-id(data-value='1415647432040331')
+
+  figure.background.noselect.nopointer.fixed-background(style='height: 1367.47px;')
+    img(src='images/parallax/4.jpg' style='transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);')
+    img(src='images/parallax/3.png' style='transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);')
+    img(src='images/parallax/2.png' style='transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);')
+    img(src='images/parallax/1.png' style='transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);')
+    img(src='images/parallax/0.png' style='transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);')
+    .filler(style='transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);')
+    include partials/footer

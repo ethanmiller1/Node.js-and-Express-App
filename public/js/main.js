@@ -97,6 +97,419 @@ var cursor = {
 };
 cursor.init();
 
+/****** Parallax ******/
+
+import { el } from '@internet/dom'
+import raf from '@internet/raf'
+import { clamp, norm } from '@internet/maths'
+import store from 'controllers/store'
+import logger from 'utils/logger'
+import MiniRunner from 'mini-runner'
+import disableScroll from 'disable-scroll'
+import parseQuerystring from 'utils/parseQuerystring'
+
+const { log, warn } = logger('Scroll', 'orange')
+
+const DISABLE = false
+
+const DEFAULT_EASE = 0.172
+const PRECISION = 0.1
+
+let SMOOTHED = DISABLE ? false : (store.get('device.desktop') && store.get('device.webkit'))
+const args = parseQuerystring(window.location.search || '')
+if (args.leo !== undefined || args.nosmoothscroll !== undefined) SMOOTHED = false
+
+const BODY = document.body
+
+store.set('smoothed', SMOOTHED)
+// 0 : bottom hide
+// 1 : bottom show
+// 2 : top hide
+// 3 : top show
+
+if (DISABLE) document.getElementsByTagName('html')[0].classList.add('smoothscroll--disabled')
+else document.getElementsByTagName('html')[0].classList.add(SMOOTHED ? 'smoothscroll--full' : 'smoothscroll--reduced')
+
+const instances = {}
+let currentScroller = null
+
+function scroller (opts) {
+  let ease = opts.ease
+  let namespace = opts.namespace
+  let element
+  let current = 0
+  let target = 0
+  let sections = []
+  let items = []
+  let invalidated = true
+  let events = {
+    update: new MiniRunner('scrollUpdate', 1),
+    didInvalidate: new MiniRunner('scrollDidInvalidate', 1),
+    willInvalidate: new MiniRunner('scrollWillInvalidate', 1)
+  }
+
+  log(opts)
+  if (opts.element) attach(opts.element)
+
+  const api = {
+    use,
+    unuse,
+    getCurrent,
+    attach,
+    detach,
+    destroy,
+    addSection,
+    removeSection,
+    addItem,
+    removeItem,
+    invalidate,
+    scroll,
+    isSmoothed,
+    events,
+    freeze,
+    unfreeze,
+    tick,
+    isCurrentScroller
+  }
+
+  return api
+
+  function getCurrent () {
+    return current
+  }
+
+  function freeze () {
+    store.set('menu.freeze', true)
+    disableScroll.on()
+  }
+
+  function unfreeze () {
+    store.set('menu.freeze', false)
+    disableScroll.off()
+  }
+
+  function addItem (el, opts, noSmoothOpts) {
+    if (DISABLE) return
+    if (!element || !el) return
+    for (let i = 0, l = items.length; i < l; i++) if (items[i] === el) return
+
+    const item = Object.assign({
+      el,
+      parallax: 0,
+      ease: 1,
+      current: 0,
+      target: 0,
+      midPoint: 0,
+      screenAlign: 0.5,
+      selfAlign: 0.5,
+      section: true,
+      noWillChange: false,
+      trackProgress: false,
+      useClasses: false,
+      progress: 0,
+      showBottomOffset: 0,
+      showTopOffset: 0,
+      scale: 1,
+      active: null,
+      _state: -1,
+      onHide () {},
+      onShow () {}
+    }, opts, SMOOTHED ? {} : noSmoothOpts)
+
+    let stop = true
+    for (let i = 0, l = sections.length; i < l; i++) {
+      if (sections[i].contains(el)) { stop = false; break }
+    }
+    if (stop) return
+
+    if (!item.noWillChange) el.style.willChange = 'transform'
+    items.push(item)
+    invalidate()
+  }
+
+  function removeItem (el) {
+    if (!element || el === element) return
+    const index = items.indexOf(el)
+    if (!~index) return
+    items.splice(index, 1)
+    el.style.transform = ''
+    invalidate()
+  }
+
+  function addSection (el) {
+    if (DISABLE) return
+    if (!element || (!element.contains(el) && element !== el)) return
+    for (let i = 0, l = sections.length; i < l; i++) if (sections[i] === el) return
+    sections.push(el)
+    invalidate()
+  }
+
+  function removeSection (el) {
+    if (!element || el === element) return
+    const index = sections.indexOf(el)
+    if (!~index) return
+    sections.splice(index, 1)
+    el.style.transform = ''
+    invalidate()
+  }
+
+  function tick (dt, force) { 
+    // log('Tick', namespace, invalidated, current, target)
+    if (dt > (16.67 * 3)) dt = 16.67 * 3
+    let needStop = true
+    const lastCurrent = current
+
+    if (force || invalidated || !SMOOTHED) {
+      current = target
+    } else {
+      current += (target - current) * ease // * dt / 16.67
+    }
+
+    if (Math.abs(target - current) < PRECISION) {
+      current = target
+    } else {
+      needStop = false
+    }
+
+    store.set('scroll', current)
+
+    if (force || invalidated) {
+      events.willInvalidate.emit(current)
+    }
+
+    if ((force && SMOOTHED) || (invalidated && currentScroller === api && SMOOTHED)) {
+      const height = element.getBoundingClientRect().height
+      BODY.style.height = height + 'px'
+    }
+
+    for (let i = 0, l = sections.length; i < l; i++) {
+      if (SMOOTHED) sections[i].style.transform = 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,' + current + ',0,1)'
+    }
+
+    for (let i = 0, l = items.length; i < l; i++) {
+      const item = items[i]
+      if (force || invalidated) {
+        // if (!item.section) item.el.style.transform = 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)'
+        const bounds = item.el.getBoundingClientRect()
+        const selfOffset = bounds.height * item.selfAlign
+        const screenOffset = -store.get('screen.height') * item.screenAlign
+        item.midPoint = bounds.top + selfOffset + screenOffset - current - item.current
+        item.topBound = bounds.top - current - item.current - store.get('screen.height')
+        item.bottomBound = bounds.bottom - current - item.current
+        if (item.midPoint < 0) item.midPoint = 0
+      }
+
+      const offset = item.midPoint + current
+
+      // don't transform if there is no parallax
+      if (item.parallax !== 0) {
+        item.target = offset * item.parallax
+
+        if (force || invalidated || !item.parallax) {
+          item.current = item.target
+        } else {
+          item.current += (item.target - item.current) * item.ease // * dt / 16.67
+        }
+
+        if (Math.abs(item.target - item.current) < PRECISION) item.current = item.target
+        else needStop = false
+        // activity test
+        item.el.style.transform = 'matrix3d(' + item.scale + ',0,0,0,0,' + item.scale + ',0,0,0,0,1,0,0,' + item.current + ',0,1)'
+      }
+
+      item.trueprogress = norm(-current - item.current, item.topBound, item.bottomBound)
+      item.progress = clamp(item.trueprogress, 0, 1)
+
+      // test for activity BUGGED FOR NOW
+      // const nactive = !!(item.trueprogress < 1.4 && item.progress > -0.4)
+      // if (item.active === null || nactive !== item.active) {
+      //  item.active = nactive
+      //  Not sure if stopping willChange is good on perf
+      //  item.el.style.willChange = item.active ? 'transform' : ''
+      // }
+
+      // CHECK STATE
+      let newState
+      if (item.progress <= 0) newState = 0 // hide item from bottom
+      else if (item.progress >= 1) newState = 2 // hide item from top
+      else if (item.progress > item.showBottomOffset && item.progress < (1 - item.showTopOffset)) {
+        if (item._state === 0) newState = 1 // show item from bottom
+        else if (item._state === 2) newState = 3 // show item from top
+        else newState = item._state
+      } else {
+        newState = item._state
+      }
+
+      if (newState !== item._state) {
+        if (newState === 0) {
+          item.onHide(false)
+          item.useClasses && item.el.classList.add('hidden', 'hidden--bottom')
+          item.useClasses && item.el.classList.remove('visible', 'visible--top', 'visible--bottom', 'hidden--top')
+        } else if (newState === 2) {
+          item.onHide(true)
+          item.useClasses && item.el.classList.add('hidden', 'hidden--top')
+          item.useClasses && item.el.classList.remove('visible', 'visible--top', 'visible--bottom', 'hidden--bottom')
+        } else if (newState === 1) {
+          item.onShow(false)
+          item.useClasses && item.el.classList.add('visible', 'visible--bottom')
+          item.useClasses && item.el.classList.remove('hidden', 'hidden--top', 'hidden--bottom', 'visible--top')
+        } else if (newState === 3) {
+          item.onShow(true)
+          item.useClasses && item.el.classList.add('visible', 'visible--top')
+          item.useClasses && item.el.classList.remove('hidden', 'hidden--top', 'hidden--bottom', 'visible--bottom')
+        }
+      }
+
+      item._state = newState
+    }
+
+    if (force || invalidated) {
+      events.didInvalidate.emit(current)
+      events.update.emit(current)
+    } else if (current !== lastCurrent) {
+      events.update.emit(current)
+    }
+
+    invalidated = false
+    if (needStop) raf.remove(tick)
+  }
+
+  function scroll (value, direct = false) {
+    // if (value < 0) value = -value
+    if (!element || currentScroller !== api) return
+    if (value !== undefined) target = -value
+    if (target !== current || invalidated) raf.add(tick)
+    if (direct) tick(16.67)
+  }
+
+  function use () {
+    // currentScroller && currentScroller !== api && currentScroller.unuse()
+
+    currentScroller = api
+    currentScroll = -current
+    store.set('scroller.current', currentScroller)
+    target = current
+    store.set('scroll', current)
+
+    window.scroll(0, -current)
+    invalidate(true)
+    window.scroll(0, -current)
+  }
+
+  function unuse () {
+    if (currentScroller !== api) return
+    if (SMOOTHED) BODY.style.height = ''
+    currentScroller = null
+    store.set('scroller.current', null)
+  }
+
+  function attach (el) {
+    element = el
+    if (DISABLE) return
+    if (SMOOTHED) {
+      element.style.position = 'fixed'
+      element.style.top = '0'
+      element.style.left = '0'
+    }
+  }
+
+  function detach () {
+    if (!element) return
+    if (currentScroller === api && SMOOTHED) BODY.style.height = ''
+    if (SMOOTHED) {
+      element.style.position = ''
+      element.style.top = ''
+      element.style.left = ''
+    }
+    element = null
+    sections = []
+  }
+
+  function destroy () {
+    if (element) detach()
+    if (currentScroller === api) currentScroller = null
+    events.update.removeAll()
+    events.willInvalidate.removeAll()
+    events.didInvalidate.removeAll()
+    delete instances[namespace]
+  }
+
+  function invalidate (forceResize = false) {
+    if (!element) return
+    if (forceResize && currentScroller === api && SMOOTHED) {
+      // log('resize', current, target)
+      const height = element.getBoundingClientRect().height
+      BODY.style.height = height + 'px'
+    }
+    invalidated = true
+    scroll()
+  }
+
+  function isSmoothed () {
+    if (DISABLE) return false
+    return SMOOTHED
+  }
+
+  function isCurrentScroller () {
+    return (currentScroller === api)
+  }
+}
+
+// Pass resize events to the current scroller
+store.watch('screen.height', () => { currentScroller && currentScroller.invalidate() })
+store.watch('screen.width', () => { currentScroller && currentScroller.invalidate() })
+
+// Cap scroll events to 60 fps
+let started = false
+let currentScroll = 0
+let lastScroll = 0
+store.set('scroll', currentScroll)
+
+window.addEventListener('scroll', () => {
+  currentScroll = window.scrollY || window.scollTop || document.getElementsByTagName('html')[0].scrollTop
+  // log('updateCurrentScroll', currentScroll)
+  if (!SMOOTHED) {
+    currentScroller && currentScroller.scroll(currentScroll, true)
+    lastScroll = currentScroll
+  }
+  if (!started) {
+    raf.add(updateScroll)
+    started = true
+  }
+})
+
+function updateScroll (dt) {
+  // log('updateScroll', currentScroll)
+  if (lastScroll === null || currentScroll !== lastScroll) {
+    currentScroller && currentScroller.scroll(currentScroll)
+    lastScroll = currentScroll
+  } else {
+    raf.remove(updateScroll)
+    started = false
+  }
+}
+
+// Get a scroller instance or create a new one
+export default function getScroller (opts = {}) {
+  opts = Object.assign({
+    namespace: 'default',
+    ease: DEFAULT_EASE
+  }, opts)
+
+  if (!instances[opts.namespace]) instances[opts.namespace] = scroller(opts)
+  return instances[opts.namespace]
+}
+
+export function freeze () {
+  store.set('menu.freeze', true)
+  disableScroll.on()
+}
+
+export function unfreeze () {
+  store.set('menu.freeze', false)
+  disableScroll.off()
+}
+
 /****** Tooltips ******/
 
 var tooltips = {
@@ -150,7 +563,8 @@ var preloader = {
     this.$text = this.$preloader.find('.preloader-msg');
   },
   bindEvents: function() {
-    this.$window.on('load', setTimeout(this.fade.bind(this), 700));
+    this.$window.on('load', this.fade.bind(this));
+    // this.$window.on('load', setTimeout(this.fade.bind(this), 700));
   },
   fade: function() {
     this.$wrapper.fadeOut('slow');
