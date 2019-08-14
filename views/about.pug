@@ -194,6 +194,13 @@ block content
       }
       /*! CSS Used keyframes */
       @keyframes pulsate-opacity{0%{opacity:1;}50%{opacity:.5;}to{opacity:1;}}
+
+      /* Custom CSS */
+      .fixed-background.background>img:nth-child(4){
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        transform: scale( calc( 1 + .5 * var(--scroll)));
+        }
+
   .page-background.gpu
     .container
       .grid
@@ -792,10 +799,10 @@ block content
     #facebook-app-id(data-value='1415647432040331')
 
   figure.background.noselect.nopointer.fixed-background(style='height: 1367.47px;')
-    img(src='images/parallax/4.jpg' style='transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);')
-    img(src='images/parallax/3.png' style='transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);')
-    img(src='images/parallax/2.png' style='transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);')
-    img(src='images/parallax/1.png' style='transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);')
-    img(src='images/parallax/0.png' style='transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);')
-    .filler(style='transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);')
+    img(src='images/parallax/4.jpg')
+    img(src='images/parallax/3.png')
+    img(src='images/parallax/2.png')
+    img(src='images/parallax/1.png')
+    img(src='images/parallax/0.png')
+    .filler
     include partials/footer

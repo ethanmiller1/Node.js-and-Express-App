@@ -7,6 +7,7 @@ node_modules
 /Node.js-and-Express-App-master.*
 /Node.js-and-Express-App-master
 /config/mongodb.js
+javascript_ideas.js
 
 # Individual files
 style-orig.css

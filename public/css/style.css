@@ -56,7 +56,8 @@
   --volumeHandleDiameter: 12px;
   --sliderWidth: calc(100% + var(--volumeHandleDiameter));
   --sliderHeight: 26px;
-  --timeWidth: calc(865px + var(--volumeHandleDiameter))
+  --timeWidth: calc(865px + var(--volumeHandleDiameter));
+  --scroll: 0;
 }
 
 
@@ -3568,4 +3569,3 @@ td.resource-list-item.resource-list-item__abstract {
   font-size: 10px;
   font-weight: 700;
 }
-
