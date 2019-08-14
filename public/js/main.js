@@ -106,19 +106,37 @@ var parallax = {
     this.bindEvents();
   },
   cacheDom: function() {
-    this.$bg = $('.fixed-background');
+    this.$bg = $('.fixed-background.background');
     this.$doc = $(document);
     this.page = document.body;
     current = 0;
   },
   bindEvents: function() {
     // page.addEventListener('scroll', this.getCurrent.bind(this));
-    this.$doc.on('scroll', this.getCurrent.bind(this));
+    this.$doc.on('scroll', this.displace.bind(this));
   },
   displace: function() {
-    this.$bg.children().each(() => {
-      this.style.transform = 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,' + current + ',0,1)';
+    const scroll = 2 * this.$doc.scrollTop() / this.$doc.height();
+
+    
+    images = this.$bg.children().toArray();
+    values = [-105, -183, -275, -401, -634, -634]
+
+    i = 0;
+    images.forEach(function(image) {
+      image.style.transform = 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,' + scroll * values[i] + ',0,1)';
+      console.log(i + image);
+      i++;
     });
+
+    $images = this.$bg.children();
+    $images.each((index) => {
+      self = $(this); // self returns parallax object instead of child
+      $(this).css('transform', 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,' + scroll * -100 + ',0,1)');
+      // console.log(self);
+    });
+    // console.log(images);
+    // console.log($images);
   },
   getCurrent: function() {
     

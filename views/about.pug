@@ -196,10 +196,11 @@ block content
       @keyframes pulsate-opacity{0%{opacity:1;}50%{opacity:.5;}to{opacity:1;}}
 
       /* Custom CSS */
-      .fixed-background.background>img:nth-child(4){
-        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-        transform: scale( calc( 1 + .5 * var(--scroll)));
+      .fixed-background.background>*{
+        transition: all 1s cubic-bezier(.21,.57,.17,.99);
         }
+
+
 
   .page-background.gpu
     .container
@@ -805,4 +806,4 @@ block content
     img(src='images/parallax/1.png')
     img(src='images/parallax/0.png')
     .filler
-    include partials/footer
+  include partials/footer
