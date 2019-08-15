@@ -120,6 +120,9 @@ app.get('/about-us', function(req, res){
   res.render('about');
 });
 
+app.get('/donate', function(req, res){
+  res.render('donate');
+});
 
 // Set port.
 let port = normalizePort(process.env.PORT || '8081');
