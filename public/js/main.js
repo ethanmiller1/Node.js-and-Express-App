@@ -102,67 +102,29 @@ cursor.init();
 var parallax = {
   init: function() {
     this.cacheDom();
-    // this.getCurrentJs();
     this.bindEvents();
   },
   cacheDom: function() {
     this.$bg = $('.fixed-background.background');
-    this.$doc = $(document);
-    this.page = document.body;
-    current = 0;
+    this.$page = $(document);
   },
   bindEvents: function() {
-    // page.addEventListener('scroll', this.getCurrent.bind(this));
-    this.$doc.on('scroll', this.displace.bind(this));
+    this.$page.on('scroll', this.displace.bind(this));
   },
   displace: function() {
-    const scroll = 2 * this.$doc.scrollTop() / this.$doc.height();
-
+    // Scroll top position divided by height of page.
+    const scroll = 2 * this.$page.scrollTop() / this.$page.height();
     
+    // Select the figure children and declare corresponding scroll values for each child.
     images = this.$bg.children().toArray();
-    values = [-105, -183, -275, -401, -634, -634]
+    values = [-105, -183, -275, -401, -634, -634];
 
+    // For each image, offset Y position by corresponding amount.
     i = 0;
     images.forEach(function(image) {
       image.style.transform = 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,' + scroll * values[i] + ',0,1)';
-      console.log(i + image);
       i++;
     });
-
-    $images = this.$bg.children();
-    $images.each((index) => {
-      self = $(this); // self returns parallax object instead of child
-      $(this).css('transform', 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,' + scroll * -100 + ',0,1)');
-      // console.log(self);
-    });
-    // console.log(images);
-    // console.log($images);
-  },
-  getCurrent: function() {
-    
-    const scroll = 2 * this.$doc.scrollTop() / this.$doc.height(); // Scroll top divided by height
-    // this.page.style.setProperty('--scroll', scroll );
-    document.documentElement.style.setProperty('--scroll', scroll);
-    // console.log(this.$doc.scrollTop());
-    // console.log(this.$doc.height());
-    // console.log(scroll);
-  },
-  getCurrentJs: function() {
-    console.clear();
-
-    const app = document.querySelector('.page-wrapper');
-    
-    app.addEventListener('scroll',() => {
-      const scroll = 2 * app.scrollTop / app.clientHeight;
-      app.style.setProperty('--scroll', scroll );
-      console.log(scroll);
-    });
-    
-  },
-  resetScroll: function() {
-    console.log('pixalsDown:' + pixalsDown);
-    console.log('scrollTop:' + this.$doc.scrollTop());
-    pixalsDown = $(window).scrollTop();
   }
 };
 
