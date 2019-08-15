@@ -4,43 +4,81 @@ block content
   head
     style.
       /*! CSS Used from: http://anafi.parrot.com/assets/builds/bundle.css */
-      *{margin:0;padding:0;border-collapse:inherit;}
-      *,:after,:before{box-sizing:inherit;}
-      :not(body){background-repeat:no-repeat;background-position:50%;background-size:cover;}
-      *{box-sizing:border-box;}
-      .noselect{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
-      .nopointer{pointer-events:none;}
-      .fixed-background.background{background:#18589d;position:fixed;z-index:0;top:0;left:0;bottom:0;width:100%;overflow:hidden;}
-      .fixed-background.background>img{width:100%;height:auto;position:absolute;bottom:0;left:0;will-change:transform;z-index:1;}
-      .fixed-background.background>img:nth-child(5){z-index:3;bottom:-2px;}
-      .fixed-background.background>img:nth-child(4){bottom:19vw;}
-      .fixed-background.background>img:nth-child(3){bottom:50vw;}
-      .fixed-background.background>img:first-child,.fixed-background.background>img:nth-child(2){bottom:58vw;}
-      @media (min-width:1441px){
-      .fixed-background.background>img:nth-child(4){bottom:calc(120px + 7%);}
-      .fixed-background.background>img:nth-child(3){bottom:calc(1210px - 39%);}
-      .fixed-background.background>img:nth-child(2){bottom:calc(750px + 3%);}
-      .fixed-background.background>img:first-child{bottom:calc(740px + 2%);}
-      }
-      @media (min-width:1701px){
-      .fixed-background.background>img:nth-child(4){bottom:calc(240px - 7vw);}
-      .fixed-background.background>img:nth-child(3){bottom:calc(620px + 2.6vw);}
-      .fixed-background.background>img:first-child,.fixed-background.background>img:nth-child(2){bottom:calc(620px + 7.6vw);}
-      }
-      .fixed-background.background .filler{position:absolute;z-index:2;left:0;bottom:-45vh;width:100%;height:45vh;background:#000;}
-      
-      /*! CSS Used from: Embedded ; media=all */
-      @media all{
-      .st0{fill:#325A8B;}
-      .st1{fill:#E4E4EC;}
-      .st2{fill:#231F20;}
-      .st3{fill:#8890B2;}
+      .fixed-background.background{
+        background:#18589d;
+        position:fixed;
+        z-index:0;
+        top:0;
+        left:0;
+        bottom:0;
+        width:100%;
+        overflow:hidden;
       }
 
-      /* Custom CSS */
+      .fixed-background.background>img{
+        width:100%;
+        height:auto;
+        position:absolute;
+        bottom:0;
+        left:0;
+        will-change:transform;
+        z-index:1;
+      }
+
+      .fixed-background.background>img:nth-child(5){
+        z-index:3;
+        bottom:-2px;
+      }
+      .fixed-background.background>img:nth-child(4){
+        bottom:19vw;
+      }
+      .fixed-background.background>img:nth-child(3){
+        bottom:50vw;
+      }
+      .fixed-background.background>img:first-child,.fixed-background.background>img:nth-child(2){
+        bottom:58vw;
+      }
+      @media (min-width:1441px){
+        .fixed-background.background>img:nth-child(4){
+          bottom:calc(120px + 7%);
+        }
+        .fixed-background.background>img:nth-child(3){
+          bottom:calc(1210px - 39%);
+        }
+        .fixed-background.background>img:nth-child(2){
+          bottom:calc(750px + 3%);
+        }
+        .fixed-background.background>img:first-child{
+          bottom:calc(740px + 2%);
+        }
+      }
+
+      @media (min-width:1701px){
+        .fixed-background.background>img:nth-child(4){
+          bottom:calc(240px - 7vw);
+        }
+        .fixed-background.background>img:nth-child(3){
+          bottom:calc(620px + 2.6vw);
+        }
+        .fixed-background.background>img:first-child,.fixed-background.background>img:nth-child(2){
+          bottom:calc(620px + 7.6vw);
+        }
+      }
+
+      .fixed-background.background .filler{
+        position:absolute;
+        z-index:2;
+        left:0;
+        bottom:-45vh;
+        width:100%;
+        height:45vh;
+        background:#000;
+      }
+
+      /* Custom CSS -- smooth image transitions */
       .fixed-background.background>*{
         transition: all 1s cubic-bezier(.21,.57,.17,.99);
-        }
+      }
 
 
 
