@@ -131,7 +131,16 @@ block content
       .Donate .container{max-width:1080px;}
       .Donate .page-background{background-color:#fff;padding-top:63px;}
       .Donate .js-reach-number{font-family:Menlo,Consolas,Monaco,monospace;font-size:36px;margin-top:1.25rem;}
-      .Donate .js-reach-number:after{content:"People for one month";font-family:Balto Web,Helvetica,Arial,sans-serif;font-size:12px;font-weight:400;display:inline-block;width:58px;margin-left:10px;line-height:1.3;}
+      .Donate .js-reach-number:after{
+        content:"People for one month";
+        font-family:Balto Web,Helvetica,Arial,sans-serif;
+        font-size:12px;
+        font-weight:400;
+        display:inline-block;
+        width:60px;
+        margin-left:10px;
+        line-height:1.3;
+      }
       .Donate .-submit-btn{box-sizing:border-box;outline:0;border:0;background:none;cursor:default;line-height:normal;color:inherit;font:inherit;text-align:inherit;overflow:visible;margin:0;border-radius:0;appearance:none;text-align:center;user-select:none;-webkit-touch-callout:none;background-color:#c6000e;color:#fff;padding:0 12px;line-height:48px;font-size:16px;height:48px;cursor:pointer;transform:translateZ(0);}
       .Donate .-submit-btn:disabled{animation:pulsate-opacity 1s ease-in-out infinite;}
       .Donate .-footer a{text-decoration:underline;}
@@ -139,6 +148,10 @@ block content
       .Donate .-audit-badges svg{width:57px;height:57px;}
       .Donate .-audit-badges a{display:inline-block;margin-right:10px;text-decoration:none;}
       .Donate .-audit-links a{margin-right:5px;}
+      .Donate .-audit-links {
+        position: relative !important;
+        top: 0 !important;
+      }
       .-amount-input{box-sizing:border-box;outline:0;border:0;background:none;cursor:default;line-height:normal;color:inherit;font:inherit;text-align:inherit;overflow:visible;padding:0;margin:0;border-radius:0;appearance:none;}
       .-amount-btn,.-amount-input{font-size:16px;line-height:42px;height:42px;text-align:center;position:relative;transition:background-color .5s cubic-bezier(.19,1,.22,1),border-color .5s cubic-bezier(.19,1,.22,1);}
       .-amount-btn{border:1px solid hsla(0,0%,100%,.3);}
@@ -255,7 +268,7 @@ block content
 
 
 
-  .page-background.gpu
+  .page-background.gpu.Donate
     .container
       .grid
         header.-header.col-33.col-45-m.pv-6.pt-5-s.pb-0-s.pr-5
