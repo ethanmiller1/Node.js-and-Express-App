@@ -72,6 +72,10 @@
 
 /* ===== 2. PRIMARY ===== */
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: Balto Web,Helvetica,Arial,sans-serif;
     font-size: 13px;

@@ -97,6 +97,51 @@ var cursor = {
 };
 cursor.init();
 
+//smooth scroll
+
+var smoothScroll = {
+  init: function() {
+    this.cacheDom();
+    this.bindEvents();
+  },
+  cacheDom: function() {
+    this.$window = $(window);
+    this.$page = $('html, body');
+  },
+  bindEvents: function() {
+    // this.$window.on('DOMMouseScroll', this.wheel.bind(this), false);
+    // this.$window.on('mousewheel', this.wheel.bind(this));
+    // $(function() { $("#top").on('click', function() { $("HTML, BODY").animate({ scrollTop: 0 }, 1000); }); });
+    if (window.addEventListener) window.addEventListener('DOMMouseScroll', this.wheel.bind(this), false);
+    window.onmousewheel = document.onmousewheel = this.wheel.bind(this);
+  },
+  wheel: function(event) {
+    var delta = 0;
+    if (event.wheelDelta) delta = event.wheelDelta / 120; // Returns an integer value indicating the distance that the mouse wheel rolled (always a multiple of 120).
+    else if (event.detail) delta = -event.detail / 3; // Returns number of scrolls.
+
+    console.log(delta);
+    console.log(event.detail);
+
+    this.handle(delta);
+
+    // if (event.preventDefault) event.preventDefault();
+    // event.returnValue = false;
+  },
+  handle: function(delta) {
+    var time = 1000;
+	  var distance = 200;
+    
+    this.$page.stop().animate(
+      {scrollTop: this.$window.scrollTop() - (distance * delta)},
+      time,
+      'swing'
+    );
+  }
+}
+
+smoothScroll.init();
+
 /****** Parallax ******/
 
 var parallax = {
