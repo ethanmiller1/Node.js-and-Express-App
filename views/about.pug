@@ -80,10 +80,16 @@ block content
         transition: all 1s cubic-bezier(.21,.57,.17,.99);
       }
 
+      .sections>* {
+        position: relative;
+        z-index: 20;
+      }
+
       /*! CSS Used from: https://cdn.kastatic.org/genwebpack/prod/en/ef51404934aee86faaf2654970b8b466.0a3a86628abd22d7c375.css */
       h2{
         font-family:inherit;
         font-weight:bold;
+        
         }
       h2{
         font-size:20px;
@@ -92,6 +98,11 @@ block content
       p{
         font-size:14px;
         margin:22px 0;
+        font-family:Rubik,sans-serif;
+        line-height:1.3em;
+        font-weight:300;
+
+        
         }
 
       /*! CSS Used from: https://cdn.kastatic.org/genwebpack/prod/en/stylesheets/about-package/about.7c57382c58f20815d1ab.css */
@@ -109,6 +120,8 @@ block content
       .about-shelf h2{
         font-size:36px;
         text-align:center;
+        margin-bottom: 22px;
+        margin-top: 100px;
         }
       .about-shelf p{
         font-size:18px;
@@ -124,13 +137,1074 @@ block content
         color: #fff;
       }
 
+      /*! CSS Used from: http://anafi.parrot.com/assets/builds/bundle.css */
+      .button.cta{
+        background:#1d69e7;color:#fff;display:inline-block;padding:0 40px;line-height:60px;font-family:Rajdhani,sans-serif;font-weight:600;margin-top:50px;font-size:16px;letter-spacing:.12em;text-transform:uppercase;vertical-align:center;border-radius:100px;transition:transform .8s cubic-bezier(.158,.799,.182,.844);will-change:transform;}
+      @media (max-width:1023px){
+
+      .button.cta{
+        margin-top:30px;
+        font-size:14px;
+        padding:0 30px;
+        line-height:50px;
+        }
+      }
+      .button.cta:hover{
+        -ms-transform:scale(1.06);
+        transform:scale(1.06);
+        }
+      .button.cta:hover span{
+        -ms-transform:scale(.88);
+        transform:scale(.88);
+        }
+      .button.cta span{
+        display:inline-block;
+        -ms-transform:scale(1);
+        transform:scale(1);
+        transition:transform .8s cubic-bezier(.158,.799,.182,.844);
+        will-change:transform;
+        }
+      .button.cta--black{
+        ackground:#000;
+        }
+      h1{
+        ont-family:Rajdhani,sans-serif;
+        font-weight:500;
+        text-transform:uppercase;
+        font-size:70px;
+        letter-spacing:.04em;
+        line-height:.9em;
+        margin:0 auto;
+        text-align:center;
+        }
+      @media (max-width:1023px){
+      h1{font-size:60px;
+      }
+      }
+      @media (max-width:639px){
+      h1{
+        font-size:42px;
+        }
+      }
+      h4{
+        font-family:Rubik,sans-serif;
+        max-width:800px;
+        line-height:1.3em;
+        font-weight:300;
+        font-size:19px;
+        margin:0 auto;
+        text-align:center;
+        }
+      @media (max-width:1023px){
+      h4{
+        margin:15px auto 0;
+        max-width:450px;
+        font-size:16px;
+        }
+      }
+      .section-header .content h1{
+        position:relative;
+        }
+      .section-header .content h1 svg path{
+        fill:#fff;
+        width:100%;
+        height:auto;
+        }
+      .section-header .content .text{
+        max-width:800px;
+        margin-left:auto;
+        margin-right:auto;
+        }
+      .content .text h4{
+        margin-top:30px;
+        max-width:600px;
+        margin:40px auto 0;
+        line-height:150%;
+        font-size:20px;
+        }
+      @media (max-width:1023px){
+      .content .text h4{
+        margin:30px auto 0;
+        max-width:450px;
+        font-size:16px;
+        }
+      }
+      .content .text h1{
+        max-width:500px;
+        margin:0 auto;
+        }
+      .section-header .button,.section-header h1,.section-header h4{
+        opacity:0;
+        will-change:opacity transform;
+        }
+      .section-header .button{
+        background:#1d69e7;
+        }
+        
+      /*! CSS Used fontfaces */
+      @font-face{
+        font-family:'Rajdhani';
+        font-style:normal;
+        font-weight:500;
+        src:local('Rajdhani Medium'), local('Rajdhani-Medium'), url(https://fonts.gstatic.com/s/rajdhani/v9/LDI2apCSOBg7S-QT7pb0EPOqeef2kg.woff2) format('woff2');
+        unicode-range:U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+        }
+      @font-face{
+        font-family:'Rajdhani';
+        font-style:normal;
+        font-weight:500;
+        src:local('Rajdhani Medium'), local('Rajdhani-Medium'), url(https://fonts.gstatic.com/s/rajdhani/v9/LDI2apCSOBg7S-QT7pb0EPOleef2kg.woff2) format('woff2');
+        unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+      @font-face{
+        font-family:'Rajdhani';
+        font-style:normal;
+        font-weight:500;
+        src:local('Rajdhani Medium'), local('Rajdhani-Medium'), url(https://fonts.gstatic.com/s/rajdhani/v9/LDI2apCSOBg7S-QT7pb0EPOreec.woff2) format('woff2');
+        unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+      @font-face{
+        font-family:'Rajdhani';
+        font-style:normal;
+        font-weight:600;
+        src:local('Rajdhani SemiBold'), local('Rajdhani-SemiBold'), url(https://fonts.gstatic.com/s/rajdhani/v9/LDI2apCSOBg7S-QT7pbYF_Oqeef2kg.woff2) format('woff2');
+        unicode-range:U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+        }
+      @font-face{
+        font-family:'Rajdhani';
+        font-style:normal;
+        font-weight:600;
+        src:local('Rajdhani SemiBold'), local('Rajdhani-SemiBold'), url(https://fonts.gstatic.com/s/rajdhani/v9/LDI2apCSOBg7S-QT7pbYF_Oleef2kg.woff2) format('woff2');
+        unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+      @font-face{
+        font-family:'Rajdhani';
+        font-style:normal;
+        font-weight:600;
+        src:local('Rajdhani SemiBold'), local('Rajdhani-SemiBold'), url(https://fonts.gstatic.com/s/rajdhani/v9/LDI2apCSOBg7S-QT7pbYF_Oreec.woff2) format('woff2');
+        unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+      @font-face{
+        font-family:'Rubik';
+        font-style:normal;
+        font-weight:400;
+        src:local('Rubik'), local('Rubik-Regular'), url(https://fonts.gstatic.com/s/rubik/v9/iJWKBXyIfDnIV7nFrXyi0A.woff2) format('woff2');
+        unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+        }
+      @font-face{
+        font-family:'Rubik';
+        font-style:normal;
+        font-weight:400;
+        src:local('Rubik'), local('Rubik-Regular'), url(https://fonts.gstatic.com/s/rubik/v9/iJWKBXyIfDnIV7nDrXyi0A.woff2) format('woff2');
+        unicode-range:U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+        }
+      @font-face{
+        font-family:'Rubik';
+        font-style:normal;
+        font-weight:400;
+        src:local('Rubik'), local('Rubik-Regular'), url(https://fonts.gstatic.com/s/rubik/v9/iJWKBXyIfDnIV7nPrXyi0A.woff2) format('woff2');
+        unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+      @font-face{
+        font-family:'Rubik';
+        font-style:normal;
+        font-weight:400;
+        src:local('Rubik'), local('Rubik-Regular'), url(https://fonts.gstatic.com/s/rubik/v9/iJWKBXyIfDnIV7nBrXw.woff2) format('woff2');
+        unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /*! CSS Used from: Embedded */
+
+      [class^=icon-]:before {
+        font-family: anafi-icons;
+        font-style: normal;
+        font-weight: 400;
+        speak: none;
+        display: inline-block;
+        text-decoration: inherit;
+        width: 1em;
+        margin-right: .2em;
+        text-align: center;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1em;
+        margin-left: .2em;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .icon-4khdr:before {
+        content: '\55';
+      }
+
+      .icon-180tilt:before {
+        content: '\56';
+      }
+
+      .icon-flighttime:before {
+        content: '\5a';
+      }
+
+      .icon-losslesszoom:before {
+        content: '\61';
+      }
+
+
+      /*! CSS Used from: http://anafi.parrot.com/assets/builds/bundle.css */
+
+      .button.cta {
+        background: #1d69e7;
+        color: #fff;
+        display: inline-block;
+        padding: 0 40px;
+        line-height: 60px;
+        font-family: Rajdhani, sans-serif;
+        font-weight: 600;
+        margin-top: 50px;
+        font-size: 16px;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        vertical-align: center;
+        border-radius: 100px;
+        transition: transform .8s cubic-bezier(.158, .799, .182, .844);
+        will-change: transform;
+      }
+
+      @media (max-width:1023px) {
+        .button.cta {
+          margin-top: 30px;
+          font-size: 14px;
+          padding: 0 30px;
+          line-height: 50px;
+        }
+      }
+
+      .button.cta:hover {
+        -ms-transform: scale(1.06);
+        transform: scale(1.06);
+      }
+
+      .button.cta:hover span {
+        -ms-transform: scale(.88);
+        transform: scale(.88);
+      }
+
+      .button.cta span {
+        display: inline-block;
+        -ms-transform: scale(1);
+        transform: scale(1);
+        transition: transform .8s cubic-bezier(.158, .799, .182, .844);
+        will-change: transform;
+      }
+
+      h1 {
+        font-family: Rajdhani, sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 70px;
+        letter-spacing: .04em;
+        line-height: .9em;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      @media (max-width:1023px) {
+        h1 {
+          font-size: 60px;
+        }
+      }
+
+      @media (max-width:639px) {
+        h1 {
+          font-size: 42px;
+        }
+      }
+
+      h4 {
+        font-family: Rubik, sans-serif;
+        max-width: 600px;
+        line-height: 1.3em;
+        font-weight: 300;
+        font-size: 19px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      @media (max-width:1023px) {
+        h4 {
+          margin: 15px auto 0;
+          max-width: 450px;
+          font-size: 16px;
+        }
+      }
+
+      .section-app {
+        position: relative;
+        background: #fff;
+        overflow: hidden;
+      }
+
+      .section-app .background-map {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60%;
+        background-size: auto;
+        background-repeat: repeat;
+        opacity: .1;
+      }
+
+      @media not all,
+      only screen and (-webkit-min-device-pixel-ratio:1.5),
+      only screen and (min--moz-device-pixel-ratio:1.5),
+      only screen and (min-resolution:1.5dppx),
+      only screen and (min-resolution:144dpi) {
+        .section-app .background-map {
+          background-size: 430px 385px;
+        }
+      }
+
+      .section-app .background-map:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background: linear-gradient(180deg, hsla(0, 0%, 97%, 0) 0, #f7f7f7);
+      }
+
+      .section-app .app-content {
+        position: relative;
+        z-index: 1;
+        padding: 0 80px;
+        max-width: 1450px;
+        margin: 0 auto;
+      }
+
+      @media (max-width:1023px) {
+        .section-app .app-content {
+          padding: 0 40px;
+        }
+      }
+
+      @media (max-width:639px) {
+        .section-app .app-content {
+          padding: 0 10px;
+        }
+      }
+
+      .section-app .button {
+        position: relative;
+        z-index: 2;
+      }
+
+      .section-app h1 {
+        font-family: Rajdhani, sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 58px;
+        letter-spacing: .02em;
+        line-height: 1em;
+        max-width: 700px;
+        text-align: center;
+        margin: 9% auto 0;
+      }
+
+      @media (max-width:1023px) {
+        .section-app h1 {
+          font-size: 60px;
+          line-height: 80%;
+        }
+      }
+
+      @media (max-width:639px) {
+        .section-app h1 {
+          margin-top: 60px;
+          padding: 0 30px;
+          font-size: 32px;
+          line-height: 1em;
+        }
+      }
+
+      .section-app h4 {
+        margin-top: 30px;
+        max-width: 600px;
+        line-height: 1.6em;
+      }
+
+      @media (max-width:639px) {
+        .section-app h4 {
+          font-size: 14px;
+          padding: 0 30px;
+        }
+      }
+
+      .section-app {
+        text-align: center;
+      }
+
+      .section-app .controller {
+        display: block;
+        max-width: 900px;
+        width: 100%;
+        margin: 9% auto 2%;
+        pointer-events: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      .section-app .app-infos {
+        position: absolute;
+        bottom: 37%;
+        left: 0;
+        text-align: right;
+        z-index: 1;
+        width: 27.5%;
+        font-size: 15.5px;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: end;
+        align-items: flex-end;
+      }
+
+      @media (max-width:1349px) {
+        .section-app .app-infos {
+          font-size: 14px;
+          width: 25%;
+        }
+      }
+
+      @media (max-width:1189px) {
+        .section-app .app-infos {
+          width: 23%;
+        }
+      }
+
+      @media (max-width:1099px) {
+        .section-app .app-infos {
+          width: 22%;
+        }
+      }
+
+      @media (max-width:1049px) {
+        .section-app .app-infos {
+          position: relative;
+          margin: 0 auto;
+          max-width: 600px;
+          width: 100%;
+          -ms-flex-align: center;
+          align-items: center;
+          font-size: 15px;
+          margin-bottom: 40px;
+        }
+      }
+
+      .section-app .app-infos .infos-list {
+        position: relative;
+        width: 100%;
+        height: 100px;
+      }
+
+      @media (max-width:1049px) {
+        .section-app .app-infos .infos-list {
+          margin: 0 auto;
+        }
+      }
+
+      .section-app .app-infos .infos-list li {
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: end;
+        align-items: flex-end;
+        -moz-osx-font-smoothing: auto!important;
+        -webkit-font-smoothing: auto!important;
+      }
+
+      @media (max-width:1049px) {
+        .section-app .app-infos .infos-list li {
+          display: block;
+          max-width: 500px;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          text-align: center;
+        }
+      }
+
+      .section-app .app-infos .infos-list h3 {
+        font-family: Rajdhani, sans-serif;
+        font-size: 1.15em;
+        margin-bottom: 8px;
+        max-width: 300px;
+        text-transform: uppercase;
+      }
+
+      @media (max-width:1049px) {
+        .section-app .app-infos .infos-list h3 {
+          margin-bottom: 12px;
+          line-height: 30px;
+        }
+      }
+
+      .section-app .app-infos .infos-list p {
+        font-size: .9em;
+        opacity: .7;
+        line-height: 1.2em;
+        max-width: 250px;
+      }
+
+      .section-app .app-infos .infos-list h3,
+      .section-app .app-infos .infos-list p {
+        padding: 0 0 0 10px;
+      }
+
+      @media (max-width:1049px) {
+        .section-app .app-infos .infos-list h3,
+        .section-app .app-infos .infos-list p {
+          margin: 0 auto;
+          max-width: auto;
+          text-align: center;
+        }
+      }
+
+      .section-app .app-infos .infos-nav ul {
+        margin-bottom: 22px;
+      }
+
+      .section-app .app-infos .infos-nav li {
+        display: inline-block;
+        font-size: 32px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        opacity: .5;
+        cursor: pointer;
+        transition: opacity .3s cubic-bezier(0, .535, .135, .99), transform .6s cubic-bezier(0, .535, .135, .99);
+      }
+
+      .section-app .app-infos .infos-nav li:hover {
+        opacity: 1;
+      }
+
+      @media (max-width:1049px) {
+        .section-app .app-infos .infos-nav li {
+          margin: 0 5px;
+        }
+      }
+
+      .section-app .app-infos.item-1 .infos-nav li:first-child {
+        opacity: 1;
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+      }
+
+      .section-app .app-infos .infos-list li {
+        transition: opacity .3s cubic-bezier(0, .535, .135, .99), transform .6s cubic-bezier(0, .535, .135, .99);
+      }
+
+      .section-app .app-infos.item-1 .infos-list li:first-child {
+        opacity: 1;
+        -ms-transform: scale(1);
+        transform: scale(1);
+      }
+
+      .section-app .app-infos:not(.item-2) .infos-list li:nth-child(2),
+      .section-app .app-infos:not(.item-3) .infos-list li:nth-child(3),
+      .section-app .app-infos:not(.item-4) .infos-list li:nth-child(4) {
+        opacity: 0;
+        -ms-transform: translateX(35px);
+        transform: translateX(35px);
+      }
+
+      /*! CSS Used from: http://anafi.parrot.com/assets/builds/bundle.css */
+
+      .button.cta {
+        background: #1d69e7;
+        color: #fff;
+        display: inline-block;
+        padding: 0 40px;
+        line-height: 60px;
+        font-family: Rajdhani, sans-serif;
+        font-weight: 600;
+        margin-top: 50px;
+        font-size: 16px;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        vertical-align: center;
+        border-radius: 100px;
+        transition: transform .8s cubic-bezier(.158, .799, .182, .844);
+        will-change: transform;
+      }
+
+      @media (max-width:1023px) {
+        .button.cta {
+          margin-top: 30px;
+          font-size: 14px;
+          padding: 0 30px;
+          line-height: 50px;
+        }
+      }
+
+      .button.cta:hover {
+        -ms-transform: scale(1.06);
+        transform: scale(1.06);
+      }
+
+      .button.cta:hover span {
+        -ms-transform: scale(.88);
+        transform: scale(.88);
+      }
+
+      .button.cta span {
+        display: inline-block;
+        -ms-transform: scale(1);
+        transform: scale(1);
+        transition: transform .8s cubic-bezier(.158, .799, .182, .844);
+        will-change: transform;
+      }
+
+      .button.cta--black {
+        background: #000;
+      }
+
+      h1 {
+        font-family: Rajdhani, sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-size: 70px;
+        letter-spacing: .04em;
+        line-height: .9em;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      @media (max-width:1023px) {
+        h1 {
+          font-size: 60px;
+        }
+      }
+
+      @media (max-width:639px) {
+        h1 {
+          font-size: 42px;
+        }
+      }
+
+      h4 {
+        font-family: Rubik, sans-serif;
+        max-width: 600px;
+        line-height: 1.3em;
+        font-weight: 300;
+        font-size: 19px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      @media (max-width:1023px) {
+        h4 {
+          margin: 15px auto 0;
+          max-width: 450px;
+          font-size: 16px;
+        }
+      }
+
+      .section-header {
+        position: relative;
+        margin: 0;
+        width: 100%;
+        overflow: visible;
+        color: #fff;
+      }
+
+      .section-header .content h1 {
+        position: relative;
+      }
+
+      .section-header .content h1 svg path {
+        fill: #fff;
+        width: 100%;
+        height: auto;
+      }
+
+      .section-header .content {
+        padding: 100px 40px 0;
+        position: relative;
+        z-index: 2;
+        top: calc(20px + 1%);
+        left: 0;
+        right: 0;
+        max-width: 1400px;
+        margin: 0 auto;
+        overflow: visible;
+        text-align: center;
+        transform: translateZ(0);
+        will-change: transform;
+      }
+
+      .section-header .content .text {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .content .text h4 {
+        margin-top: 30px;
+        max-width: 600px;
+        margin: 40px auto 0;
+        line-height: 150%;
+        font-size: 20px;
+      }
+
+      @media (max-width:1023px) {
+        .content .text h4 {
+          margin: 30px auto 0;
+          max-width: 450px;
+          font-size: 16px;
+        }
+      }
+
+      .content .text h1 {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .section-header .content {
+        padding-bottom: 400px;
+      }
+
+      @media (max-width:1439px) {
+        .section-header .content {
+          padding-bottom: 38vw;
+        }
+      }
+
+      @media (max-width:999px) {
+        .section-header .content {
+          padding-bottom: 30vw;
+        }
+      }
+
+      @media (max-width:639px) {
+        .section-header .content {
+          padding-bottom: 120px;
+        }
+      }
+
+      .section-header .drone {
+        position: relative;
+        display: block;
+        width: calc(100% - 300px);
+        margin: 0 auto 60px;
+        text-align: center;
+        animation: drone 2s infinite alternate cubic-bezier(.655, .005, .305, 1);
+      }
+
+      @media (max-width:1299px) {
+        .section-header .drone {
+          width: 80%;
+        }
+      }
+
+      @media (max-width:639px) {
+        .section-header .drone {
+          width: 90%;
+          margin-bottom: 40px;
+        }
+      }
+
+      .section-header .drone img.drone-main {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: auto;
+        transform: translateZ(500px);
+      }
+
+      .section-header .drone img.drone-p {
+        position: absolute;
+        z-index: 1;
+        width: 35%;
+        height: auto;
+        opacity: .4;
+      }
+
+      .section-header .drone img.p0 {
+        left: 0;
+        bottom: 8%;
+        animation: propeller0 .7s infinite linear;
+      }
+
+      .section-header .drone img.p1 {
+        right: -.8%;
+        bottom: 7.7%;
+        animation: propeller1 .7s infinite linear;
+      }
+
+      .section-header .drone img.p2 {
+        left: -11.4%;
+        top: -24.5%;
+        width: 46%;
+        animation: propeller2 .7s infinite linear;
+      }
+
+      .section-header .drone img.p3 {
+        right: -12%;
+        top: -23.7%;
+        width: 46%;
+        animation: propeller3 .7s infinite linear;
+      }
+
+      .section-header .button,
+      .section-header .drone-wrapper,
+      .section-header h1,
+      .section-header h4 {
+        opacity: 0;
+        will-change: opacity transform;
+      }
+
+      .section-header .button {
+        background: #1d69e7;
+      }
+
+
+      /*! CSS Used keyframes */
+
+      @keyframes drone {
+        0% {
+          transform: translate3d(0, -10px, 0);
+        }
+        to {
+          transform: translate3d(0, 10px, 0);
+        }
+      }
+
+      @keyframes propeller0 {
+        0% {
+          transform: rotateY(-10deg) rotateX(-60deg) rotate(0deg);
+        }
+        to {
+          transform: rotateY(-10deg) rotateX(-60deg) rotate(1turn);
+        }
+      }
+
+      @keyframes propeller1 {
+        0% {
+          transform: rotateY(-10deg) rotateX(60deg) rotate(20deg);
+        }
+        to {
+          transform: rotateY(-10deg) rotateX(60deg) rotate(380deg);
+        }
+      }
+
+      @keyframes propeller2 {
+        0% {
+          transform: rotateY(-10deg) rotateX(-60deg) rotate(0deg);
+        }
+        to {
+          transform: rotateY(-10deg) rotateX(-60deg) rotate(1turn);
+        }
+      }
+
+      @keyframes propeller3 {
+        0% {
+          transform: rotateY(-10deg) rotateX(-60deg) rotate(0deg);
+        }
+        to {
+          transform: rotateY(-10deg) rotateX(-60deg) rotate(1turn);
+        }
+      }
+
+
+      /*! CSS Used fontfaces */
+
+      @font-face {
+        font-family: 'Rajdhani';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Rajdhani Medium'), local('Rajdhani-Medium'), url(https://fonts.gstatic.com/s/rajdhani/v9/LDI2apCSOBg7S-QT7pb0EPOqeef2kg.woff2) format('woff2');
+        unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+      }
+
+      @font-face {
+        font-family: 'Rajdhani';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Rajdhani Medium'), local('Rajdhani-Medium'), url(https://fonts.gstatic.com/s/rajdhani/v9/LDI2apCSOBg7S-QT7pb0EPOleef2kg.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+
+      @font-face {
+        font-family: 'Rajdhani';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Rajdhani Medium'), local('Rajdhani-Medium'), url(https://fonts.gstatic.com/s/rajdhani/v9/LDI2apCSOBg7S-QT7pb0EPOreec.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      @font-face {
+        font-family: 'Rajdhani';
+        font-style: normal;
+        font-weight: 600;
+        src: local('Rajdhani SemiBold'), local('Rajdhani-SemiBold'), url(https://fonts.gstatic.com/s/rajdhani/v9/LDI2apCSOBg7S-QT7pbYF_Oqeef2kg.woff2) format('woff2');
+        unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+      }
+
+      @font-face {
+        font-family: 'Rajdhani';
+        font-style: normal;
+        font-weight: 600;
+        src: local('Rajdhani SemiBold'), local('Rajdhani-SemiBold'), url(https://fonts.gstatic.com/s/rajdhani/v9/LDI2apCSOBg7S-QT7pbYF_Oleef2kg.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+
+      @font-face {
+        font-family: 'Rajdhani';
+        font-style: normal;
+        font-weight: 600;
+        src: local('Rajdhani SemiBold'), local('Rajdhani-SemiBold'), url(https://fonts.gstatic.com/s/rajdhani/v9/LDI2apCSOBg7S-QT7pbYF_Oreec.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      @font-face {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Rubik'), local('Rubik-Regular'), url(https://fonts.gstatic.com/s/rubik/v9/iJWKBXyIfDnIV7nFrXyi0A.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+
+      @font-face {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Rubik'), local('Rubik-Regular'), url(https://fonts.gstatic.com/s/rubik/v9/iJWKBXyIfDnIV7nDrXyi0A.woff2) format('woff2');
+        unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+      }
+
+      @font-face {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Rubik'), local('Rubik-Regular'), url(https://fonts.gstatic.com/s/rubik/v9/iJWKBXyIfDnIV7nPrXyi0A.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+
+      @font-face {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Rubik'), local('Rubik-Regular'), url(https://fonts.gstatic.com/s/rubik/v9/iJWKBXyIfDnIV7nBrXw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+
+  .sections
+    header.section.section-header.section--smooth(style='transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);')
+      .content
+        .drone-wrapper(style='opacity: 1; transform: scale(1) translateZ(0px);')
+          figure.drone.noselect.nopointer
+            img.drone-main(src='http://anafi.parrot.com/assets/images/section-header/drone.png')
+            img.drone-p.p0(src='http://anafi.parrot.com/assets/images/section-header/propeller.png')
+            img.drone-p.p1(src='http://anafi.parrot.com/assets/images/section-header/propeller.png')
+            img.drone-p.p2(src='http://anafi.parrot.com/assets/images/section-header/propeller.png')
+            img.drone-p.p3(src='http://anafi.parrot.com/assets/images/section-header/propeller.png')
+        .text
+          h1(style='opacity: 1; transform: scale(1) translateZ(0px);')
+            svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 968.9 248.6')
+              path(d='M886.4 243.4v-1.5c0-.5-.3-.7-.8-.7h-16.7c-.4 0-.6-.2-.6-.6V225c0-.4.2-.6.6-.6h14.9c.5 0 .7-.2.7-.7v-1.5c0-.5-.2-.7-.7-.7h-14.9c-.4 0-.6-.2-.6-.6v-14.8c0-.4.2-.6.6-.6h16.7c.5 0 .8-.2.8-.7v-1.5c0-.5-.3-.7-.8-.7h-19.9c-.4 0-.6.3-.6.8v39.9c0 .5.2.8.6.8h19.9c.5 0 .8-.2.8-.7')
+              path(d='M836.6 243.3l-7.7-16.2v-.3a7.9 7.9 0 0 0 5-3 9.2 9.2 0 0 0 1.8-5.9v-6.1c0-2.8-.8-5.1-2.4-6.7a9 9 0 0 0-6.6-2.5H812c-.4 0-.6.3-.6.8v39.9c0 .5.2.8.6.8h1.9c.5 0 .7-.3.7-.8v-15.7c0-.4.2-.6.6-.6h10.2l7.6 16.2c.2.5.6.8 1.2.8h2c.5.1.7-.1.4-.7zm-21.4-19c-.4 0-.6-.2-.6-.6v-17.6c0-.4.2-.6.6-.6h11.1c2 0 3.5.6 4.6 1.7 1.1 1.1 1.6 2.7 1.6 4.7v6.1c0 2-.5 3.6-1.6 4.7s-2.6 1.6-4.6 1.6h-11.1z')
+              path(d='M782.4 243.4v-1.5c0-.5-.3-.7-.8-.7h-16.7c-.4 0-.6-.2-.6-.6V225c0-.4.2-.6.6-.6h14.9c.5 0 .7-.2.7-.7v-1.5c0-.5-.2-.7-.7-.7h-14.9c-.4 0-.6-.2-.6-.6v-14.8c0-.4.2-.6.6-.6h16.7c.5 0 .8-.2.8-.7v-1.5c0-.5-.3-.7-.8-.7h-19.9c-.4 0-.6.3-.6.8v39.9c0 .5.2.8.6.8h19.9c.5 0 .8-.2.8-.7')
+              path(d='M708.2 243.3v-18.2c0-.4.2-.6.6-.6h18c.4 0 .6.2.6.6v18.2c0 .5.2.8.6.8h1.9c.5 0 .7-.3.7-.8v-39.9c0-.5-.2-.8-.7-.8H728c-.4 0-.6.3-.6.8V221c0 .4-.2.6-.6.6h-18c-.4 0-.6-.2-.6-.6v-17.6c0-.5-.2-.8-.7-.8h-1.9c-.4 0-.6.3-.6.8v39.9c0 .5.2.8.6.8h1.9c.5 0 .7-.2.7-.8')
+              path(d='M644.9 243.3l9.6-36.3h.3l9.5 36.3c.1.5.4.8.9.8h3.3c.5 0 .8-.3.8-.8l8.8-39.9c.1-.5-.1-.8-.6-.8h-2.2c-.5 0-.8.3-.9.8l-7.6 37h-.3l-9.9-37c-.1-.5-.4-.7-.9-.7h-2.4c-.5 0-.8.2-.8.7l-9.8 37h-.3l-7.7-37c-.1-.5-.4-.8-.8-.8h-2.1c-.6 0-.8.3-.6.8l8.8 39.9c.1.5.4.8.9.8h3.2c.4 0 .7-.2.8-.8')
+              path(d='M595.5 243.3v-14.9l12.6-25c.2-.5 0-.8-.4-.8h-2.4c-.4 0-.7.3-.9.8L594 224.5h-.3l-10.3-21.1c-.2-.5-.5-.8-.9-.8h-2.3c-.6 0-.7.3-.5.8l12.5 25v14.9c0 .5.2.8.7.8h1.9c.4 0 .7-.2.7-.8')
+              path(d='M530.1 243.3v-33.7h.3l19.7 33.8c.3.5.6.7 1 .7h1.5c.5 0 .7-.3.7-.8v-39.9c0-.5-.2-.8-.7-.8h-1.8c-.5 0-.7.3-.7.8V237h-.3L530 203c-.1-.3-.4-.4-.8-.4h-1.7c-.4 0-.6.3-.6.8v39.9c0 .5.2.8.6.8h1.9c.4 0 .7-.2.7-.8')
+              path(d='M500.1 243.3l-12.8-39.9c-.2-.5-.5-.8-.9-.8h-3c-.5 0-.8.3-.9.8l-12.8 39.9c-.2.5 0 .8.4.8h2c.4 0 .7-.3.8-.8l3.5-10.3h16.9l3.5 10.3c.1.5.4.8.8.8h2.1c.4 0 .6-.2.4-.8zm-22.8-13.2l7.4-23.9h.3l7.5 23.9h-15.2z')
+              path(d='M443.4 240.5h-2.3c-.5 0-.7.1-.7.3v3.1c0 .2.2.3.7.3h2.3c.4 0 .6-.1.6-.3v-3.1c0-.2-.2-.3-.6-.3')
+              path(d='M412.6 243.4v-1.5c0-.5-.3-.7-.8-.7h-16.7c-.4 0-.6-.2-.6-.6V225c0-.4.2-.6.6-.6H410c.5 0 .7-.2.7-.7v-1.5c0-.5-.2-.7-.7-.7h-14.9c-.4 0-.6-.2-.6-.6v-14.8c0-.4.2-.6.6-.6h16.7c.5 0 .8-.2.8-.7v-1.5c0-.5-.3-.7-.8-.7h-19.9c-.4 0-.6.3-.6.8v39.9c0 .5.2.8.6.8h19.9c.5 0 .8-.2.8-.7')
+              path(d='M356.3 203.1l-12.1 28.3h-.3l-12.1-28.3c-.1-.3-.3-.4-.6-.4h-3.5c-.4 0-.6.3-.6.8v39.9c0 .5.2.8.6.8h1.9c.4 0 .6-.3.6-.8v-35.7h.3l11.6 26.8c.2.5.5.7.9.7h2.1c.4 0 .7-.2 1-.7l11.4-26.7h.3v35.7c0 .5.2.8.7.8h1.9c.4 0 .6-.3.6-.8v-39.9c0-.5-.2-.8-.6-.8h-3.5c-.3-.1-.5 0-.6.3')
+              path(d='M295.8 202.7H294c-.4 0-.6.3-.6.8v39.9c0 .5.2.8.6.8h1.9c.5 0 .7-.3.7-.8v-39.9c-.1-.5-.3-.8-.8-.8')
+              path(d='M256.3 243.3v-37.2c0-.4.2-.6.6-.6h9.3c.5 0 .8-.2.8-.7v-1.5c0-.5-.3-.7-.8-.7H243c-.5 0-.8.2-.8.7v1.5c0 .5.3.7.8.7h9.3c.4 0 .6.2.6.6v37.2c0 .5.2.8.7.8h1.9c.6 0 .8-.2.8-.8')
+              path(d='M207.5 243.3v-14.9l12.6-25c.2-.5 0-.8-.4-.8h-2.4c-.4 0-.7.3-.9.8l-10.2 21.1h-.3l-10.3-21.1c-.2-.5-.5-.8-.9-.8h-2.3c-.6 0-.7.3-.5.8l12.5 25v14.9c0 .5.2.8.7.8h1.9c.3 0 .5-.2.5-.8')
+              path(d='M142.1 243.3v-33.7h.3l19.7 33.8c.3.5.6.7 1 .7h1.5c.5 0 .7-.3.7-.8v-39.9c0-.5-.2-.8-.7-.8h-1.8c-.5 0-.7.3-.7.8V237h-.3L142 203c-.1-.3-.4-.4-.8-.4h-1.7c-.4 0-.6.3-.6.8v39.9c0 .5.2.8.6.8h1.9c.5 0 .7-.2.7-.8')
+              path(d='M112.2 243.3l-12.8-39.9c-.2-.5-.5-.8-.9-.8h-3c-.5 0-.8.3-.9.8l-12.8 39.9c-.2.5 0 .8.4.8h2c.4 0 .7-.3.8-.8l3.5-10.3h16.9l3.5 10.3c.1.5.4.8.8.8h2.1c.4 0 .5-.2.4-.8zm-22.8-13.2l7.4-23.9h.3l7.5 23.9H89.4z')
+              path(d='M952.8 14.9l4.8-11.7h2.2v14.2h-1.5V5l-5.2 12.4h-.7L947.2 5v12.4h-1.5V3.2h2.2z')
+              path(d='M937.8 17.4h-1.4v-13h-4.8V3.2h11v1.2h-4.8z')
+              path(d='M878.4 3.2h8v149.5h-8z')
+              path(d='M707.1 3.2v149.4h8.1V78.7h73.2v-6.9h-73.2V10.3h78.7V3.2z')
+              path(d='M566.6 3.2h-8.7l-64.6 149.5h8.7l17.5-41.8h84l17.3 41.8h8.7L566.6 3.2zm-44.2 100.7l39.5-93.5 38.6 93.5h-78.1z')
+              path(d='M407.6 3.2v138.4h-.4L306.1 3.2h-10.6v149.4h8V13.7h.4l101.2 138.9h10.5V3.2z')
+              path(d='M146.3 3.2L81.7 152.6h8.7l17.5-41.8h84l17.3 41.8h8.6L154.9 3.2h-8.6zm4 7.1l38.6 93.5h-78.1l39.5-93.5z')
+          h4(style='opacity: 1; transform: scale(1) translateZ(0px);') The flying 4K HDR camera you can take everywhere
+          a.button.cta.cta--black(href='https://www.parrot.com/us/drones/anafi?utm_source=minisite&utm_medium=minisite&utm_content=preorder_top&utm_campaign=anafi&xtor=CS3-39-[anafi]-[]-[preorder_top]' style='opacity: 1; transform: scale(1) translateZ(0px);')
+            span Buy ANAFI
+
   .about-shelf
+    .text
+      h4(style='opacity: 1; transform: scale(1) translateZ(0px);') The flying 4K HDR camera you can take everywhere
+
     .content
       h2 A personalized learning resource for all ages
       p
-        | Khan Academy offers practice exercises, instructional videos, and a personalized learning dashboard that empower learners to study at their own pace in and outside of the classroom. We tackle math, science, computer programming, history, art history, economics, and more. Our math missions guide learners from kindergarten to calculus using state-of-the-art, adaptive technology that identifies strengths and learning gaps. We&apos;ve also partnered with institutions like NASA, The Museum of Modern Art, The California Academy of Sciences, and MIT to offer specialized content.
+        | Bible Academy offers practice exercises, instructional videos, and a personalized learning dashboard that empower learners to study at their own pace in and outside of church.
       #kui-button-1.center-button
-
+    .content
+      h2 Free tools for laymen and teachers
+      p
+        | We’re working hard to ensure that Bible Academy empowers the layman armed with scripture to engage new believers in sound biblical doctrine, and better understand how best to help them. See at a glance how far along a student or a friend is in his exposure to biblical doctrine, and learn how to engage with them where they're at. 
+        
+      h4 "For unto whomsoever much is given, of him shall much be required." ~ Luke 12:48
+    .content
+      h2 For free. For everyone. Forever.
+      p
+        | No ads, no subscriptions. We are a not‑for‑profit because we believe in a free, world-class education for anyone, anywhere. We rely on our community of thousands of volunteers and donors. Learn more about getting involved today.
+      .text  
+        h4 "Freely ye have received, freely give." ~  Matthew 10:8
+  section.section.section-app.section--smooth(data-anchor='app' data-anchor-label='Freeflight Application' style='transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -6000, 0, 1);')
+    figure.background-map(style='background-image: url("images/bg/bg.png"); will-change: transform; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -36.8458, 0, 1);')
+    section.app-content
+      h1 FREEFLIGHT 6: Flying is a breeze
+      h4
+        | Fly, capture and share photos and videos directly from the free mobile app Freeflight 6.
+      a.button.cta(href='/us/freeflight' data-route='')
+        span More information
+      img.controller(src='http://anafi.parrot.com/us/assets/images/section-app/controller.png' style='will-change: transform; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 38.4604, 0, 1);')
+      .app-infos.item-1
+        .infos-nav
+          ul
+            li.icon-4khdr(data-app-usp='0')
+            li.icon-180tilt(data-app-usp='1')
+            li.icon-losslesszoom(data-app-usp='2')
+            li.icon-flighttime(data-app-usp='3')
+        ul.infos-list
+          li(data-app-usp='0')
+            h3 4K HDR VIDEOS AND 21 MP PHOTOS
+            p Perfection is in the details.
+          li(data-app-usp='1')
+            h3 TILT 180&#xFFFD;
+            p Discover behind the scenes.
+          li(data-app-usp='2')
+            h3 2.8X FULL HD ZOOM
+            p Take a closer look.
+          li(data-app-usp='3')
+            h3 Slow motion &amp; Hyperlapse
+          p Speed up it or slow it down, take control of time.
 
   figure.background.noselect.nopointer.fixed-background(style='height: 1367.47px;')
     img(src='images/parallax/4.jpg')
@@ -139,4 +1213,6 @@ block content
     img(src='images/parallax/1.png')
     img(src='images/parallax/0.png')
     .filler
+  
+
   include partials/footer

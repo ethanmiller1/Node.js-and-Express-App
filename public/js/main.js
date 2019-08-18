@@ -123,7 +123,7 @@ var smoothScroll = {
 
   },
   handle: function(delta) {
-    var time = 1000;
+    var time = 700;
 	  var distance = 200;
     
     this.$page.stop().animate(
