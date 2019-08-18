@@ -150,7 +150,7 @@ var parallax = {
   },
   bindEvents: function() {
     this.$page.on('scroll', this.displace.bind(this));
-    // this.$page.on('scroll', this.adjustContent.bind(this));
+    this.$page.on('mousewheel', this.adjustContent.bind(this));
   },
   displace: function() {
     // Scroll top position divided by height of page.
@@ -171,7 +171,19 @@ var parallax = {
     this.adjustContent.bind(this);
   },
   adjustContent: function() {
-    position = this.$page.scrollTop() / 3 * 2;
+
+    // Get mousewheel direction
+    offset = 0;
+    if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+      offset = 300;
+    }
+    else {
+      offset = -300;
+    }
+
+    position = this.$page.scrollTop() * .6;
+    console.log('scrollTop Position: ' + position + ': I am called multiple times as the scroll position gradually changes. Change scroll event to mousewheel event.');
+    scroll = 2 * this.$page.scrollTop() / this.$page.height() * 634;
 
     this.$header.css({ 'transform': 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,' + position + ',0,1)'})
   }
