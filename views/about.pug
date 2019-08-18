@@ -76,9 +76,15 @@ block content
       }
 
       /* Custom CSS -- smooth image transitions */
-      .fixed-background.background>*{
+      .fixed-background.background>* {
         transition: all 1s cubic-bezier(.21,.57,.17,.99);
       }
+      footer {
+        position: relative;
+        z-index: 20;
+        background-color: #fff;
+      }
+
 
       .sections>* {
         position: relative;
@@ -217,7 +223,7 @@ block content
         }
       .content .text h4{
         margin-top:30px;
-        max-width:600px;
+        max-width:800px;
         margin:40px auto 0;
         line-height:150%;
         font-size:20px;
@@ -422,7 +428,7 @@ block content
 
       h4 {
         font-family: Rubik, sans-serif;
-        max-width: 600px;
+        max-width: 800px;
         line-height: 1.3em;
         font-weight: 300;
         font-size: 19px;
@@ -509,7 +515,7 @@ block content
         font-size: 58px;
         letter-spacing: .02em;
         line-height: 1em;
-        max-width: 700px;
+        max-width: 900px;
         text-align: center;
         margin: 9% auto 0;
       }
@@ -532,7 +538,7 @@ block content
 
       .section-app h4 {
         margin-top: 30px;
-        max-width: 600px;
+        max-width: 800px;
         line-height: 1.6em;
       }
 
@@ -562,7 +568,8 @@ block content
       .section-app .app-infos {
         position: absolute;
         bottom: 37%;
-        left: 0;
+        left: -125px;
+        bottom: 75px;
         text-align: right;
         z-index: 1;
         width: 27.5%;
@@ -598,7 +605,7 @@ block content
         .section-app .app-infos {
           position: relative;
           margin: 0 auto;
-          max-width: 600px;
+          max-width: 800px;
           width: 100%;
           -ms-flex-align: center;
           align-items: center;
@@ -809,7 +816,7 @@ block content
 
       h4 {
         font-family: Rubik, sans-serif;
-        max-width: 600px;
+        max-width: 800px;
         line-height: 1.3em;
         font-weight: 300;
         font-size: 19px;
@@ -866,7 +873,7 @@ block content
 
       .content .text h4 {
         margin-top: 30px;
-        max-width: 600px;
+        max-width: 800px;
         margin: 40px auto 0;
         line-height: 150%;
         font-size: 20px;
@@ -1152,32 +1159,32 @@ block content
               path(d='M566.6 3.2h-8.7l-64.6 149.5h8.7l17.5-41.8h84l17.3 41.8h8.7L566.6 3.2zm-44.2 100.7l39.5-93.5 38.6 93.5h-78.1z')
               path(d='M407.6 3.2v138.4h-.4L306.1 3.2h-10.6v149.4h8V13.7h.4l101.2 138.9h10.5V3.2z')
               path(d='M146.3 3.2L81.7 152.6h8.7l17.5-41.8h84l17.3 41.8h8.6L154.9 3.2h-8.6zm4 7.1l38.6 93.5h-78.1l39.5-93.5z')
-          h4(style='opacity: 1; transform: scale(1) translateZ(0px);') The flying 4K HDR camera you can take everywhere
+          h4(style='opacity: 1; transform: scale(1) translateZ(0px);') The online library you can take everywhere
           a.button.cta.cta--black(href='/users/register' style='opacity: 1; transform: scale(1) translateZ(0px);')
             span Sign Up
 
     section.section.section-app.section--smooth(data-anchor='app' data-anchor-label='Freeflight Application' style='transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 150, 1);')
       section.app-content
-          h1 FREEFLIGHT 6: Flying is a breeze
+          h1 Learn, Teach, Communicate
           h4
-            | Fly, capture and share photos and videos directly from the free mobile app Freeflight 6.
-          a.button.cta(href='/us/freeflight' data-route='')
+            | The point of Bible Academy is to help bridge the differences between the many denominations in Christianity today. Some folks have the attitude that conversations about controversial doctrines should be avoided to keep unity between the different sects of belief. At Bible Academy we have the opposite perspective. Our goal is to bridge the gap between fellow believers not by avoiding conversation, but by using conversation to (1) define our differences, (2) understand why other's believe differently, and (3) ultimately evaluate whether those differences are significant enough to entail separation or trivial enough to confirm unity.
+          a.button.cta(href='#info' data-route='')
             span More information
-          .app-infos.item-1
-            .infos-nav
-              ul
-                li.icon-4khdr(data-app-usp='0')
-                li.icon-180tilt(data-app-usp='1')
-                li.icon-losslesszoom(data-app-usp='2')
-                li.icon-flighttime(data-app-usp='3')
-            ul.infos-list
-              li(data-app-usp='0')
-                h3 4K HDR VIDEOS AND 21 MP PHOTOS
-                p Perfection is in the details.
+          //- .app-infos.item-1
+          //-   .infos-nav
+          //-     ul
+          //-       li.icon-4khdr(data-app-usp='0')
+          //-       li.icon-180tilt(data-app-usp='1')
+          //-       li.icon-losslesszoom(data-app-usp='2')
+          //-       li.icon-flighttime(data-app-usp='3')
+          //-   ul.infos-list
+          //-     li(data-app-usp='0')
+          //-       h3 4K HDR VIDEOS AND 21 MP PHOTOS
+          //-       p Perfection is in the details.
 
       .about-shelf
         .text
-          h4(style='opacity: 1; transform: scale(1) translateZ(0px);') The flying 4K HDR camera you can take everywhere
+          h4(style='opacity: 1; transform: scale(1) translateZ(0px);') The online library you can take everywhere
 
         .content
           h2 A personalized learning resource for all ages
