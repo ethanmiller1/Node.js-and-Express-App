@@ -146,9 +146,11 @@ var parallax = {
   cacheDom: function() {
     this.$bg = $('.fixed-background.background');
     this.$page = $(document);
+    this.$header = $('.sections .section');
   },
   bindEvents: function() {
     this.$page.on('scroll', this.displace.bind(this));
+    // this.$page.on('scroll', this.adjustContent.bind(this));
   },
   displace: function() {
     // Scroll top position divided by height of page.
@@ -164,6 +166,14 @@ var parallax = {
       image.style.transform = 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,' + scroll * values[i] + ',0,1)';
       i++;
     });
+
+    // Call remaining functions.
+    this.adjustContent.bind(this);
+  },
+  adjustContent: function() {
+    position = this.$page.scrollTop() / 3 * 2;
+
+    this.$header.css({ 'transform': 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,' + position + ',0,1)'})
   }
 };
 
