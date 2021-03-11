@@ -95,7 +95,7 @@ var cursor = {
     }
   }
 };
-cursor.init();
+// cursor.init();
 
 //smooth scroll
 
@@ -134,7 +134,7 @@ var smoothScroll = {
   }
 }
 
-smoothScroll.init();
+// smoothScroll.init();
 
 /****** Parallax ******/
 
