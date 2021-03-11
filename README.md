@@ -208,6 +208,7 @@ Check status of ngrok at [localhost:4040/status](http://localhost:4040/status).
 Download and install [MongoDB](https://www.mongodb.com/download-center/community "MongoDB Download Center") from MSI file
 
 #### Start MongoDB as a service.
+
 1. Navigate to `..\mongoDB\bin` in cmd as administrator.
 2. `mongod --directoryperdb --dbpath ..\mongoDB\data\db --logpath ..\mongoDB\log\mongo.log --logappend --install`
 3. `net start MongoDB`
@@ -222,7 +223,7 @@ cls
 ```
 
 | Command | Use |
-|-|-|
+|---|---|
 | show dbs | Show MongoDB Databases |
 | use bibleAcademy | Pick A Databases |
 | show collections | Show all collections (or tables) within the selected database |
@@ -291,7 +292,7 @@ module.exports = {
 1. Access AWS environment variables using [`process.env.ENV_VARIABLE`](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_nodejs.container.html). After deploying the app, navigate to Configuration > Software (Modify) > Environment properties. Copy the keys from [`keys_prod.js`](https://github.com/ethanmiller1/Node.js-and-Express-App/blob/master/config/keys_prod.js) and the values from `keys_dev.js`. Search for any other process.env variables in your project.
 
 |Key|Value|
-|-|-|
+|---|-----|
 |MONGO_URI|mongodb+srv://melchizedek:kingofsalem@bibleacademy-lbizz.mongodb.net/test?retryWrites=true&w=majority|
 |SECRET_OR_KEY|SECRET|
 |NODE_ENV|production|
@@ -363,6 +364,31 @@ function onListening() {
   debug('Listening on ' + bind);
 }
 ```
+
+### Deploy to Heroku
+
+* [Deploy your first App with Heroku and Node.js](https://www.youtube.com/watch?v=MxfxiR8TVNU)
+
+1. From [Heroku]() select `New` > `Create new app`.
+1. Under `Deployment method` select `Connect to GitHub`. Click `Enable Automatic Deploys`.
+1. Create a `Procfile` in the project root with the following command:
+
+```Procfile
+# Initialize a git repository in a new or existing directory
+web: node app.js
+```
+
+4. Add the following environment variables from your app's Settings tab in
+   the [Heroku Dashboard](https://dashboard.heroku.com/):
+
+|Key|Value|
+|---|-----|
+|MONGO_URI|mongodb+srv://melchizedek:kingofsalem@bibleacademy-lbizz.mongodb.net/test?retryWrites=true&w=majority|
+|SECRET_OR_KEY|SECRET|
+|NODE_ENV|production|
+|PORT|3000|
+
+![](https://devcenter1.assets.heroku.com/article-images/321-imported-1443570183-321-imported-1443554644-389-original.jpg)
 
 ## Contributors
 

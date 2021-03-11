@@ -8,7 +8,8 @@ node_modules
 /Node.js-and-Express-App-master
 /config/mongodb.js
 javascript_ideas.js
-
+.idea
+*.zip
 # Individual files
 style-orig.css
 
